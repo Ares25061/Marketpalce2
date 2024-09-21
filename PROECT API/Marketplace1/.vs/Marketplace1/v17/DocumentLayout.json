@@ -1,0 +1,1842 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\addresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\chatparticipantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\chatparticipantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\filepermissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\filepermissioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\filecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\orderitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\paymentusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\paymentusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\pricehistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\pricehistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\searchhistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\searchhistorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\userdiscountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\userdiscountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\userfilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\userfilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\marketplace1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE447BBE-135A-4B00-9428-65C3510EF0B5}|Marketplace1.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iaddressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\wrapper\\irepositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\wrapper\\repositorywrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\chatparticipantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\discountsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\filepermissionsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\filesevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\notificationsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\orderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\paymentsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\paymentusersevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\pricehistorysevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\searchhistorysevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\userdiscountsevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\services\\userfilesevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iuserfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ichatparticipantservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\idiscountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ifilepermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\imessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iorderitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ipaymentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ipricehistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\isearchhistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52E969AF-4B61-4EFF-91BB-00A47C622185}|..\\BusinessLogic\\BusinessLogic.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\businesslogic\\interfaces\\iuserdiscountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\pricehistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\imagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\filepermissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\discountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\chatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\chatparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\adressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\paymentuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\searchhistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\userdiscountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\repositories\\userfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ipaymentuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ipaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ipricehistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iuserdiscountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\idiscountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\isearchhistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ifilepermissionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iuserfilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ifilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\imessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iadressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ichatparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\ichatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iorderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73943CF8-C7FD-4DBF-A3E5-B7D80E1211B7}|..\\DataAccess\\DataAccess.csproj|c:\\users\\\u0430\u0440\u0441\u0435\u043D\u0438\u0439\\desktop\\proect api\\dataaccess\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Interfaces\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IUserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\RepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\IRepositoryWrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\RepositoryBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IRepositoryBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Models\\MarketpalceContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\Domain\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatParticipantController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ChatParticipantController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatParticipantController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ChatParticipantController.cs",
+              "RelativeToolTip": "Controllers\\ChatParticipantController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:35:41.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Controllers\\ChatController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:35:19.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AddressController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "Controllers\\AddressController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:34:45.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwCkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:31:02.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiscountController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\DiscountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DiscountController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\DiscountController.cs",
+              "RelativeToolTip": "Controllers\\DiscountController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:37:42.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FilePermissionController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\FilePermissionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FilePermissionController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\FilePermissionController.cs",
+              "RelativeToolTip": "Controllers\\FilePermissionController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:36:34.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FileController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\FileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FileController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\FileController.cs",
+              "RelativeToolTip": "Controllers\\FileController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:36:09.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessageController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "Controllers\\MessageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:35:54.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ImageController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "Controllers\\ImageController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:33:39.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:36:47.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderItemController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\OrderItemController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderItemController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\OrderItemController.cs",
+              "RelativeToolTip": "Controllers\\OrderItemController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:34:27.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:33:50.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:38:09.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PaymentUserController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PaymentUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentUserController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PaymentUserController.cs",
+              "RelativeToolTip": "Controllers\\PaymentUserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:38:21.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PriceHistoryController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PriceHistoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PriceHistoryController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\PriceHistoryController.cs",
+              "RelativeToolTip": "Controllers\\PriceHistoryController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:37:17.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:33:02.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:35:05.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SearchHistoryController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\SearchHistoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SearchHistoryController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\SearchHistoryController.cs",
+              "RelativeToolTip": "Controllers\\SearchHistoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:37:03.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserDiscountController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserDiscountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserDiscountController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserDiscountController.cs",
+              "RelativeToolTip": "Controllers\\UserDiscountController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:37:55.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:28:42.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserFileController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserFileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserFileController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\UserFileController.cs",
+              "RelativeToolTip": "Controllers\\UserFileController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:36:21.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\Marketplace1\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:32:10.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AddressService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\AddressService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\AddressService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\AddressService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\AddressService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwBwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:57:05.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IRepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeToolTip": "..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:38:58.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeToolTip": "..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAgwP0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:38:53.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IAddressService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IAddressService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IAddressService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IAddressService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IAddressService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:38:09.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ChatParticipantService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ChatParticipantService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\ChatParticipantService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ChatParticipantService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\ChatParticipantService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:58:22.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ChatService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\ChatService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ChatService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\ChatService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:58:05.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DiscountSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\DiscountSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\DiscountSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\DiscountSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\DiscountSevice.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:59:59.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "FilePermissionSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\FilePermissionSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\FilePermissionSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\FilePermissionSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\FilePermissionSevice.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:59:09.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "MessageService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\MessageService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\MessageService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\MessageService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\MessageService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:58:34.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "FileSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\FileSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\FileSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\FileSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\FileSevice.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAmwCgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:58:47.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ImageService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ImageService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\ImageService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ImageService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\ImageService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wCkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:56:29.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "NotificationSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\NotificationSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\NotificationSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\NotificationSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\NotificationSevice.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:59:23.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "OrderItemService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\OrderItemService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\OrderItemService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\OrderItemService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\OrderItemService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:56:51.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\OrderService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\OrderService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:56:41.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "PaymentSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PaymentSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\PaymentSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PaymentSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\PaymentSevice.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:00:17.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "PaymentUserSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PaymentUserSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\PaymentUserSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PaymentUserSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\PaymentUserSevice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:00:27.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "PriceHistorySevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PriceHistorySevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\PriceHistorySevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\PriceHistorySevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\PriceHistorySevice.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:59:48.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ProductService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:56:10.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\ReviewService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\ReviewService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wDgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:57:17.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "SearchHistorySevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\SearchHistorySevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\SearchHistorySevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\SearchHistorySevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\SearchHistorySevice.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:59:39.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UserDiscountSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\UserDiscountSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\UserDiscountSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\UserDiscountSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\UserDiscountSevice.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:00:07.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UserFileSevice.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\UserFileSevice.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Services\\UserFileSevice.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Services\\UserFileSevice.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Services\\UserFileSevice.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:58:54.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:33:57.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "IUserFileService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserFileService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IUserFileService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserFileService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IUserFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:37:39.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "IDiscountService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IDiscountService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IDiscountService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IDiscountService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IDiscountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:40:22.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IChatService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IChatService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IChatService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IChatService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IChatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:38:34.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IChatParticipantService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IChatParticipantService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IChatParticipantService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IChatParticipantService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IChatParticipantService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:38:45.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IFilePermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IFilePermissionService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IFilePermissionService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IFilePermissionService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IFilePermissionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:39:16.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IMessageService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IMessageService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IMessageService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IMessageService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IMessageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:38:58.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IFileService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IFileService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IFileService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:37:50.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IImageService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IImageService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IImageService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IImageService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IImageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:36:40.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\INotificationService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\INotificationService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:39:36.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "IOrderItemService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IOrderItemService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IOrderItemService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IOrderItemService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IOrderItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:37:13.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:36:56.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IPaymentService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPaymentService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:40:44.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "IPaymentUserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPaymentUserService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IPaymentUserService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPaymentUserService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IPaymentUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:41:02.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IPriceHistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPriceHistoryService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IPriceHistoryService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IPriceHistoryService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IPriceHistoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:40:03.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:36:21.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IReviewService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IReviewService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IReviewService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:38:22.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "ISearchHistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\ISearchHistoryService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\ISearchHistoryService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\ISearchHistoryService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\ISearchHistoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:39:52.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "IUserDiscountService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserDiscountService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogic\\Interfaces\\IUserDiscountService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\BusinessLogic\\Interfaces\\IUserDiscountService.cs",
+              "RelativeToolTip": "..\\BusinessLogic\\Interfaces\\IUserDiscountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:40:29.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "FileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\FileRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\FileRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\FileRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\FileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:04:41.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\ReviewRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ReviewRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:03:38.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "PriceHistoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PriceHistoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\PriceHistoryRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PriceHistoryRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\PriceHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:06:58.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "ImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ImageRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\ImageRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ImageRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\ImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:02:53.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "FilePermissionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\FilePermissionRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\FilePermissionRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\FilePermissionRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\FilePermissionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:05:43.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "DiscountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\DiscountRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\DiscountRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\DiscountRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\DiscountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:06:27.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "ChatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ChatRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\ChatRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ChatRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\ChatRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:03:54.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "ChatParticipantRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ChatParticipantRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\ChatParticipantRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ChatParticipantRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\ChatParticipantRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:04:13.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "AdressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\AdressRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\AdressRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\AdressRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\AdressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:03:28.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "MessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\MessageRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\MessageRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\MessageRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\MessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:04:21.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "NotificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\NotificationRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\NotificationRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\NotificationRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\NotificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:06:00.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "OrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\OrderItemRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\OrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\OrderItemRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\OrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:03:18.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:03:08.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "PaymentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PaymentRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\PaymentRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PaymentRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\PaymentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:07:16.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "PaymentUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PaymentUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\PaymentUserRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\PaymentUserRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\PaymentUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:07:24.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:02:39.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "IReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IReviewRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IReviewRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IReviewRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:47:29.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:41:02.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "SearchHistoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\SearchHistoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\SearchHistoryRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\SearchHistoryRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\SearchHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:06:18.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "UserDiscountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\UserDiscountRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\UserDiscountRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\UserDiscountRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\UserDiscountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:06:42.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "UserFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\UserFileRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\UserFileRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Repositories\\UserFileRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\UserFileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:05:30.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "IPaymentUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPaymentUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IPaymentUserRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPaymentUserRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IPaymentUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:00:48.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "IPaymentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPaymentRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IPaymentRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPaymentRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IPaymentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:00:18.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "IPriceHistoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPriceHistoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IPriceHistoryRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IPriceHistoryRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IPriceHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:56:44.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 87,
+              "Title": "IUserDiscountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IUserDiscountRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IUserDiscountRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IUserDiscountRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IUserDiscountRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:55:52.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 88,
+              "Title": "IDiscountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IDiscountRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IDiscountRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IDiscountRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IDiscountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:55:18.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 89,
+              "Title": "ISearchHistoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\ISearchHistoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\ISearchHistoryRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\ISearchHistoryRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\ISearchHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:53:48.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 90,
+              "Title": "INotificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\INotificationRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\INotificationRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\INotificationRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\INotificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:53:18.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 91,
+              "Title": "IFilePermissionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IFilePermissionRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IFilePermissionRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IFilePermissionRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IFilePermissionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:52:35.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 92,
+              "Title": "IUserFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IUserFileRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IUserFileRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IUserFileRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IUserFileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:51:39.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 93,
+              "Title": "IFileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IFileRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IFileRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IFileRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IFileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:50:40.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 94,
+              "Title": "IMessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IMessageRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IMessageRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IMessageRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IMessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:50:17.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "IChatParticipantRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IChatParticipantRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IChatParticipantRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IChatParticipantRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IChatParticipantRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:49:07.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "IChatRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IChatRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IChatRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IChatRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IChatRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:48:29.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "IAdressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IAdressRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IAdressRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IAdressRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IAdressRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:46:36.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "IOrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IOrderItemRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IOrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IOrderItemRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IOrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:45:47.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "IImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IImageRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IImageRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IImageRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:42:57.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\PROECT API\\DataAccess\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T16:44:26.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\..\\BusinessLogic\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\..\\BusinessLogic\\Services\\UserService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:27:42.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\..\\BusinessLogic\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:27:10.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:26:19.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:25:18.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 105,
+              "Title": "RepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Wrapper\\RepositoryWrapper.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:23:39.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 106,
+              "Title": "IRepositoryWrapper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Wrapper\\IRepositoryWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:23:24.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 107,
+              "Title": "RepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\RepositoryBase.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Repositories\\RepositoryBase.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Repositories\\RepositoryBase.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Repositories\\RepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:22:29.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 108,
+              "Title": "IRepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IRepositoryBase.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Interfaces\\IRepositoryBase.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Interfaces\\IRepositoryBase.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Interfaces\\IRepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:21:39.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 109,
+              "Title": "MarketpalceContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Models\\MarketpalceContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Models\\MarketpalceContext.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Models\\MarketpalceContext.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Models\\MarketpalceContext.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:17:11.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 110,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\BusinessLogic\\Class1.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\BusinessLogic\\Class1.cs",
+              "RelativeToolTip": "..\\..\\BusinessLogic\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:13:28.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 111,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\Domain\\Class1.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\Domain\\Class1.cs",
+              "RelativeToolTip": "..\\..\\Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:13:17.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 112,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\DataAccess\\Class1.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0441\u0435\u043D\u0438\u0439\\Desktop\\DataAccess\\Class1.cs",
+              "RelativeToolTip": "..\\..\\DataAccess\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T15:12:41.407Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
