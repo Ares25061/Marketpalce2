@@ -1,0 +1,167 @@
+C:\Users\Арсений\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Арсений\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Арсений\Desktop\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Арсений\Desktop\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Арсений\Desktop\PROECT API\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Beckup3\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\Beckup3\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup3\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Beckup3\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\Beckup3\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Beckup3\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Beckup4\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Арсений\Desktop\Backup5\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Арсений\Desktop\Backup6\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\Backup7\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\Backup7\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Backup7\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Backup7\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\Backup7\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Backup7\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\MarketplaceApi\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
