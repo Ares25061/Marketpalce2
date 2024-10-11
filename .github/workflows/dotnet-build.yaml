@@ -7,7 +7,7 @@ on:
       - ".editorconfig"
 
 jobs:
-  check-format:
+  build:
     runs-on: windows-latest
 
     steps:
