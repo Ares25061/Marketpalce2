@@ -51,11 +51,11 @@ namespace MarketplaceApi
                 {
 
                     Version = "v1",
-                    Title = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ API",
-                    Description = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)",
+                    Title = "Кислород API",
+                    Description = "Маркетплейс Кислород (надеюсь не кончится)",
                     Contact = new OpenApiContact
                     {
-                        Name = "пїЅпїЅпїЅпїЅпїЅ",
+                        Name = "Арбуз",
                         Url = new Uri("https://t.me/Ares250678")
                     }
                 });
