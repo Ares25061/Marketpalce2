@@ -938,7 +938,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "paymentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -948,13 +953,18 @@
   {
     "ContainingType": "MarketplaceApi.Controllers.PaymentUserController",
     "Method": "GetById",
-    "RelativePath": "api/PaymentUser/{id}",
+    "RelativePath": "api/PaymentUser/{paymentId}/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "paymentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }

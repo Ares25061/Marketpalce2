@@ -2,9 +2,9 @@
 {
     public class CreateNotificationRequest
     {
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
         public string NotificationType { get; set; } = null!;
         public string Message { get; set; } = null!;
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

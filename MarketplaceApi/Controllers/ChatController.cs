@@ -53,6 +53,8 @@ namespace MarketplaceApi.Controllers
         ///     POST /Todo
         ///     {
         ///       "Title": "string"
+        ///       "OwnerId": 1,
+        ///       "ModificatedBy": 1
         ///     }
         ///
         /// </remarks>
@@ -64,6 +66,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateChatRequest chat)
         {
             var Dto = chat.Adapt<Chat>();
+            Dto.ModifiedBy = Dto.OwnerId;
             await _chatService.Create(Dto);
             return Ok();
         }
@@ -78,6 +81,7 @@ namespace MarketplaceApi.Controllers
         ///     {
         ///       "ChatId": 1,
         ///       "Title": "string",
+        ///       "OwnerId": 1,
         ///       "IsDeleted": false,
         ///       "CreatedDate": "2024-09-19T14:05:14.947Z",
         ///       "ModifiedBy": 1,

@@ -55,7 +55,6 @@ namespace MarketplaceApi.Controllers
         ///     {
         ///       "ProductId": 0,
         ///       "Price": 93.75,
-        ///       "ChangeDate": "2024-09-19T14:05:14.947Z",
         ///       "CreatedBy": 1
         ///     }
         ///

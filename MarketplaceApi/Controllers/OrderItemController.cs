@@ -55,7 +55,8 @@ namespace MarketplaceApi.Controllers
         ///       "OrderId": 1,
         ///       "ProductId": 1,
         ///       "Quantity": 1
-        ///       "Price": 93.75
+        ///       "Price": 93.75,
+        ///       "CreatedBy": 1
         ///     }
         ///
         /// </remarks>
@@ -67,6 +68,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateOrderItemRequest orderitem)
         {
             var Dto = orderitem.Adapt<OrderItem>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _orderItemService.Create(Dto);
             return Ok();
         }

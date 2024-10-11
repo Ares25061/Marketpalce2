@@ -33,15 +33,15 @@ namespace MarketplaceApi.Controllers
         /// <summary>
         /// Получение информации о картах пользователя по id
         /// </summary>
-        /// <param name="id">ID</param>
-
+        /// <param name="paymentId">userID</param>
+        /// <param name="userId">paymentID</param>
         /// <returns></returns>
 
         // GET api/<PaymentUserController>
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        [HttpGet("{paymentId}/{userId}")]
+        public async Task<IActionResult> GetById(int paymentId, int userId)
         {
-            var Dto = await _paymentUserService.GetById(id);
+            var Dto = await _paymentUserService.GetById(paymentId, userId);
             return Ok(Dto.Adapt<GetPaymentUserResponse>());
         }
 
@@ -100,14 +100,15 @@ namespace MarketplaceApi.Controllers
         /// <summary>
         /// Удаление карт пользователя
         /// </summary>
-        /// <param name="id">ID</param>
+        /// <param name="paymentId">userID</param>
+        /// <param name="userId">paymentID</param>
         /// <returns></returns>
 
         // DELETE api/<PaymentUserController>
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int paymentId, int userId)
         {
-            await _paymentUserService.Delete(id);
+            await _paymentUserService.Delete(paymentId, userId);
             return Ok();
         }
     }

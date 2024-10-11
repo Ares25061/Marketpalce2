@@ -66,6 +66,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateImageRequest image)
         {
             var Dto = image.Adapt<Image>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _imageService.Create(Dto);
             return Ok();
         }

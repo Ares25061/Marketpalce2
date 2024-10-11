@@ -55,7 +55,8 @@ namespace MarketplaceApi.Controllers
         ///       "DiscountCode": "string",
         ///       "DiscountPercentage": 90.75,
         ///       "StartDate": "2024-09-19T14:34:41.968Z",
-        ///       "EndDate": 2024-09-19T14:05:14.947Z"
+        ///       "EndDate": 2024-09-19T14:05:14.947Z",
+        ///       "CreatedBy": 1
         ///     }
         ///
         /// </remarks>

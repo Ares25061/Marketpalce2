@@ -53,7 +53,8 @@ namespace MarketplaceApi.Controllers
         ///     POST /Todo
         ///     {
         ///       "ChatId": 1,
-        ///       "UserId": 1
+        ///       "UserId": 1,
+        ///       "CreatedBy": 1
         ///     }
         ///
         /// </remarks>
