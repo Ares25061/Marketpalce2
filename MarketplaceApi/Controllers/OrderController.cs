@@ -54,7 +54,8 @@ namespace MarketplaceApi.Controllers
         ///     {
         ///       "BuyerId": 1,
         ///       "OrderDate": "2024-09-19T14:05:14.947Z",
-        ///       "Status": "string"
+        ///       "Status": "string",
+        ///       "CreatedBy": 1
         ///     }
         ///
         /// </remarks>
@@ -66,6 +67,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateOrderRequest order)
         {
             var Dto = order.Adapt<Order>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _orderService.Create(Dto);
             return Ok();
         }

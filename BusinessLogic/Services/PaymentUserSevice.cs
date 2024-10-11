@@ -17,31 +17,52 @@ namespace BusinessLogic.Services
             return await _repositoryWrapper.PaymentUser.FindAll();
         }
 
-        public async Task<PaymentUser> GetById(int id)
+        public async Task<PaymentUser> GetById(int paymentId, int userId)
         {
-            var paymentuser = await _repositoryWrapper.PaymentUser
-                .FindByCondition(x => x.PaymentId == id);
-            return paymentuser.First();
+            var model = await _repositoryWrapper.PaymentUser
+                .FindByCondition(x => x.PaymentId == paymentId && x.UserId == userId);
+
+            if (model is null || model.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
+
+
+            return model.First();
         }
 
         public async Task Create(PaymentUser model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
             _repositoryWrapper.PaymentUser.Create(model);
             _repositoryWrapper.Save();
         }
 
         public async Task Update(PaymentUser model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+
             _repositoryWrapper.PaymentUser.Update(model);
             _repositoryWrapper.Save();
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(int paymentId, int userId)
         {
-            var paymentuser = await _repositoryWrapper.PaymentUser
-                .FindByCondition(x => x.PaymentId == id);
+            var model = await _repositoryWrapper.PaymentUser
+                .FindByCondition(x => x.PaymentId == paymentId && x.UserId == userId);
+            if (model is null || model.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
 
-            _repositoryWrapper.PaymentUser.Delete(paymentuser.First());
+            _repositoryWrapper.PaymentUser.Delete(model.First());
             _repositoryWrapper.Save();
         }
     }

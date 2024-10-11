@@ -2,9 +2,9 @@
 {
     public class CreateFilePermissionRequest
     {
-        public int? FileId { get; set; }
-        public int? UserId { get; set; }
+        public int FileId { get; set; }
+        public int UserId { get; set; }
         public string PermissionLevel { get; set; } = null!;
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

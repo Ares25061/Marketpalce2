@@ -21,17 +21,57 @@ namespace BusinessLogic.Services
         {
             var filepermission = await _repositoryWrapper.FilePermission
                 .FindByCondition(x => x.FilePermissionId == id);
+            if (filepermission is null || filepermission.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
             return filepermission.First();
         }
 
         public async Task Create(FilePermission model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            if (string.IsNullOrEmpty(model.PermissionLevel))
+            {
+                throw new ArgumentException(nameof(model.PermissionLevel));
+            }
             _repositoryWrapper.FilePermission.Create(model);
             _repositoryWrapper.Save();
         }
 
         public async Task Update(FilePermission model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            if (string.IsNullOrEmpty(model.PermissionLevel))
+            {
+                throw new ArgumentException(nameof(model.PermissionLevel));
+            }
+            if (model.CreatedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.CreatedDate));
+            }
+            if (model.ModifiedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.ModifiedDate));
+            }
+            if (model.IsDeleted is true && model.DeletedDate is null || model.DeletedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.IsDeleted));
+            }
+            if (model.DeletedBy is not null && model.DeletedDate is null || model.DeletedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.DeletedDate));
+            }
+            if (model.DeletedBy is null && model.DeletedDate is not null)
+            {
+                throw new ArgumentException(nameof(model.DeletedBy));
+            }
             _repositoryWrapper.FilePermission.Update(model);
             _repositoryWrapper.Save();
         }
@@ -40,7 +80,10 @@ namespace BusinessLogic.Services
         {
             var filepermission = await _repositoryWrapper.FilePermission
                 .FindByCondition(x => x.FilePermissionId == id);
-
+            if (filepermission is null || filepermission.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
             _repositoryWrapper.FilePermission.Delete(filepermission.First());
             _repositoryWrapper.Save();
         }

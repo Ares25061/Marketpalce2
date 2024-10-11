@@ -70,6 +70,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateProductRequest product)
         {
             var Dto = product.Adapt<Product>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _productService.Create(Dto);
             return Ok();
         }

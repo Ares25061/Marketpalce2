@@ -49,7 +49,7 @@ namespace Domain.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server = ARES; Database = Marketpalce; Integrated Security = True;");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-C0LJ6FJ1;Database=Marketpalce1;TrustServerCertificate=True;Trusted_Connection=True");
             }
         }
 
@@ -79,9 +79,9 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.State)
                     .HasMaxLength(50)
@@ -94,6 +94,7 @@ namespace Domain.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Addresses)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Addresses_Users");
             });
 
@@ -115,7 +116,7 @@ namespace Domain.Models
             modelBuilder.Entity<AttributeValue>(entity =>
             {
                 entity.HasKey(e => e.ValueId)
-                    .HasName("PK__Attribut__93364E4866D6BFEF");
+                    .HasName("PK__Attribut__93364E48A2FC954A");
 
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
@@ -127,8 +128,6 @@ namespace Domain.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ValueName)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -136,12 +135,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Attribute)
                     .WithMany(p => p.AttributeValues)
                     .HasForeignKey(d => d.AttributeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_AttributeValues_Attributes");
             });
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasIndex(e => e.CategoryName, "UQ__Categori__8517B2E0C8A1C34F")
+                entity.HasIndex(e => e.CategoryName, "UQ__Categori__8517B2E091C98DFB")
                     .IsUnique();
 
                 entity.Property(e => e.CategoryName)
@@ -158,11 +158,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Attribute)
                     .WithMany(p => p.CategoryAttributes)
                     .HasForeignKey(d => d.AttributeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CategoryAttributes_Attributes");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.CategoryAttributes)
                     .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CategoryAttributes_Categories");
             });
 
@@ -174,9 +176,9 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Title)
                     .HasMaxLength(255)
@@ -191,22 +193,22 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.HasOne(d => d.Chat)
                     .WithMany(p => p.ChatParticipants)
                     .HasForeignKey(d => d.ChatId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ChatParticipants_Chats");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.ChatParticipants)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ChatParticipants_Users");
             });
 
             modelBuilder.Entity<Discount>(entity =>
             {
-                entity.HasIndex(e => e.DiscountCode, "UQ__Discount__A1120AF5074BDBB6")
+                entity.HasIndex(e => e.DiscountCode, "UQ__Discount__A1120AF5543A0757")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedDate)
@@ -222,8 +224,6 @@ namespace Domain.Models
                 entity.Property(e => e.DiscountPercentage).HasColumnType("decimal(4, 2)");
 
                 entity.Property(e => e.EndDate).HasColumnType("datetime");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.StartDate).HasColumnType("datetime");
             });
@@ -248,8 +248,6 @@ namespace Domain.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
             });
 
@@ -261,8 +259,6 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
                 entity.Property(e => e.PermissionLevel)
@@ -272,11 +268,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.File)
                     .WithMany(p => p.FilePermissions)
                     .HasForeignKey(d => d.FileId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_FilePermissions_Files");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.FilePermissions)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_FilePermissions_Users");
             });
 
@@ -292,13 +290,12 @@ namespace Domain.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Images)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Images_Products");
             });
 
@@ -310,20 +307,18 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.IsRead).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.MessageContent).IsUnicode(false);
 
                 entity.HasOne(d => d.Chat)
                     .WithMany(p => p.Messages)
                     .HasForeignKey(d => d.ChatId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Messages_Chats");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Messages)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Messages_Users");
             });
 
@@ -334,10 +329,6 @@ namespace Domain.Models
                     .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.IsRead).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.Message)
                     .HasMaxLength(255)
@@ -350,6 +341,7 @@ namespace Domain.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Notifications)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Notifications_Users");
             });
 
@@ -361,13 +353,10 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.OrderDate)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
+                entity.Property(e => e.OrderDate).HasColumnType("datetime");
+
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(50)
@@ -377,6 +366,7 @@ namespace Domain.Models
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.BuyerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Orders_Users");
             });
 
@@ -388,8 +378,6 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
@@ -397,11 +385,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderItems)
                     .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_OrderItems_Orders");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.OrderItems)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_OrderItems_Products");
             });
 
@@ -430,7 +420,7 @@ namespace Domain.Models
             modelBuilder.Entity<PaymentUser>(entity =>
             {
                 entity.HasKey(e => e.PaymentId)
-                    .HasName("PK__Payment___9B556A58C98966D6");
+                    .HasName("PK__Payment___9B556A586F3D558D");
 
                 entity.ToTable("Payment_Users");
 
@@ -438,7 +428,10 @@ namespace Domain.Models
                     .ValueGeneratedNever()
                     .HasColumnName("PaymentID");
 
-                entity.Property(e => e.IsActive).HasColumnName("Is_active");
+                entity.Property(e => e.IsActive)
+                    .IsRequired()
+                    .HasColumnName("Is_active")
+                    .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -451,6 +444,7 @@ namespace Domain.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.PaymentUsers)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Payment_Users_Users");
             });
 
@@ -468,13 +462,12 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.PriceHistories)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PriceHistory_Products");
             });
 
@@ -490,8 +483,6 @@ namespace Domain.Models
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
                 entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
@@ -503,11 +494,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Products_Categories");
 
                 entity.HasOne(d => d.Seller)
                     .WithMany(p => p.Products)
                     .HasForeignKey(d => d.SellerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Products_Users");
             });
 
@@ -516,16 +509,19 @@ namespace Domain.Models
                 entity.HasOne(d => d.Attribute)
                     .WithMany(p => p.ProductAttributes)
                     .HasForeignKey(d => d.AttributeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProductAttributes_Attributes");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.ProductAttributes)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProductAttributes_Products");
 
                 entity.HasOne(d => d.Value)
                     .WithMany(p => p.ProductAttributes)
                     .HasForeignKey(d => d.ValueId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProductAttributes_AttributeValues");
             });
 
@@ -541,24 +537,24 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Reviews)
                     .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Reviews_Products");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Reviews)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Reviews_Users");
             });
 
             modelBuilder.Entity<Role>(entity =>
             {
-                entity.HasIndex(e => e.RoleName, "UQ__Roles__8A2B616057DB70C1")
+                entity.HasIndex(e => e.RoleName, "UQ__Roles__8A2B61601E70C98B")
                     .IsUnique();
 
                 entity.Property(e => e.Description)
@@ -580,8 +576,6 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.Property(e => e.SearchDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -593,15 +587,16 @@ namespace Domain.Models
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.SearchHistories)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_SearchHistory_Users");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.Username, "UQ__Users__536C85E4F8A01CAB")
+                entity.HasIndex(e => e.Username, "UQ__Users__536C85E4FBE4BE36")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Email, "UQ__Users__A9D10534F87D305E")
+                entity.HasIndex(e => e.Email, "UQ__Users__A9D1053489967278")
                     .IsUnique();
 
                 entity.Property(e => e.CreatedDate)
@@ -618,9 +613,9 @@ namespace Domain.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
+                entity.Property(e => e.IsActive)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.LastName)
                     .HasMaxLength(50)
@@ -642,11 +637,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Discount)
                     .WithMany(p => p.UserDiscounts)
                     .HasForeignKey(d => d.DiscountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserDiscounts_Discounts");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserDiscounts)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserDiscounts_Users");
             });
 
@@ -658,16 +655,16 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
-
                 entity.HasOne(d => d.File)
                     .WithMany(p => p.UserFiles)
                     .HasForeignKey(d => d.FileId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserFiles_Files");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserFiles)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserFiles_Users");
             });
 
@@ -676,11 +673,13 @@ namespace Domain.Models
                 entity.HasOne(d => d.Role)
                     .WithMany(p => p.UserRoles)
                     .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserRoles_Roles");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserRoles)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserRoles_Users");
             });
 

@@ -67,6 +67,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateFilePermissionRequest filepermission)
         {
             var Dto = filepermission.Adapt<FilePermission>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _filepermissionService.Create(Dto);
             return Ok();
         }

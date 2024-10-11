@@ -21,17 +21,77 @@ namespace BusinessLogic.Services
         {
             var discount = await _repositoryWrapper.Discount
                 .FindByCondition(x => x.DiscountId == id);
+            if (discount is null || discount.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
             return discount.First();
         }
 
         public async Task Create(Discount model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            if (string.IsNullOrEmpty(model.DiscountCode))
+            {
+                throw new ArgumentException(nameof(model.DiscountCode));
+            }
+            if (model.DiscountPercentage < 1 || model.DiscountPercentage > 100)
+            {
+                throw new ArgumentException(nameof(model.DiscountPercentage));
+            }
+            if (model.StartDate < model.EndDate)
+            {
+                throw new ArgumentException(nameof(model.StartDate));
+            }
+            if (model.StartDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.StartDate));
+            }
             _repositoryWrapper.Discount.Create(model);
             _repositoryWrapper.Save();
         }
 
         public async Task Update(Discount model)
         {
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
+            if (string.IsNullOrEmpty(model.DiscountCode))
+            {
+                throw new ArgumentException(nameof(model.DiscountCode));
+            }
+            if (model.DiscountPercentage < 1 || model.DiscountPercentage > 100)
+            {
+                throw new ArgumentException(nameof(model.DiscountPercentage));
+            }
+            if (model.StartDate < model.EndDate)
+            {
+                throw new ArgumentException(nameof(model.StartDate));
+            }
+            if (model.StartDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.StartDate));
+            }
+            if (model.CreatedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.CreatedDate));
+            }
+            if (model.IsDeleted is true && model.DeletedDate is null || model.DeletedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.IsDeleted));
+            }
+            if (model.DeletedBy is not null && model.DeletedDate is null || model.DeletedDate > DateTime.Now)
+            {
+                throw new ArgumentException(nameof(model.DeletedDate));
+            }
+            if (model.DeletedBy is null && model.DeletedDate is not null)
+            {
+                throw new ArgumentException(nameof(model.DeletedBy));
+            }
             _repositoryWrapper.Discount.Update(model);
             _repositoryWrapper.Save();
         }
@@ -40,7 +100,10 @@ namespace BusinessLogic.Services
         {
             var discount = await _repositoryWrapper.Discount
                 .FindByCondition(x => x.DiscountId == id);
-
+            if (discount is null || discount.Count == 0)
+            {
+                throw new ArgumentNullException("Not found");
+            }
             _repositoryWrapper.Discount.Delete(discount.First());
             _repositoryWrapper.Save();
         }

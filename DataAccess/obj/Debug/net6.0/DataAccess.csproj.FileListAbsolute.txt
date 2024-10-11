@@ -179,3 +179,37 @@ C:\Users\User\Desktop\MarketplaceApi\DataAccess\obj\Debug\net6.0\refint\DataAcce
 C:\Users\User\Desktop\MarketplaceApi\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 C:\Users\User\Desktop\MarketplaceApi\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
 C:\Users\User\Desktop\MarketplaceApi\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\Domain.dll
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\bin\Debug\net6.0\Domain.pdb
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.csproj.Up2Date
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.dll
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll

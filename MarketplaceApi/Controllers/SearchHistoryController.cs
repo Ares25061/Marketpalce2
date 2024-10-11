@@ -55,7 +55,7 @@ namespace MarketplaceApi.Controllers
         ///     {
         ///       "UserId": 1,
         ///       "SearchTerm": "string",
-        ///       "SearchDate": "2024-09-19T14:05:14.947Z"
+        ///       "CreatedBy": 1
         ///     }
         ///
         /// </remarks>

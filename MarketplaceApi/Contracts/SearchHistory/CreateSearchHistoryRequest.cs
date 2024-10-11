@@ -2,8 +2,8 @@
 {
     public class CreateSearchHistoryRequest
     {
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
         public string SearchTerm { get; set; } = null!;
-        public DateTime? SearchDate { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

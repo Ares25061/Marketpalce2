@@ -68,6 +68,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateFileRequest file)
         {
             var Dto = file.Adapt<Domain.Models.File>();
+            Dto.ModifiedBy = Dto.CreatedBy;
             await _fileService.Create(Dto);
             return Ok();
         }

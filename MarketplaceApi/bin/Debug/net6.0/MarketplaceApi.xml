@@ -99,6 +99,8 @@
                  POST /Todo
                  {
                    "Title": "string"
+                   "OwnerId": 1,
+                   "ModificatedBy": 1
                  }
             
              </remarks>
@@ -116,6 +118,7 @@
                  {
                    "ChatId": 1,
                    "Title": "string",
+                   "OwnerId": 1,
                    "IsDeleted": false,
                    "CreatedDate": "2024-09-19T14:05:14.947Z",
                    "ModifiedBy": 1,
@@ -159,7 +162,8 @@
                  POST /Todo
                  {
                    "ChatId": 1,
-                   "UserId": 1
+                   "UserId": 1,
+                   "CreatedBy": 1
                  }
             
              </remarks>
@@ -222,7 +226,8 @@
                    "DiscountCode": "string",
                    "DiscountPercentage": 90.75,
                    "StartDate": "2024-09-19T14:34:41.968Z",
-                   "EndDate": 2024-09-19T14:05:14.947Z"
+                   "EndDate": 2024-09-19T14:05:14.947Z",
+                   "CreatedBy": 1
                  }
             
              </remarks>
@@ -606,7 +611,8 @@
                  {
                    "BuyerId": 1,
                    "OrderDate": "2024-09-19T14:05:14.947Z",
-                   "Status": "string"
+                   "Status": "string",
+                   "CreatedBy": 1
                  }
             
              </remarks>
@@ -671,7 +677,8 @@
                    "OrderId": 1,
                    "ProductId": 1,
                    "Quantity": 1
-                   "Price": 93.75
+                   "Price": 93.75,
+                   "CreatedBy": 1
                  }
             
              </remarks>
@@ -776,11 +783,12 @@
             <returns></returns>
             
         </member>
-        <member name="M:MarketplaceApi.Controllers.PaymentUserController.GetById(System.Int32)">
+        <member name="M:MarketplaceApi.Controllers.PaymentUserController.GetById(System.Int32,System.Int32)">
             <summary>
             Получение информации о картах пользователя по id
             </summary>
-            <param name="id">ID</param>
+            <param name="paymentId">userID</param>
+            <param name="userId">paymentID</param>
             <returns></returns>
         </member>
         <member name="M:MarketplaceApi.Controllers.PaymentUserController.Add(MarketplaceApi.Contracts.PaymentUser.CreatePaymentUserRequest)">
@@ -819,11 +827,12 @@
              <param name="paymentuser">Карты пользователя</param>
              <returns></returns>
         </member>
-        <member name="M:MarketplaceApi.Controllers.PaymentUserController.Delete(System.Int32)">
+        <member name="M:MarketplaceApi.Controllers.PaymentUserController.Delete(System.Int32,System.Int32)">
             <summary>
             Удаление карт пользователя
             </summary>
-            <param name="id">ID</param>
+            <param name="paymentId">userID</param>
+            <param name="userId">paymentID</param>
             <returns></returns>
         </member>
         <member name="M:MarketplaceApi.Controllers.PriceHistoryController.GetAll">
@@ -851,7 +860,6 @@
                  {
                    "ProductId": 0,
                    "Price": 93.75,
-                   "ChangeDate": "2024-09-19T14:05:14.947Z",
                    "CreatedBy": 1
                  }
             
@@ -1051,7 +1059,7 @@
                  {
                    "UserId": 1,
                    "SearchTerm": "string",
-                   "SearchDate": "2024-09-19T14:05:14.947Z"
+                   "CreatedBy": 1
                  }
             
              </remarks>

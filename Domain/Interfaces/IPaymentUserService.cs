@@ -10,9 +10,9 @@ namespace Domain.Interfaces
     public interface IPaymentUserService
     {
         Task<List<PaymentUser>> GetAll();
-        Task<PaymentUser> GetById(int id);
+        Task<PaymentUser> GetById(int paymentId, int userId);
         Task Create(PaymentUser model);
         Task Update(PaymentUser model);
-        Task Delete(int id);
+        Task Delete(int paymentId, int userId);
     }
 }

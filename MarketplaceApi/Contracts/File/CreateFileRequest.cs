@@ -7,6 +7,6 @@
         public string FilePath { get; set; } = null!;
         public int FileSize { get; set; }
         public string FileType { get; set; } = null!;
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
     }
 }

@@ -14,9 +14,9 @@ namespace Domain.Models
 
         public int AttributeId { get; set; }
         public string AttributeName { get; set; } = null!;
-        public string? Description { get; set; }
-        public int? CreatedBy { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public string Description { get; set; } = null!;
+        public int CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
         public virtual ICollection<AttributeValue> AttributeValues { get; set; }
         public virtual ICollection<CategoryAttribute> CategoryAttributes { get; set; }
