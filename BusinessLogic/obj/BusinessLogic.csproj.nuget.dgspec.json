@@ -1,6 +1,10 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {}
+=======
+<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {}
   },
   "projects": {
@@ -12,6 +16,26 @@
         "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\obj\\",
+=======
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {}
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
+  },
+  "projects": {
+    "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
+        "projectName": "BusinessLogic",
+<<<<<<< HEAD
+        "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\obj\\",
+=======
+        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\obj\\",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +53,18 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+=======
+<<<<<<< HEAD
+              "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+=======
+              "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
               }
             }
           }
@@ -69,6 +103,10 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+=======
+<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -77,6 +115,23 @@
         "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
+=======
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+<<<<<<< HEAD
+        "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
+=======
+        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

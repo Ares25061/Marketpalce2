@@ -7,7 +7,11 @@ on:
       - ".editorconfig"
 
 jobs:
+<<<<<<< HEAD
   test:
+=======
+  check-tests:
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
     runs-on: windows-latest
 
     steps:

@@ -2036,11 +2036,27 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
       "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\obj\\",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2058,8 +2074,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+=======
+            "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
             }
           }
         }

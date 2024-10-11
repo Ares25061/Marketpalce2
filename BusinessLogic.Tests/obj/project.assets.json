@@ -7457,11 +7457,23 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\User\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Арсений\\.nuget\\packages\\": {}
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+=======
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
       "projectName": "BusinessLogic.Tests",
       "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
@@ -7470,6 +7482,21 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
+      "projectName": "BusinessLogic.Tests",
+      "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7484,8 +7511,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
               "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+=======
+            "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+>>>>>>> 31ff24336ba59c5bb27925b89e9ed8cefabb060a
             }
           }
         }
