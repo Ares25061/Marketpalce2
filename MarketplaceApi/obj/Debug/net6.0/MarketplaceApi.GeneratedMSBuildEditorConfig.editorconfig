@@ -9,11 +9,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MarketplaceApi
 build_property.RootNamespace = MarketplaceApi
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\User\Desktop\MarketplaceApi — копия\MarketplaceApi\
+=======
+build_property.ProjectDir = C:\Users\Арсений\Desktop\MarketplaceApi — копия\MarketplaceApi\
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\MarketplaceApi — копия\MarketplaceApi
+=======
+build_property.MSBuildProjectDirectory = C:\Users\Арсений\Desktop\MarketplaceApi — копия\MarketplaceApi
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
 build_property._RazorSourceGeneratorDebug = 

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+        "projectName": "BusinessLogic.Tests",
+        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +46,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
                 "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+=======
+              "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
               }
             }
           }
@@ -91,6 +113,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -102,6 +125,19 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
+        "projectName": "BusinessLogic",
+        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,8 +152,13 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+=======
+              "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
               }
             }
           }
@@ -156,6 +197,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -167,6 +209,19 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
