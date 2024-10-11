@@ -7457,19 +7457,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Арсений\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
       "projectName": "BusinessLogic.Tests",
-      "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
-      "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7484,8 +7484,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
+            "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\BusinessLogic\\BusinessLogic.csproj"
             }
           }
         }
