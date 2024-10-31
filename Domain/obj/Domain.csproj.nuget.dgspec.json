@@ -1,34 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {}
+    "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
+    "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
-=======
-    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
-        "projectName": "Domain",
-        "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\obj\\",
->>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+        "outputPath": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

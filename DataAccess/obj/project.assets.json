@@ -2031,27 +2031,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Арсений\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\DataAccess\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
-      "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\DataAccess\\obj\\",
->>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+      "outputPath": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2066,13 +2058,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
-=======
-            "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Арсений\\Desktop\\MarketplaceApi — копия\\Domain\\Domain.csproj"
->>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+            "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Marketpalce2-main\\Domain\\Domain.csproj"
             }
           }
         }

@@ -8,10 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataAccess
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\User\Desktop\MarketplaceApi — копия\DataAccess\
-=======
-build_property.ProjectDir = C:\Users\Арсений\Desktop\MarketplaceApi — копия\DataAccess\
->>>>>>> 69ea11bbb7307951491d805bde0196dcda6c2a9e
+build_property.ProjectDir = C:\Users\User\Desktop\Marketpalce2-main\DataAccess\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

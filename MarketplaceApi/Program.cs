@@ -15,8 +15,7 @@ namespace MarketplaceApi
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<MarketpalceContext>(
-                optionsAction: options => options.UseSqlServer(
-                    connectionString: "Server = LAPTOP-C0LJ6FJ1; Database = Marketpalce1; Integrated Security = True;"));
+                options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -65,8 +64,16 @@ namespace MarketplaceApi
 
             var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                var context = services.GetRequiredService<MarketpalceContext>();
+                context.Database.Migrate();
+            }
+
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            //if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
