@@ -38,8 +38,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.SearchTerm));
             }
-            _repositoryWrapper.SearchHistory.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.SearchHistory.Create(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(SearchHistory model)
@@ -68,8 +68,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.DeletedBy));
             }
-            _repositoryWrapper.SearchHistory.Update(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.SearchHistory.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -80,8 +80,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException("Not found");
             }
-            _repositoryWrapper.SearchHistory.Delete(searchhistory.First());
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.SearchHistory.Delete(searchhistory.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

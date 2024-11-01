@@ -46,8 +46,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.Price));
             }
-            _repositoryWrapper.Product.Create(model);
-            _repositoryWrapper.Save();
+            await _repositoryWrapper.Product.Create(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(Product model)
@@ -88,8 +88,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.DeletedBy));
             }
-            _repositoryWrapper.Product.Update(model);
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.Product.Update(model);
+           await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -100,8 +100,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException("Not found");
             }
-            _repositoryWrapper.Product.Delete(product.First());
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.Product.Delete(product.First());
+           await _repositoryWrapper.Save();
         }
     }
 }

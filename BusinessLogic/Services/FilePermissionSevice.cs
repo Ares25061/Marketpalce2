@@ -38,8 +38,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.PermissionLevel));
             }
-            _repositoryWrapper.FilePermission.Create(model);
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.FilePermission.Create(model);
+           await _repositoryWrapper.Save();
         }
 
         public async Task Update(FilePermission model)
@@ -72,8 +72,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.DeletedBy));
             }
-            _repositoryWrapper.FilePermission.Update(model);
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.FilePermission.Update(model);
+           await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -84,8 +84,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException("Not found");
             }
-            _repositoryWrapper.FilePermission.Delete(filepermission.First());
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.FilePermission.Delete(filepermission.First());
+           await _repositoryWrapper.Save();
         }
     }
 }

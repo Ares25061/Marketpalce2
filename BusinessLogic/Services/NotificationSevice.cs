@@ -42,8 +42,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.Message));
             }
-            _repositoryWrapper.Notification.Create(model);
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.Notification.Create(model);
+           await _repositoryWrapper.Save();
         }
 
         public async Task Update(Notification model)
@@ -76,8 +76,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.DeletedBy));
             }
-            _repositoryWrapper.Notification.Update(model);
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.Notification.Update(model);
+           await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -88,8 +88,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException("Not found");
             }
-            _repositoryWrapper.Notification.Delete(notification.First());
-            _repositoryWrapper.Save();
+           await _repositoryWrapper.Notification.Delete(notification.First());
+           await _repositoryWrapper.Save();
         }
     }
 }

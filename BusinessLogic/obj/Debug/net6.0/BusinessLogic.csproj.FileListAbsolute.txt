@@ -211,3 +211,18 @@ C:\Users\Арсений\Desktop\MarketplaceApi — копия\BusinessLogic\obj\
 C:\Users\Арсений\Desktop\MarketplaceApi — копия\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
 C:\Users\Арсений\Desktop\MarketplaceApi — копия\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
 C:\Users\Арсений\Desktop\MarketplaceApi — копия\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\User\Desktop\Marketpalce2-main\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
