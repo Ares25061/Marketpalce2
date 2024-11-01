@@ -39,8 +39,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.ImageUrl));
             }
-           await _repositoryWrapper.Image.Create(model);
-           await _repositoryWrapper.Save();
+            await _repositoryWrapper.Image.Create(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Update(Image model)
@@ -73,8 +73,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException(nameof(model.DeletedBy));
             }
-           await _repositoryWrapper.Image.Update(model);
-           await _repositoryWrapper.Save();
+            await _repositoryWrapper.Image.Update(model);
+            await _repositoryWrapper.Save();
         }
 
         public async Task Delete(int id)
@@ -85,8 +85,8 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException("Not found");
             }
-           await _repositoryWrapper.Image.Delete(image.First());
-           await _repositoryWrapper.Save();
+            await _repositoryWrapper.Image.Delete(image.First());
+            await _repositoryWrapper.Save();
         }
     }
 }
