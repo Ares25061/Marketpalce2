@@ -10,3 +10,5 @@ Domain/bin/
 Domain/obj/
 MarketplaceApi/bin/
 MarketplaceApi/obj/
+BlazorClient/bin/
+BlazorClient/obj/
