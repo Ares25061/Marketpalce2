@@ -1,0 +1,12 @@
+.vs/
+.vscode/
+BusinessLogic/bin/
+BusinessLogic/obj/
+BuisnessLogic.Tests/bin/
+BuisnessLogic.Tests/obj/
+DataAccess/bin/
+DataAccess/obj/
+Domain/bin/
+Domain/obj/
+MarketplaceApi/bin/
+MarketplaceApi/obj/
