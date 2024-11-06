@@ -2,8 +2,8 @@
 .vscode/
 BusinessLogic/bin/
 BusinessLogic/obj/
-BuisnessLogic.Tests/bin/
-BuisnessLogic.Tests/obj/
+BusinessLogic.Tests/bin/
+BusinessLogic.Tests/obj/
 DataAccess/bin/
 DataAccess/obj/
 Domain/bin/
