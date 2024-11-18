@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>BlazorClient</title>
+    <base href="/" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="css/app.css" rel="stylesheet" />
+
+    <!-- Add Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="BlazorClient.styles.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div id="app" class="d-flex justify-content-center align-items-center vh-100">
+        <style>
+            .preloader {
+                /*фиксированное позиционирование*/
+                position: fixed;
+                /* координаты положения */
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                /* фоновый цвет элемента */
+                background: #e0e0e0;
+                /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+                z-index: 1001;
+            }
+
+            .preloader__row {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                width: 70px;
+                height: 70px;
+                margin-top: -35px;
+                margin-left: -35px;
+                text-align: center;
+                animation: preloader-rotate 2s infinite linear;
+            }
+
+            .preloader__item {
+                position: absolute;
+                display: inline-block;
+                top: 0;
+                background-color: #337ab7;
+                border-radius: 100%;
+                width: 35px;
+                height: 35px;
+                animation: preloader-bounce 2s infinite ease-in-out;
+            }
+
+                .preloader__item:last-child {
+                    top: auto;
+                    bottom: 0;
+                    animation-delay: -1s;
+                }
+
+            @keyframes preloader-rotate {
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes preloader-bounce {
+
+                0%, 100% {
+                    transform: scale(0);
+                }
+
+                50% {
+                    transform: scale(1);
+                }
+            }
+
+            .loaded_hiding .preloader {
+                transition: 0.3s opacity;
+                opacity: 0;
+            }
+
+            .loaded .preloader {
+                display: none;
+            }
+        </style>
+        <div class="preloader">
+            <div class="preloader__row">
+                <div class="preloader__item"></div>
+                <div class="preloader__item"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
