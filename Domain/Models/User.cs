@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Entities;
 
 namespace Domain.Models
 {
@@ -19,7 +20,6 @@ namespace Domain.Models
             SearchHistories = new HashSet<SearchHistory>();
             UserDiscounts = new HashSet<UserDiscount>();
             UserFiles = new HashSet<UserFile>();
-            UserRoles = new HashSet<UserRole>();
         }
 
         public int UserId { get; set; }
@@ -28,14 +28,32 @@ namespace Domain.Models
         public string Password { get; set; } = null!;
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
         public int ModifiedBy { get; set; }
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
+        public int RoleId { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime Updated { get; set; }
+        public bool AcceptTerms { get; set; }
+        public string? VerificationToken { get; set; }
 
+        public DateTime? Verified { get; set; }
+        public bool IsVerified => Verified.HasValue || PasswordReset.HasValue;
+        public string? ResetToken { get; set; }
+        public DateTime? ResetTokenExpires { get; set; }
+
+        public DateTime? PasswordReset { get; set; }
+        public List<RefreshToken> RefreshTokens { get; set; }
+        public bool OwnsToken(string token)
+        {
+            return this.RefreshTokens?.Find(x => x.Token == token) != null;
+        }
+
+        public virtual Role Role { get; set; } = null!;
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<ChatParticipant> ChatParticipants { get; set; }
         public virtual ICollection<FilePermission> FilePermissions { get; set; }
@@ -48,6 +66,5 @@ namespace Domain.Models
         public virtual ICollection<SearchHistory> SearchHistories { get; set; }
         public virtual ICollection<UserDiscount> UserDiscounts { get; set; }
         public virtual ICollection<UserFile> UserFiles { get; set; }
-        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

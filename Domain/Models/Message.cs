@@ -11,7 +11,7 @@ namespace Domain.Models
         public string MessageContent { get; set; } = null!;
         public bool IsRead { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
 

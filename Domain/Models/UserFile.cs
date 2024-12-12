@@ -9,7 +9,7 @@ namespace Domain.Models
         public int UserId { get; set; }
         public int FileId { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
 

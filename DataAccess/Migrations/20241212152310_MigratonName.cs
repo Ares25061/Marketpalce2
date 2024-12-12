@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -94,7 +94,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -130,30 +130,6 @@ namespace DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.RoleId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
-                    FirstName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValueSql: "((1))"),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
-                    ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DeletedBy = table.Column<int>(type: "int", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -203,6 +179,44 @@ namespace DataAccess.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "CategoryId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
+                    FirstName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValueSql: "((1))"),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    ModifiedBy = table.Column<int>(type: "int", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    DeletedBy = table.Column<int>(type: "int", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    RoleId = table.Column<int>(type: "int", nullable: false, defaultValueSql: "((2))"),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Updated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AcceptTerms = table.Column<bool>(type: "bit", nullable: false),
+                    VerificationToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Verified = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ResetToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ResetTokenExpires = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    PasswordReset = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_Users_Roles",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "RoleId");
                 });
 
             migrationBuilder.CreateTable(
@@ -276,7 +290,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -364,7 +378,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -416,7 +430,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -433,6 +447,33 @@ namespace DataAccess.Migrations
                         column: x => x.SellerId,
                         principalTable: "Users",
                         principalColumn: "UserId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RefreshToken",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountUserId = table.Column<int>(type: "int", nullable: false),
+                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Expires = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedByIp = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Revoked = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RevokedByIp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReplacedByToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReasonRevoked = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RefreshToken", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RefreshToken_Users_AccountUserId",
+                        column: x => x.AccountUserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -513,30 +554,6 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserRoles",
-                columns: table => new
-                {
-                    UserRoleId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    RoleId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserRoles", x => x.UserRoleId);
-                    table.ForeignKey(
-                        name: "FK_UserRoles_Roles",
-                        column: x => x.RoleId,
-                        principalTable: "Roles",
-                        principalColumn: "RoleId");
-                    table.ForeignKey(
-                        name: "FK_UserRoles_Users",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "UserId");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
@@ -548,7 +565,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -576,7 +593,7 @@ namespace DataAccess.Migrations
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     ModifiedBy = table.Column<int>(type: "int", nullable: false),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -662,7 +679,7 @@ namespace DataAccess.Migrations
                     Comment = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
                     DeletedBy = table.Column<int>(type: "int", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
@@ -804,6 +821,11 @@ namespace DataAccess.Migrations
                 column: "SellerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_RefreshToken_AccountUserId",
+                table: "RefreshToken",
+                column: "AccountUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reviews_ProductId",
                 table: "Reviews",
                 column: "ProductId");
@@ -845,14 +867,9 @@ namespace DataAccess.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserRoles_RoleId",
-                table: "UserRoles",
+                name: "IX_Users_RoleId",
+                table: "Users",
                 column: "RoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserRoles_UserId",
-                table: "UserRoles",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "UQ__Users__536C85E4FBE4BE36",
@@ -903,6 +920,9 @@ namespace DataAccess.Migrations
                 name: "ProductAttributes");
 
             migrationBuilder.DropTable(
+                name: "RefreshToken");
+
+            migrationBuilder.DropTable(
                 name: "Reviews");
 
             migrationBuilder.DropTable(
@@ -913,9 +933,6 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserFiles");
-
-            migrationBuilder.DropTable(
-                name: "UserRoles");
 
             migrationBuilder.DropTable(
                 name: "Chats");
@@ -939,9 +956,6 @@ namespace DataAccess.Migrations
                 name: "Files");
 
             migrationBuilder.DropTable(
-                name: "Roles");
-
-            migrationBuilder.DropTable(
                 name: "Attributes");
 
             migrationBuilder.DropTable(
@@ -949,6 +963,9 @@ namespace DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Roles");
         }
     }
 }

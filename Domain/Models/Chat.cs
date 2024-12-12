@@ -15,9 +15,9 @@ namespace Domain.Models
         public int OwnerId { get; set; }
         public string Title { get; set; } = null!;
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
         public int ModifiedBy { get; set; }
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
 

@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Domain.Models
 {
@@ -42,14 +42,13 @@ namespace Domain.Models
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserDiscount> UserDiscounts { get; set; } = null!;
         public virtual DbSet<UserFile> UserFiles { get; set; } = null!;
-        public virtual DbSet<UserRole> UserRoles { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-C0LJ6FJ1;Database=Marketpalce1;TrustServerCertificate=True;Trusted_Connection=True");
+                optionsBuilder.UseSqlServer("Server = LAPTOP-C0LJ6FJ1; Database = Marketpalce1; Integrated Security = True;");
             }
         }
 
@@ -248,7 +247,9 @@ namespace Domain.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<FilePermission>(entity =>
@@ -259,7 +260,9 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.PermissionLevel)
                     .HasMaxLength(50)
@@ -290,7 +293,9 @@ namespace Domain.Models
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Images)
@@ -353,10 +358,11 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.OrderDate).HasColumnType("datetime");
-
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(50)
@@ -378,7 +384,9 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
 
@@ -483,7 +491,9 @@ namespace Domain.Models
                     .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
 
@@ -537,7 +547,9 @@ namespace Domain.Models
 
                 entity.Property(e => e.DeletedDate).HasColumnType("datetime");
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Reviews)
@@ -621,15 +633,25 @@ namespace Domain.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ModifiedDate).HasColumnType("datetime");
+                entity.Property(e => e.ModifiedDate)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Password)
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
+                entity.Property(e => e.RoleId).HasDefaultValueSql("((2))");
+
                 entity.Property(e => e.Username)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.RoleId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Users_Roles");
             });
 
             modelBuilder.Entity<UserDiscount>(entity =>
@@ -666,21 +688,6 @@ namespace Domain.Models
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserFiles_Users");
-            });
-
-            modelBuilder.Entity<UserRole>(entity =>
-            {
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.UserRoles)
-                    .HasForeignKey(d => d.RoleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserRoles_Roles");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.UserRoles)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserRoles_Users");
             });
 
             OnModelCreatingPartial(modelBuilder);

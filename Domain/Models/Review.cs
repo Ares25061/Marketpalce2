@@ -11,8 +11,8 @@ namespace Domain.Models
         public int Rating { get; set; }
         public string Comment { get; set; } = null!;
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
 

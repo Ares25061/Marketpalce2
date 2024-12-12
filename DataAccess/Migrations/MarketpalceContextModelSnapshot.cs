@@ -22,6 +22,50 @@ namespace DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Domain.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AccountUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedByIp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReasonRevoked")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReplacedByToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RevokedByIp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountUserId");
+
+                    b.ToTable("RefreshToken");
+                });
+
             modelBuilder.Entity("Domain.Models.Address", b =>
                 {
                     b.Property<int>("AddressId")
@@ -407,7 +451,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.HasKey("FileId");
 
@@ -446,7 +492,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("PermissionLevel")
                         .IsRequired()
@@ -501,7 +549,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -640,12 +690,12 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
                         .HasDefaultValueSql("(getdate())");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -691,7 +741,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -853,7 +905,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(10,2)");
@@ -933,7 +987,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -1034,6 +1090,12 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
+                    b.Property<bool>("AcceptTerms")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
@@ -1076,7 +1138,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("(getdate())");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -1084,13 +1148,38 @@ namespace DataAccess.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(255)");
 
+                    b.Property<DateTime?>("PasswordReset")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ResetToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ResetTokenExpires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValueSql("((2))");
+
+                    b.Property<DateTime>("Updated")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(50)
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("VerificationToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Verified")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("UserId");
+
+                    b.HasIndex("RoleId");
 
                     b.HasIndex(new[] { "Username" }, "UQ__Users__536C85E4FBE4BE36")
                         .IsUnique();
@@ -1161,27 +1250,15 @@ namespace DataAccess.Migrations
                     b.ToTable("UserFiles");
                 });
 
-            modelBuilder.Entity("Domain.Models.UserRole", b =>
+            modelBuilder.Entity("Domain.Entities.RefreshToken", b =>
                 {
-                    b.Property<int>("UserRoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("Domain.Models.User", "Account")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("AccountUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserRoleId"), 1L, 1);
-
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserRoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserRoles");
+                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("Domain.Models.Address", b =>
@@ -1440,6 +1517,17 @@ namespace DataAccess.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Models.User", b =>
+                {
+                    b.HasOne("Domain.Models.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Users_Roles");
+
+                    b.Navigation("Role");
+                });
+
             modelBuilder.Entity("Domain.Models.UserDiscount", b =>
                 {
                     b.HasOne("Domain.Models.Discount", "Discount")
@@ -1474,25 +1562,6 @@ namespace DataAccess.Migrations
                         .HasConstraintName("FK_UserFiles_Users");
 
                     b.Navigation("File");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.Models.UserRole", b =>
-                {
-                    b.HasOne("Domain.Models.Role", "Role")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("RoleId")
-                        .IsRequired()
-                        .HasConstraintName("FK_UserRoles_Roles");
-
-                    b.HasOne("Domain.Models.User", "User")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UserId")
-                        .IsRequired()
-                        .HasConstraintName("FK_UserRoles_Users");
-
-                    b.Navigation("Role");
 
                     b.Navigation("User");
                 });
@@ -1562,7 +1631,7 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Domain.Models.Role", b =>
                 {
-                    b.Navigation("UserRoles");
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Domain.Models.User", b =>
@@ -1583,6 +1652,8 @@ namespace DataAccess.Migrations
 
                     b.Navigation("Products");
 
+                    b.Navigation("RefreshTokens");
+
                     b.Navigation("Reviews");
 
                     b.Navigation("SearchHistories");
@@ -1590,8 +1661,6 @@ namespace DataAccess.Migrations
                     b.Navigation("UserDiscounts");
 
                     b.Navigation("UserFiles");
-
-                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

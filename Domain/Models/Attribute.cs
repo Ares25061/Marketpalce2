@@ -16,7 +16,7 @@ namespace Domain.Models
         public string AttributeName { get; set; } = null!;
         public string Description { get; set; } = null!;
         public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime CreatedDate { get; set; }
 
         public virtual ICollection<AttributeValue> AttributeValues { get; set; }
         public virtual ICollection<CategoryAttribute> CategoryAttributes { get; set; }
