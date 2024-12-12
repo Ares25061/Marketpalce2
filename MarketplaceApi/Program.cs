@@ -73,11 +73,16 @@ namespace MarketplaceApi
             }
 
             // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(builder => builder.WithOrigins(new[] { "https://oxygenmarketapi.onrender.com", })
+           .AllowAnyHeader()
+           .AllowAnyMethod()
+           .AllowAnyOrigin());
 
             app.UseHttpsRedirection();
 

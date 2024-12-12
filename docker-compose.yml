@@ -22,3 +22,15 @@ services:
     container_name: mssql
     ports:
       - "1555:1433"
+  client:
+      image: ${DOCKER_REGISTRY-}blazor
+      build:
+        context: ./BlazorClient
+        dockerfile: ./Dockerfile
+      environment:
+        - API_URL=http://webapi:5000
+        - CLIENT_ENVIRONMENT=Development
+      ports:
+        - "3000:80"
+      depends_on:
+        - webapi

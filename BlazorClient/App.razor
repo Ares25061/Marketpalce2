@@ -5,14 +5,50 @@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
     </Found>
     <NotFound>
-        @{
-            Navigation.NavigateTo("/404", true);
-        }
+        <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <style>
+            lottie-player {
+                width: 100vw;
+                height: 100vh;
+                display: block;
+                background: transparent;
+            }
+
+            .back-button {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                text-decoration: none;
+            }
+
+                .back-button:hover {
+                    background-color: #0056b3;
+                }
+        </style>
+
+        <lottie-player src="./data.json"
+                       background="transparent"
+                       speed="1"
+                       loop
+                       autoplay>
+        </lottie-player>
+
+        <a href="/" class="back-button" @onclick="NavigateToHome">Вернуться на главную</a>
     </NotFound>
 </Router>
+
 @code {
-    private void NavigateTo404()
+    private void NavigateToHome()
     {
-        Navigation.NavigateTo("/404");
+        Navigation.NavigateTo("/");
     }
 }
