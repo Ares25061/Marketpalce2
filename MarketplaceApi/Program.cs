@@ -133,7 +133,7 @@ namespace MarketplaceApi
 
             app.UseAuthorization();
 
-            app.UseMiddleware<ErrorHandlerMiddleware>();
+          //  app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();

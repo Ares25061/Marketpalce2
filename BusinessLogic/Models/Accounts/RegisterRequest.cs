@@ -5,16 +5,13 @@ namespace BusinessLogic.Models.Accounts
     public class RegisterRequest
     {
         [Required]
-        public string Login { get; set; }
+        public string Username { get; set; }
 
         [Required]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
-        public string Lastname { get; set; }
-
-        [Required]
-        public string Middlename { get; set; }
+        public string LastName { get; set; }
 
         [Required]
         [EmailAddress]
