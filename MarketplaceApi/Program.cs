@@ -115,8 +115,7 @@ namespace MarketplaceApi
 
                 var context = services.GetRequiredService<MarketpalceContext>();
                 await context.Database.MigrateAsync();
-                context.Database.EnsureCreated();
-                if (!context.Roles.Any())
+                /*if (!context.Roles.Any())
                 {
                     context.Roles.AddRange(
                         new Role { RoleName = "Admin" },
@@ -125,7 +124,7 @@ namespace MarketplaceApi
                     );
 
                 }
-                context.SaveChangesAsync();
+                context.SaveChangesAsync();*/
             }
 
             // Configure the HTTP request pipeline.
@@ -144,7 +143,7 @@ namespace MarketplaceApi
 
             app.UseAuthorization();
 
-          //  app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();
