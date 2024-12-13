@@ -1,4 +1,4 @@
-using BankPrikoloff.Authorization;
+п»їusing BankPrikoloff.Authorization;
 using BusinessLogic.Authorization;
 using BusinessLogic.Helpers;
 using BusinessLogic.Services;
@@ -62,15 +62,15 @@ namespace MarketplaceApi
                 {
                     Version = "v1",
                     Title = "OxygenMarketApi",
-                    Description = "Маркетплейс Кислодрод (надеюсь не кончится",
+                    Description = "РњР°СЂРєРµС‚РїР»РµР№СЃ РљРёСЃР»РѕРґСЂРѕРґ (РЅР°РґРµСЋСЃСЊ РЅРµ РєРѕРЅС‡РёС‚СЃСЏ",
                     Contact = new OpenApiContact
                     {
-                        Name = "Сайт",
+                        Name = "РЎР°Р№С‚",
                         Url = new Uri("https://oxygenmarketsite.onrender.com")
                     },
                     License = new OpenApiLicense
                     {
-                        Name = " Бекэндер (не пишите)",
+                        Name = " Р‘РµРєСЌРЅРґРµСЂ (РЅРµ РїРёС€РёС‚Рµ)",
                         Url = new Uri("https://t.me/Ares250678")
                     },
                 });
