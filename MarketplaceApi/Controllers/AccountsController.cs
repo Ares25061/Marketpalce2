@@ -138,10 +138,6 @@ namespace MarketplaceApi.Controllers
             {
                 return Unauthorized(new { message = "Unathorized" });
             }
-            if (User.RoleId != 1)
-            {
-                model.Role = null;
-            }
 
             var account = await _accountService.Update(id, model);
             return Ok(account);
