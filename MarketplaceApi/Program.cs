@@ -15,7 +15,7 @@ namespace MarketplaceApi
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -112,7 +112,7 @@ namespace MarketplaceApi
                 var services = scope.ServiceProvider;
 
                 var context = services.GetRequiredService<MarketpalceContext>();
-                context.Database.Migrate();
+                await context.Database.MigrateAsync();
             }
 
             // Configure the HTTP request pipeline.
