@@ -7,6 +7,8 @@ using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Authorization;
+using MarketplaceApi.Helpers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -131,7 +133,7 @@ namespace MarketplaceApi
 
             app.UseAuthorization();
 
-            app.UseMiddleware<ErrorEventHandler>();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();
