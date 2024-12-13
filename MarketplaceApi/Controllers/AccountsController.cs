@@ -1,7 +1,7 @@
-﻿using MarketplaceApi.Authorization;
-using BusinessLogic.Authorization;
+﻿using BusinessLogic.Authorization;
 using BusinessLogic.Models.Accounts;
 using Domain.Entities;
+using MarketplaceApi.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
@@ -36,7 +36,7 @@ namespace MarketplaceApi.Controllers
         [HttpPost("authenticate")]
         public async Task<ActionResult<AuthenticateResponse>> Authenticate(AuthenticateRequest model)
         {
-            var response = await _accountService.Authenticate(model,ipAddress());
+            var response = await _accountService.Authenticate(model, ipAddress());
             setTokenCookie(response.RefreshToken);
             return Ok(response);
         }
@@ -123,7 +123,7 @@ namespace MarketplaceApi.Controllers
             var account = await _accountService.GetById(id);
             return Ok();
         }
-        [Authorize(roles:2)]
+        [Authorize(roles: 2)]
         [HttpPost]
         public async Task<ActionResult<IEnumerable<AccountResponse>>> Create(CreateRequest model)
         {

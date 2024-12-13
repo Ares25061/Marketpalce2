@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLogic.Models.Accounts
 {

@@ -5,6 +5,8 @@ using BusinessLogic.Services;
 using DataAccess.Wrapper;
 using Domain.Interfaces;
 using Domain.Models;
+using Mapster;
+using MarketplaceApi.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -47,7 +49,8 @@ namespace MarketplaceApi
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IEmailService, EmailService>();
 
-
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddMapster();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -109,7 +112,7 @@ namespace MarketplaceApi
                 var services = scope.ServiceProvider;
 
                 var context = services.GetRequiredService<MarketpalceContext>();
-                context.Database.Migrate();
+                context.Database.MigrateAsync();
             }
 
             // Configure the HTTP request pipeline.
@@ -128,6 +131,8 @@ namespace MarketplaceApi
 
             app.UseAuthorization();
 
+            app.UseMiddleware<ErrorEventHandler>();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();
 

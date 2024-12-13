@@ -27,7 +27,7 @@ namespace BankPrikoloff.Authorization
 
         public string GenerateJwtToken(User account)
         {
-           var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {

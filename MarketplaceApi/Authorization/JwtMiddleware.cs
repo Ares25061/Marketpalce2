@@ -20,9 +20,9 @@ namespace MarketplaceApi.Authorization
         {
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
             var accountId = jwtUtils.ValidateJwtToken(token);
-            if(accountId != null)
+            if (accountId != null)
             {
-                context.Items["User"] = (await wrapper.User.GetByIdWithToken(accountId.Value)); 
+                context.Items["User"] = (await wrapper.User.GetByIdWithToken(accountId.Value));
             }
 
             await _next(context);
