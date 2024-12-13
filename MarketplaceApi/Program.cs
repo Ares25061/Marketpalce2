@@ -1,3 +1,6 @@
+using BankPrikoloff.Authorization;
+using BusinessLogic.Authorization;
+using BusinessLogic.Helpers;
 using BusinessLogic.Services;
 using DataAccess.Wrapper;
 using Domain.Interfaces;
@@ -38,6 +41,11 @@ namespace MarketplaceApi
             builder.Services.AddScoped<IUserDiscountService, UserDiscountService>();
             builder.Services.AddScoped<IPaymentService, PaymentService>();
             builder.Services.AddScoped<IPaymentUserService, PaymentUserService>();
+            builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+            builder.Services.AddScoped<IJwtUtils, JwtUtils>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
 
 
             builder.Services.AddControllers();
@@ -45,19 +53,51 @@ namespace MarketplaceApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
-
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-
                     Version = "v1",
-                    Title = "MARKETPLACEAPI",
-                    Description = "Маркетплейс Кислород (надеюсь не кончится)",
+                    Title = "Backend API",
+                    Description = "Backend API ASP .NET Core Web API",
                     Contact = new OpenApiContact
                     {
-                        Name = "Разработчик (не пишите)",
-                        Url = new Uri("https://t.me/Ares250678")
-                    }
+                        Name = "Internet Shop",
+                        Url = new Uri("https://example.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Internet Shop",
+                        Url = new Uri("https://example.com/license")
+                    },
                 });
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                  {
+                    {
+                      new OpenApiSecurityScheme
+                      {
+                        Reference = new OpenApiReference
+                          {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                          },
+                          Scheme = "oauth2",
+                          Name = "Bearer",
+                          In = ParameterLocation.Header,
+
+                        },
+                        new List<string>()
+                      }
+                    });
+                // using System.Reflection;
                 var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });

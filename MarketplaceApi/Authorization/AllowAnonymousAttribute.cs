@@ -1,6 +1,6 @@
 ﻿namespace MarketplaceApi.Authorization
 {
-    public class AllowAnonymousAttribute
-    {
-    }
+    [AttributeUsage(AttributeTargets.Method)]
+    public class AllowAnonymousAttribute : Attribute
+    {}
 }
