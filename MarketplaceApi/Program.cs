@@ -115,7 +115,7 @@ namespace MarketplaceApi
 
                 var context = services.GetRequiredService<MarketpalceContext>();
                 await context.Database.MigrateAsync();
-                /*if (!context.Roles.Any())
+                if (!context.Roles.Any())
                 {
                     context.Roles.AddRange(
                         new Role { RoleName = "Admin" },
@@ -124,7 +124,7 @@ namespace MarketplaceApi
                     );
 
                 }
-                context.SaveChangesAsync();*/
+                context.SaveChanges();
             }
 
             // Configure the HTTP request pipeline.
