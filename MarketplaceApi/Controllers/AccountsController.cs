@@ -123,7 +123,7 @@ namespace MarketplaceApi.Controllers
             var account = await _accountService.GetById(id);
             return Ok();
         }
-        [Authorize(roles: 2)]
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<ActionResult<IEnumerable<AccountResponse>>> Create(CreateRequest model)
         {

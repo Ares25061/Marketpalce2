@@ -61,17 +61,17 @@ namespace MarketplaceApi
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Backend API",
-                    Description = "Backend API ASP .NET Core Web API",
+                    Title = "OxygenMarketApi",
+                    Description = "Маркетплейс Кислодрод (надеюсь не кончится",
                     Contact = new OpenApiContact
                     {
-                        Name = "Internet Shop",
-                        Url = new Uri("https://example.com/contact")
+                        Name = "Сайт",
+                        Url = new Uri("https://oxygenmarketsite.onrender.com")
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Internet Shop",
-                        Url = new Uri("https://example.com/license")
+                        Name = " Бекэндер (не пишите)",
+                        Url = new Uri("https://t.me/Ares250678")
                     },
                 });
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
