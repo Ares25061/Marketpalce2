@@ -55,7 +55,8 @@ namespace MarketplaceApi.Controllers
         ///        "Email" : "email@gmail.com",
         ///        "Password" : "!Pa$$word123@",
         ///        "FirstName" : "Иван",
-        ///        "LastName" : "Иванов"
+        ///        "LastName" : "Иванов",
+        ///        "RoleId" : 1
         ///     }
         ///
         /// </remarks>
@@ -91,7 +92,8 @@ namespace MarketplaceApi.Controllers
         ///       "ModifiedBy": 1,
         ///       "ModifiedDate": "2024-09-19T14:05:14.947Z",
         ///       "DeletedBy": 1,
-        ///       "DeletedDate": "2024-09-19T14:05:14.947Z"
+        ///       "DeletedDate": "2024-09-19T14:05:14.947Z",
+        ///       "RoleId" : 1
         ///     }
         ///
         /// </remarks>
