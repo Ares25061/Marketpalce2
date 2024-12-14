@@ -1,4 +1,4 @@
-﻿using BankPrikoloff.Authorization;
+﻿using MarketplaceApi.Authorization;
 using BusinessLogic.Authorization;
 using BusinessLogic.Helpers;
 using BusinessLogic.Services;
@@ -6,7 +6,6 @@ using DataAccess.Wrapper;
 using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
-using MarketplaceApi.Authorization;
 using MarketplaceApi.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
