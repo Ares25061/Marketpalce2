@@ -61,7 +61,7 @@ namespace MarketplaceApi
                 {
                     Version = "v1",
                     Title = "OxygenMarketApi",
-                    Description = "Маркетплейс Кислодрод (надеюсь не кончится",
+                    Description = "Маркетплейс Кислодрод (надеюсь не кончится)",
                     Contact = new OpenApiContact
                     {
                         Name = "Сайт",
