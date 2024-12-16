@@ -122,16 +122,5 @@ namespace BusinessLogic.Services
             await _repositoryWrapper.Adress.Delete(address.First());
             await _repositoryWrapper.Save();
         }
-        public async Task SoftDelete(int id)
-        {
-            var address = await GetById(id);
-            if (address == null)
-            {
-                throw new ArgumentNullException("Not found");
-            }
-            address.IsDeleted = true;
-            address.DeletedDate = DateTime.UtcNow;
-            await Update(address);
-        }
     }
 }
