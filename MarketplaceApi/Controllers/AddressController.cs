@@ -1,9 +1,9 @@
 ﻿using BusinessLogic.Authorization;
+using BusinessLogic.Services;
 using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Address;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
@@ -13,18 +13,19 @@ namespace MarketplaceApi.Controllers
     [ApiController]
     public class AddressController : BaseController
     {
-        private IAddressService _addressService;
-        public AddressController(IAddressService addressService)
+        private readonly IAddressService _addressService;
+        private readonly IAccountService _accountService;
+
+        public AddressController(IAddressService addressService, IAccountService accountService)
         {
             _addressService = addressService;
+            _accountService = accountService;
         }
 
         /// <summary>
         /// Получение информации о всех адресах
         /// </summary>
         /// <returns></returns>
-        /// 
-        // GET api/<AddressController>
         [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -38,14 +39,12 @@ namespace MarketplaceApi.Controllers
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
-
-        // GET api/<AddressController>
         [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var Dto = await _addressService.GetById(id);
-            return Ok(Dto.Adapt<List<GetAddressResponse>>());
+            return Ok(Dto.Adapt<GetAddressResponse>()); 
         }
 
         /// <summary>
@@ -68,8 +67,6 @@ namespace MarketplaceApi.Controllers
         /// </remarks>
         /// <param name="address">Адрес</param>
         /// <returns></returns>
-
-        // POST api/<AddressController>
         [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateAddressRequest address)
@@ -105,8 +102,6 @@ namespace MarketplaceApi.Controllers
         /// </remarks>
         /// <param name="address">Адресс</param>
         /// <returns></returns>
-
-        // PUT api/<AddressController>
         [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetAddressResponse address)
@@ -121,13 +116,31 @@ namespace MarketplaceApi.Controllers
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
-
-        // DELETE api/<AddressController>
         [Authorize(roles: 1)]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _addressService.Delete(id);
+            return Ok();
+        }
+
+        /// <summary>
+        /// "Мягкое" удаление
+        /// </summary>
+        /// <param name="id">ID</param>
+        /// <returns></returns>
+        [HttpPut("softdelete/{id}")]
+        public async Task<IActionResult> SoftDelete(int id)
+        {
+
+            var account = await _accountService.GetById(id);
+            var address = await _addressService.GetById(id);
+            address.DeletedBy = account.UserId;
+            if (account.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unauthorized" });
+            }
+            await _addressService.SoftDelete(id);
             return Ok();
         }
     }
