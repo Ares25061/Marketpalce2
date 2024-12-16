@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Chat;
@@ -7,11 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ChatController : ControllerBase
+    public class ChatController : BaseController
     {
         private IChatService _chatService;
+        private IAccountService _accountService;
         public ChatController(IChatService chatService)
         {
             _chatService = chatService;
@@ -23,6 +26,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
         /// 
         // GET api/<ChatController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -40,6 +44,10 @@ namespace MarketplaceApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            if (id != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             var Dto = await _chatService.GetById(id);
             return Ok(Dto.Adapt<List<GetChatResponse>>());
         }
@@ -67,6 +75,10 @@ namespace MarketplaceApi.Controllers
         {
             var Dto = chat.Adapt<Chat>();
             Dto.ModifiedBy = Dto.OwnerId;
+            if (Dto.OwnerId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _chatService.Create(Dto);
             return Ok();
         }
@@ -95,6 +107,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<ChatController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetChatResponse chat)
         {
@@ -110,6 +123,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<ChatController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

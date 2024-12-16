@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.SearchHistory;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class SearchHistoryController : ControllerBase
+    public class SearchHistoryController : BaseController
     {
         private ISearchHistoryService _searchHistoryService;
         public SearchHistoryController(ISearchHistoryService searchHistoryService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
         /// 
         // GET api/<SearchHistoryController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -38,6 +41,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<SearchHistoryController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -63,6 +67,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<SearchHistoryController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateSearchHistoryRequest searchhistory)
         {
@@ -96,6 +101,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<SearchHistoryController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetSearchHistoryResponse searchhistory)
         {
@@ -111,6 +117,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<SearchHistoryController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

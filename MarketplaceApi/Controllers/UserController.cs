@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.User;
@@ -6,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private IUserService _userService;
         public UserController(IUserService userService)
@@ -22,6 +24,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<UserController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -39,6 +42,10 @@ namespace MarketplaceApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            if (id != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             var Dto = await _userService.GetById(id);
             return Ok(Dto.Adapt<GetUserResponse>());
         }
@@ -63,6 +70,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<UserController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateUserRequest user)
         {
@@ -91,7 +99,8 @@ namespace MarketplaceApi.Controllers
         ///       "ModifiedBy": 1,
         ///       "ModifiedDate": "2024-09-19T14:05:14.947Z",
         ///       "DeletedBy": 1,
-        ///       "DeletedDate": "2024-09-19T14:05:14.947Z"
+        ///       "DeletedDate": "2024-09-19T14:05:14.947Z",
+        ///       "RoleId" : 1
         ///     }
         ///
         /// </remarks>
@@ -102,7 +111,13 @@ namespace MarketplaceApi.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(GetUserResponse user)
         {
+
+
             var Dto = user.Adapt<User>();
+            if (Dto.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _userService.Update(Dto);
             return Ok();
         }
@@ -114,6 +129,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<UserController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

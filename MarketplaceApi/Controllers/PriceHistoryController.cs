@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.PriceHistory;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PriceHistoryController : ControllerBase
+    public class PriceHistoryController : BaseController
     {
         private IPriceHistoryService _priceHistoryService;
         public PriceHistoryController(IPriceHistoryService PricehistoryService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
         /// 
         // GET api/<PriceHistoryController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -38,6 +41,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<PriceHistoryController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -63,6 +67,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<PriceHistoryController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreatePriceHistoryRequest pricehistory)
         {
@@ -95,6 +100,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<PriceHistoryController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetPriceHistoryResponse pricehistory)
         {
@@ -110,6 +116,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<PriceHistoryController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

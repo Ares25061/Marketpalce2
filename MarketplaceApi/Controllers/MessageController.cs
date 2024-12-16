@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using BusinessLogic.Services;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Message;
@@ -7,11 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class MessageController : ControllerBase
+    public class MessageController : BaseController
     {
         private IMessageService _messageService;
+        private IAccountService _accountService;
         public MessageController(IMessageService messageService)
         {
             _messageService = messageService;
@@ -23,6 +27,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<MessageController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +42,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<MessageController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -66,6 +72,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreateMessageRequest message)
         {
             var Dto = message.Adapt<Message>();
+            if (Dto.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _messageService.Create(Dto);
             return Ok();
         }
@@ -98,6 +108,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetMessageResponse message)
         {
             var Dto = message.Adapt<Message>();
+            if (Dto.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _messageService.Update(Dto);
             return Ok();
         }
@@ -109,6 +123,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<MessageController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

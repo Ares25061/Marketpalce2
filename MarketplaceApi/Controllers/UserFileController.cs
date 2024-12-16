@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.UserFile;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UserFileController : ControllerBase
+    public class UserFileController : BaseController
     {
         private IUserFileService _userFileService;
         public UserFileController(IUserFileService userFileService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<UserFileController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +40,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<UserFileController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -61,6 +65,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<UserFileController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateUserFileRequest userfile)
         {
@@ -91,6 +96,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<UserFileController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetUserFileResponse userfile)
         {
@@ -106,6 +112,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<UserFileController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

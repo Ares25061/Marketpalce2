@@ -1,15 +1,19 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Payment;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Asn1.Ocsp;
+using System.Security.Principal;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PaymentController : ControllerBase
+    public class PaymentController : BaseController
     {
         private IPaymentService _paymentService;
         public PaymentController(IPaymentService paymentService)
@@ -23,6 +27,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<PaymentController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +42,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<PaymentController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -62,6 +68,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<PaymentController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreatePaymentRequest payment)
         {
@@ -89,6 +96,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<PaymentController>
+        [Authorize(1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetPaymentResponse payment)
         {
@@ -104,6 +112,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<PaymentController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

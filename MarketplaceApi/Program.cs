@@ -1,5 +1,4 @@
-﻿using BankPrikoloff.Authorization;
-using BusinessLogic.Authorization;
+﻿using BusinessLogic.Authorization;
 using BusinessLogic.Helpers;
 using BusinessLogic.Services;
 using DataAccess.Wrapper;
@@ -62,7 +61,7 @@ namespace MarketplaceApi
                 {
                     Version = "v1",
                     Title = "OxygenMarketApi",
-                    Description = "Маркетплейс Кислодрод (надеюсь не кончится",
+                    Description = "Маркетплейс Кислодрод (надеюсь не кончится)",
                     Contact = new OpenApiContact
                     {
                         Name = "Сайт",

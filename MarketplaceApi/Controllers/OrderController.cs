@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Order;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderController : ControllerBase
+    public class OrderController : BaseController
     {
         private IOrderService _orderService;
         public OrderController(IOrderService orderService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<OrderController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +40,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<OrderController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -68,6 +72,10 @@ namespace MarketplaceApi.Controllers
         {
             var Dto = order.Adapt<Order>();
             Dto.ModifiedBy = Dto.CreatedBy;
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _orderService.Create(Dto);
             return Ok();
         }
@@ -98,6 +106,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<OrderController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetOrderResponse order)
         {
@@ -113,6 +122,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<OrderController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

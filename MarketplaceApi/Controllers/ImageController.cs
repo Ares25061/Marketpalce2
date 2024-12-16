@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using BusinessLogic.Services;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Image;
@@ -7,11 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ImageController : ControllerBase
+    public class ImageController : BaseController
     {
         private IImageService _imageService;
+        private IAccountService _accountService;
         public ImageController(IImageService imageService)
         {
             _imageService = imageService;
@@ -23,6 +27,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<ImageController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +42,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<ImageController>
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -67,6 +73,10 @@ namespace MarketplaceApi.Controllers
         {
             var Dto = image.Adapt<Image>();
             Dto.ModifiedBy = Dto.CreatedBy;
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _imageService.Create(Dto);
             return Ok();
         }
@@ -100,6 +110,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetImageResponse image)
         {
             var Dto = image.Adapt<Image>();
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _imageService.Update(Dto);
             return Ok();
         }
@@ -111,6 +125,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<ImageController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

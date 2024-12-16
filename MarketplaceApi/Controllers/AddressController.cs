@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.Address;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class AddressController : ControllerBase
+    public class AddressController : BaseController
     {
         private IAddressService _addressService;
         public AddressController(IAddressService addressService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
         /// 
         // GET api/<AddressController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +40,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<AddressController>
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -66,6 +70,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<AddressController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateAddressRequest address)
         {
@@ -102,6 +107,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<AddressController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetAddressResponse address)
         {
@@ -117,6 +123,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<AddressController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

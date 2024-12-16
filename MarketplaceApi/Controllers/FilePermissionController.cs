@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using BusinessLogic.Services;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.FilePermission;
@@ -7,11 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class FilePermissionController : ControllerBase
+    public class FilePermissionController : BaseController
     {
         private IFilePermissionService _filepermissionService;
+        private IAccountService _accountService;
         public FilePermissionController(IFilePermissionService filepermissionService)
         {
             _filepermissionService = filepermissionService;
@@ -23,6 +27,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<FilePermissionController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +42,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<FilePermissionController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -68,6 +74,10 @@ namespace MarketplaceApi.Controllers
         {
             var Dto = filepermission.Adapt<FilePermission>();
             Dto.ModifiedBy = Dto.CreatedBy;
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _filepermissionService.Create(Dto);
             return Ok();
         }
@@ -102,6 +112,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetFilePermissionResponse filepermission)
         {
             var Dto = filepermission.Adapt<FilePermission>();
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _filepermissionService.Update(Dto);
             return Ok();
         }
@@ -113,6 +127,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<FilePermissionController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

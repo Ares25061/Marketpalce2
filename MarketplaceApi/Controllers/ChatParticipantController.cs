@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.ChatParticipant;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ChatParticipantController : ControllerBase
+    public class ChatParticipantController : BaseController
     {
         private IChatParticipantService _chatparticipantService;
         public ChatParticipantController(IChatParticipantService chatparticipantService)
@@ -21,8 +23,8 @@ namespace MarketplaceApi.Controllers
         /// Получение информации о всех пользователях чатов
         /// </summary>
         /// <returns></returns>
-        /// 
         // GET api/<ChatParticipantController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +39,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<ChatParticipantController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -62,6 +65,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<ChatParticipantController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateChatParticipantRequest chatparticipant)
         {
@@ -93,6 +97,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<ChatParticipantController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetChatParticipantResponse chatparticipant)
         {
@@ -108,6 +113,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<ChatParticipantController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

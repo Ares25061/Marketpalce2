@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Authorization;
-using BusinessLogic.Helpers;
+﻿using BusinessLogic.Helpers;
 using Domain.Entities;
 using Domain.Interfaces;
 using Domain.Models;
@@ -10,7 +9,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace BankPrikoloff.Authorization
+namespace BusinessLogic.Authorization
 {
     public class JwtUtils : IJwtUtils
     {

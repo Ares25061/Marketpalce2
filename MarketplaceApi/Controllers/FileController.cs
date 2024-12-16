@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using BusinessLogic.Services;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.File;
@@ -7,11 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class FileController : ControllerBase
+    public class FileController : BaseController
     {
         private IFileService _fileService;
+        private IAccountService _accountService;
         public FileController(IFileService fileService)
         {
             _fileService = fileService;
@@ -23,6 +27,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<FileController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +42,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<FileController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -67,8 +73,13 @@ namespace MarketplaceApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(CreateFileRequest file)
         {
+
             var Dto = file.Adapt<Domain.Models.File>();
             Dto.ModifiedBy = Dto.CreatedBy;
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _fileService.Create(Dto);
             return Ok();
         }
@@ -104,6 +115,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetFileResponse file)
         {
             var Dto = file.Adapt<Domain.Models.File>();
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _fileService.Update(Dto);
             return Ok();
         }
@@ -115,6 +130,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<FileController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

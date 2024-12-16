@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.PaymentUser;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PaymentUserController : ControllerBase
+    public class PaymentUserController : BaseController
     {
         private IPaymentUserService _paymentUserService;
         public PaymentUserController(IPaymentUserService paymentUserService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
         /// 
         // GET api/<PaymentUserController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -38,6 +41,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<PaymentUserController>
+        [Authorize(roles: 1)]
         [HttpGet("{paymentId}/{userId}")]
         public async Task<IActionResult> GetById(int paymentId, int userId)
         {
@@ -67,6 +71,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Add(CreatePaymentUserRequest paymentuser)
         {
             var Dto = paymentuser.Adapt<PaymentUser>();
+            if (Dto.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _paymentUserService.Create(Dto);
             return Ok();
         }
@@ -93,6 +101,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetPaymentUserResponse paymentuser)
         {
             var Dto = paymentuser.Adapt<PaymentUser>();
+            if (Dto.UserId != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _paymentUserService.Update(Dto);
             return Ok();
         }
@@ -105,6 +117,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<PaymentUserController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int paymentId, int userId)
         {

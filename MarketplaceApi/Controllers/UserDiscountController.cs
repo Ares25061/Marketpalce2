@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.UserDiscount;
@@ -7,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UserDiscountController : ControllerBase
+    public class UserDiscountController : BaseController
     {
         private IUserDiscountService _userDiscountService;
         public UserDiscountController(IUserDiscountService userDiscountService)
@@ -23,6 +25,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<UserDiscountController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +40,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<UserDiscountController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -61,6 +65,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // POST api/<UserDiscountController>
+        [Authorize(roles: 1)]
         [HttpPost]
         public async Task<IActionResult> Add(CreateUserDiscountRequest userdiscount)
         {
@@ -87,6 +92,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // PUT api/<UserDiscountController>
+        [Authorize(roles: 1)]
         [HttpPut]
         public async Task<IActionResult> Update(GetUserDiscountResponse userdiscount)
         {
@@ -102,6 +108,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<UserDiscountController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

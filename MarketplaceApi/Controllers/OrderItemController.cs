@@ -1,17 +1,22 @@
-﻿using Domain.Interfaces;
+﻿using BusinessLogic.Authorization;
+using Domain.Interfaces;
 using Domain.Models;
 using Mapster;
 using MarketplaceApi.Contracts.OrderItem;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Org.BouncyCastle.Asn1.Ocsp;
+using System.Security.Principal;
 
 namespace MarketplaceApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderItemController : ControllerBase
+    public class OrderItemController : BaseController
     {
         private IOrderItemService _orderItemService;
+        private IAccountService _accountService;
         public OrderItemController(IOrderItemService orderItemService)
         {
             _orderItemService = orderItemService;
@@ -23,6 +28,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<OrderItemController>
+        [Authorize(roles: 1)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -37,6 +43,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // GET api/<OrderItemController>
+        [Authorize(roles: 1)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -69,6 +76,10 @@ namespace MarketplaceApi.Controllers
         {
             var Dto = orderitem.Adapt<OrderItem>();
             Dto.ModifiedBy = Dto.CreatedBy;
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _orderItemService.Create(Dto);
             return Ok();
         }
@@ -104,6 +115,10 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Update(GetOrderItemResponse orderitem)
         {
             var Dto = orderitem.Adapt<OrderItem>();
+            if (Dto.CreatedBy != User.UserId && User.RoleId != 1)
+            {
+                return Unauthorized(new { message = "Unathorized" });
+            }
             await _orderItemService.Update(Dto);
             return Ok();
         }
@@ -115,6 +130,7 @@ namespace MarketplaceApi.Controllers
         /// <returns></returns>
 
         // DELETE api/<OrderItemController>
+        [Authorize(roles: 1)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

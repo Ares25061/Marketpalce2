@@ -1,7 +1,6 @@
 ﻿using BusinessLogic.Authorization;
 using BusinessLogic.Models.Accounts;
 using Domain.Entities;
-using MarketplaceApi.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
