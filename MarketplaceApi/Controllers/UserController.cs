@@ -62,7 +62,8 @@ namespace MarketplaceApi.Controllers
         ///        "Email" : "email@gmail.com",
         ///        "Password" : "!Pa$$word123@",
         ///        "FirstName" : "Иван",
-        ///        "LastName" : "Иванов"
+        ///        "LastName" : "Иванов",
+        ///        "RoleId" : 1
         ///     }
         ///
         /// </remarks>
