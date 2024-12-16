@@ -34,9 +34,9 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException(nameof(model));
             }
-            if (string.IsNullOrEmpty(model.Username))
+            if (string.IsNullOrEmpty(model.UserName))
             {
-                throw new ArgumentException(nameof(model.Username));
+                throw new ArgumentException(nameof(model.UserName));
             }
             if (string.IsNullOrEmpty(model.Email))
             {
@@ -64,9 +64,9 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentNullException(nameof(model));
             }
-            if (string.IsNullOrEmpty(model.Username))
+            if (string.IsNullOrEmpty(model.UserName))
             {
-                throw new ArgumentException(nameof(model.Username));
+                throw new ArgumentException(nameof(model.UserName));
             }
             if (string.IsNullOrEmpty(model.Email))
             {

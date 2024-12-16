@@ -1167,7 +1167,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("Updated")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .IsUnicode(false)
@@ -1183,7 +1183,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.HasIndex(new[] { "Username" }, "UQ__Users__536C85E4FBE4BE36")
+                    b.HasIndex(new[] { "UserName" }, "UQ__Users__536C85E4FBE4BE36")
                         .IsUnique();
 
                     b.HasIndex(new[] { "Email" }, "UQ__Users__A9D1053489967278")
