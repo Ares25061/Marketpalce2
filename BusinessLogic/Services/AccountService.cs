@@ -212,7 +212,7 @@ namespace BusinessLogic.Services
             account.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
             await _repositoryWrapper.User.Create(account);
             await _repositoryWrapper.Save();
-            _emailService.Send(account.Email, "Подтверждение почты", $"введите этот токен:{account.VerificationToken}");
+            _emailService.Send(account.Email, "Подтверждение почты", $"введите этот токен: {account.VerificationToken}");
         }
 
         private async Task<User> getAccountByResetToken(string token)
