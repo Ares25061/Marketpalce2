@@ -20,12 +20,12 @@ namespace MarketplaceApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            /*builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
             // Зарегистрируйте AppSettings
-          /*  builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+            builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));*/
             builder.Services.AddDbContext<MarketpalceContext>(
-                options => options.UseSqlServer(builder.Configuration["ConnectionString"]));*/
+                options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
