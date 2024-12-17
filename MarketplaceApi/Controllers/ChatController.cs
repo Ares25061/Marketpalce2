@@ -44,7 +44,7 @@ namespace MarketplaceApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            
+
             var Dto = await _chatService.GetById(id);
             if (Dto.OwnerId != User.UserId && User.RoleId != 1)
             {
