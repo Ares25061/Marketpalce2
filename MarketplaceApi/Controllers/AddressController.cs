@@ -44,7 +44,7 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var Dto = await _addressService.GetById(id);
-            return Ok(Dto.Adapt<GetAddressResponse>()); 
+            return Ok(Dto.Adapt<GetAddressResponse>());
         }
 
         /// <summary>
@@ -121,21 +121,6 @@ namespace MarketplaceApi.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _addressService.Delete(id);
-            return Ok();
-        }
-
-        /// <summary>
-        /// "Мягкое" удаление
-        /// </summary>
-        /// <param name="id">ID</param>
-        /// <returns></returns>
-        // PUT api/<AddressController>/softdelete/{id}
-        [HttpPut("softdelete/{id}")]
-        public async Task<IActionResult> SoftDelete(int id)
-        {
-            var address = await _addressService.GetById(id);
-            address.DeletedBy = address.UserId;
-            await _addressService.SoftDelete(id);
             return Ok();
         }
     }

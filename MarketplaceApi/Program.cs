@@ -20,6 +20,10 @@ namespace MarketplaceApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            // Зарегистрируйте AppSettings
+            builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
             builder.Services.AddDbContext<MarketpalceContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
 

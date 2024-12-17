@@ -14,6 +14,5 @@ namespace Domain.Interfaces
         Task Create(Address model);
         Task Update(Address model);
         Task Delete(int id);
-        Task SoftDelete (int id);
     }
 }

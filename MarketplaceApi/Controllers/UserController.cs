@@ -58,7 +58,7 @@ namespace MarketplaceApi.Controllers
         ///
         ///     POST /Todo
         ///     {
-        ///        "Username": "string",
+        ///        "UserName": "string",
         ///        "Email" : "email@gmail.com",
         ///        "Password" : "!Pa$$word123@",
         ///        "FirstName" : "Иван",
@@ -88,7 +88,7 @@ namespace MarketplaceApi.Controllers
         ///     PUT /Todo
         ///     {
         ///       "UserId": 1,
-        ///       "Username": "string",
+        ///       "UserName": "string",
         ///       "Email" : "email@gmail.com",
         ///       "Password" : "!Pa$$word123@",
         ///       "FirstName" : "Иван",

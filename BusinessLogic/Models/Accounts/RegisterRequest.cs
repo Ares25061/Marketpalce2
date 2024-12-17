@@ -5,7 +5,7 @@ namespace BusinessLogic.Models.Accounts
     public class RegisterRequest
     {
         [Required]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         public string FirstName { get; set; }

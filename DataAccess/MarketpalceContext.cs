@@ -605,7 +605,7 @@ namespace Domain.Models
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasIndex(e => e.Username, "UQ__Users__536C85E4FBE4BE36")
+                entity.HasIndex(e => e.UserName, "UQ__Users__536C85E4FBE4BE36")
                     .IsUnique();
 
                 entity.HasIndex(e => e.Email, "UQ__Users__A9D1053489967278")
@@ -643,7 +643,7 @@ namespace Domain.Models
 
                 entity.Property(e => e.RoleId).HasDefaultValueSql("((2))");
 
-                entity.Property(e => e.Username)
+                entity.Property(e => e.UserName)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 

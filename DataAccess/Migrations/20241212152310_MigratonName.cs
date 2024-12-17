@@ -187,7 +187,7 @@ namespace DataAccess.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    UserName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Password = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
                     FirstName = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
@@ -874,7 +874,7 @@ namespace DataAccess.Migrations
             migrationBuilder.CreateIndex(
                 name: "UQ__Users__536C85E4FBE4BE36",
                 table: "Users",
-                column: "Username",
+                column: "UserName",
                 unique: true);
 
             migrationBuilder.CreateIndex(

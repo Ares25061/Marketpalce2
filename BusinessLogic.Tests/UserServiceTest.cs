@@ -33,12 +33,12 @@ namespace BuisnessLogic.Tests
         {
             return new List<object[]>
             {
-                new object[] {new User { Email = "", Password = "", Username = "", FirstName = "", LastName = "" } },
-                new object[] {new User { Email = "email@email.com", Password = "", Username = "Nick", FirstName = "firstname", LastName = "lastname" } },
-                new object[] {new User { Email = "", Password = "12345pass", Username = "Nick", FirstName = "firstname", LastName = "lastname" } },
-                new object[] {new User { Email = "email@email.com", Password = "12345pass", Username = "", FirstName = "firstname", LastName = "lastname" } },
-                new object[] {new User { Email = "email@email.com", Password = "12345pass", Username = "Nick", FirstName = "", LastName = "lastname" } },
-                new object[] {new User { Email = "email@email.com", Password = "12345pass", Username = "Nick", FirstName = "firstname", LastName = "" } },
+                new object[] {new User { Email = "", Password = "", UserName = "", FirstName = "", LastName = "" } },
+                new object[] {new User { Email = "email@email.com", Password = "", UserName = "Nick", FirstName = "firstname", LastName = "lastname" } },
+                new object[] {new User { Email = "", Password = "12345pass", UserName = "Nick", FirstName = "firstname", LastName = "lastname" } },
+                new object[] {new User { Email = "email@email.com", Password = "12345pass", UserName = "", FirstName = "firstname", LastName = "lastname" } },
+                new object[] {new User { Email = "email@email.com", Password = "12345pass", UserName = "Nick", FirstName = "", LastName = "lastname" } },
+                new object[] {new User { Email = "email@email.com", Password = "12345pass", UserName = "Nick", FirstName = "firstname", LastName = "" } },
             };
         }
 
@@ -60,7 +60,7 @@ namespace BuisnessLogic.Tests
             {
                 Email = "email@email.com",
                 Password = "12345pass",
-                Username = "Nick",
+                UserName = "Nick",
                 FirstName = "firstname",
                 LastName = "lastname"
             };
@@ -91,17 +91,17 @@ namespace BuisnessLogic.Tests
         {
             return new List<object[]>
             {
-                new object[] {new User { UserId = 1, Email = "", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false,   CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = true, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.MaxValue, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.MaxValue, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = 1, DeletedDate = null } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = DateTime.Now } },
-                new object[] {new User { UserId = 1, Email = "email", Password = "Password", Username = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = 1, DeletedDate = DateTime.MaxValue } },
+                new object[] {new User { UserId = 1, Email = "", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false,   CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = true, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.MaxValue, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.MaxValue, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = 1, DeletedDate = null } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = null, DeletedDate = DateTime.Now } },
+                new object[] {new User { UserId = 1, Email = "email", Password = "Password", UserName = "Nick", FirstName = "firstname", LastName = "lastname", IsActive = true, IsDeleted = false, CreatedDate = DateTime.Now, ModifiedBy = 1, ModifiedDate = DateTime.Now, DeletedBy = 1, DeletedDate = DateTime.MaxValue } },
             };
         }
 
@@ -124,7 +124,7 @@ namespace BuisnessLogic.Tests
                 UserId = 1,
                 Email = "email@email.com",
                 Password = "12345pass",
-                Username = "Nick",
+                UserName = "Nick",
                 FirstName = "firstname",
                 LastName = "lastname",
                 IsActive = true,
