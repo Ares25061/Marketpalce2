@@ -44,11 +44,12 @@ namespace MarketplaceApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            if (id != User.UserId && User.RoleId != 1)
+            
+            var Dto = await _chatService.GetById(id);
+            if (Dto.OwnerId != User.UserId && User.RoleId != 1)
             {
                 return Unauthorized(new { message = "Unathorized" });
             }
-            var Dto = await _chatService.GetById(id);
             return Ok(Dto.Adapt<List<GetChatResponse>>());
         }
 

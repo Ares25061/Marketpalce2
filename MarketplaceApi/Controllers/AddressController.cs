@@ -100,7 +100,7 @@ namespace MarketplaceApi.Controllers
         ///     }
         ///
         /// </remarks>
-        /// <param name="address">Адресс</param>
+        /// <param name="address">Адрес</param>
         /// <returns></returns>
         [Authorize(roles: 1)]
         [HttpPut]
@@ -129,17 +129,12 @@ namespace MarketplaceApi.Controllers
         /// </summary>
         /// <param name="id">ID</param>
         /// <returns></returns>
+        // PUT api/<AddressController>/softdelete/{id}
         [HttpPut("softdelete/{id}")]
         public async Task<IActionResult> SoftDelete(int id)
         {
-
-            var account = await _accountService.GetById(id);
             var address = await _addressService.GetById(id);
-            address.DeletedBy = account.UserId;
-            if (account.UserId != User.UserId && User.RoleId != 1)
-            {
-                return Unauthorized(new { message = "Unauthorized" });
-            }
+            address.DeletedBy = address.UserId;
             await _addressService.SoftDelete(id);
             return Ok();
         }
