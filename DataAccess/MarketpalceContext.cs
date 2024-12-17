@@ -48,7 +48,7 @@ namespace Domain.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server = LAPTOP-C0LJ6FJ1; Database = Marketpalce2281; Integrated Security = True; MultipleActiveResultSets=True; ");
+                optionsBuilder.UseSqlServer("Server = LAPTOP-C0LJ6FJ1; Database = Marketpalce2281337; Integrated Security = True;");
             }
         }
 
@@ -56,6 +56,8 @@ namespace Domain.Models
         {
             modelBuilder.Entity<Address>(entity =>
             {
+                entity.HasIndex(e => e.UserId, "IX_Addresses_UserId");
+
                 entity.Property(e => e.AddressLine1)
                     .HasMaxLength(255)
                     .IsUnicode(false);
@@ -117,6 +119,8 @@ namespace Domain.Models
                 entity.HasKey(e => e.ValueId)
                     .HasName("PK__Attribut__93364E48A2FC954A");
 
+                entity.HasIndex(e => e.AttributeId, "IX_AttributeValues_AttributeId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -154,6 +158,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<CategoryAttribute>(entity =>
             {
+                entity.HasIndex(e => e.AttributeId, "IX_CategoryAttributes_AttributeId");
+
+                entity.HasIndex(e => e.CategoryId, "IX_CategoryAttributes_CategoryId");
+
                 entity.HasOne(d => d.Attribute)
                     .WithMany(p => p.CategoryAttributes)
                     .HasForeignKey(d => d.AttributeId)
@@ -186,6 +194,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<ChatParticipant>(entity =>
             {
+                entity.HasIndex(e => e.ChatId, "IX_ChatParticipants_ChatId");
+
+                entity.HasIndex(e => e.UserId, "IX_ChatParticipants_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -254,6 +266,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<FilePermission>(entity =>
             {
+                entity.HasIndex(e => e.FileId, "IX_FilePermissions_FileId");
+
+                entity.HasIndex(e => e.UserId, "IX_FilePermissions_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -283,6 +299,8 @@ namespace Domain.Models
 
             modelBuilder.Entity<Image>(entity =>
             {
+                entity.HasIndex(e => e.ProductId, "IX_Images_ProductId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -306,6 +324,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<Message>(entity =>
             {
+                entity.HasIndex(e => e.ChatId, "IX_Messages_ChatId");
+
+                entity.HasIndex(e => e.UserId, "IX_Messages_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -329,6 +351,8 @@ namespace Domain.Models
 
             modelBuilder.Entity<Notification>(entity =>
             {
+                entity.HasIndex(e => e.UserId, "IX_Notifications_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -352,6 +376,8 @@ namespace Domain.Models
 
             modelBuilder.Entity<Order>(entity =>
             {
+                entity.HasIndex(e => e.BuyerId, "IX_Orders_BuyerId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -378,6 +404,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<OrderItem>(entity =>
             {
+                entity.HasIndex(e => e.OrderId, "IX_OrderItems_OrderId");
+
+                entity.HasIndex(e => e.ProductId, "IX_OrderItems_ProductId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -432,6 +462,8 @@ namespace Domain.Models
 
                 entity.ToTable("Payment_Users");
 
+                entity.HasIndex(e => e.UserId, "IX_Payment_Users_UserID");
+
                 entity.Property(e => e.PaymentId)
                     .ValueGeneratedNever()
                     .HasColumnName("PaymentID");
@@ -460,6 +492,8 @@ namespace Domain.Models
             {
                 entity.ToTable("PriceHistory");
 
+                entity.HasIndex(e => e.ProductId, "IX_PriceHistory_ProductId");
+
                 entity.Property(e => e.ChangeDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -481,6 +515,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<Product>(entity =>
             {
+                entity.HasIndex(e => e.CategoryId, "IX_Products_CategoryId");
+
+                entity.HasIndex(e => e.SellerId, "IX_Products_SellerId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -516,6 +554,12 @@ namespace Domain.Models
 
             modelBuilder.Entity<ProductAttribute>(entity =>
             {
+                entity.HasIndex(e => e.AttributeId, "IX_ProductAttributes_AttributeId");
+
+                entity.HasIndex(e => e.ProductId, "IX_ProductAttributes_ProductId");
+
+                entity.HasIndex(e => e.ValueId, "IX_ProductAttributes_ValueId");
+
                 entity.HasOne(d => d.Attribute)
                     .WithMany(p => p.ProductAttributes)
                     .HasForeignKey(d => d.AttributeId)
@@ -535,8 +579,13 @@ namespace Domain.Models
                     .HasConstraintName("FK_ProductAttributes_AttributeValues");
             });
 
+
             modelBuilder.Entity<Review>(entity =>
             {
+                entity.HasIndex(e => e.ProductId, "IX_Reviews_ProductId");
+
+                entity.HasIndex(e => e.UserId, "IX_Reviews_UserId");
+
                 entity.Property(e => e.Comment)
                     .HasMaxLength(500)
                     .IsUnicode(false);
@@ -582,6 +631,8 @@ namespace Domain.Models
             {
                 entity.ToTable("SearchHistory");
 
+                entity.HasIndex(e => e.UserId, "IX_SearchHistory_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
@@ -605,6 +656,8 @@ namespace Domain.Models
 
             modelBuilder.Entity<User>(entity =>
             {
+                entity.HasIndex(e => e.RoleId, "IX_Users_RoleId");
+
                 entity.HasIndex(e => e.UserName, "UQ__Users__536C85E4FBE4BE36")
                     .IsUnique();
 
@@ -656,6 +709,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<UserDiscount>(entity =>
             {
+                entity.HasIndex(e => e.DiscountId, "IX_UserDiscounts_DiscountId");
+
+                entity.HasIndex(e => e.UserId, "IX_UserDiscounts_UserId");
+
                 entity.HasOne(d => d.Discount)
                     .WithMany(p => p.UserDiscounts)
                     .HasForeignKey(d => d.DiscountId)
@@ -671,6 +728,10 @@ namespace Domain.Models
 
             modelBuilder.Entity<UserFile>(entity =>
             {
+                entity.HasIndex(e => e.FileId, "IX_UserFiles_FileId");
+
+                entity.HasIndex(e => e.UserId, "IX_UserFiles_UserId");
+
                 entity.Property(e => e.CreatedDate)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");

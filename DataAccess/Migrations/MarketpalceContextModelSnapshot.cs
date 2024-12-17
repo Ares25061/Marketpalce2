@@ -133,7 +133,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("AddressId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_Addresses_UserId");
 
                     b.ToTable("Addresses");
                 });
@@ -214,7 +214,7 @@ namespace DataAccess.Migrations
                     b.HasKey("ValueId")
                         .HasName("PK__Attribut__93364E48A2FC954A");
 
-                    b.HasIndex("AttributeId");
+                    b.HasIndex(new[] { "AttributeId" }, "IX_AttributeValues_AttributeId");
 
                     b.ToTable("AttributeValues");
                 });
@@ -262,9 +262,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("CategoryAttributeId");
 
-                    b.HasIndex("AttributeId");
+                    b.HasIndex(new[] { "AttributeId" }, "IX_CategoryAttributes_AttributeId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex(new[] { "CategoryId" }, "IX_CategoryAttributes_CategoryId");
 
                     b.ToTable("CategoryAttributes");
                 });
@@ -346,9 +346,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ChatParticipantId");
 
-                    b.HasIndex("ChatId");
+                    b.HasIndex(new[] { "ChatId" }, "IX_ChatParticipants_ChatId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_ChatParticipants_UserId");
 
                     b.ToTable("ChatParticipants");
                 });
@@ -507,9 +507,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("FilePermissionId");
 
-                    b.HasIndex("FileId");
+                    b.HasIndex(new[] { "FileId" }, "IX_FilePermissions_FileId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_FilePermissions_UserId");
 
                     b.ToTable("FilePermissions");
                 });
@@ -558,7 +558,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ImageId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_Images_ProductId");
 
                     b.ToTable("Images");
                 });
@@ -601,9 +601,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("MessageId");
 
-                    b.HasIndex("ChatId");
+                    b.HasIndex(new[] { "ChatId" }, "IX_Messages_ChatId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_Messages_UserId");
 
                     b.ToTable("Messages");
                 });
@@ -653,7 +653,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("NotificationId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_Notifications_UserId");
 
                     b.ToTable("Notifications");
                 });
@@ -707,7 +707,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("BuyerId");
+                    b.HasIndex(new[] { "BuyerId" }, "IX_Orders_BuyerId");
 
                     b.ToTable("Orders");
                 });
@@ -759,9 +759,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("OrderItemId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex(new[] { "OrderId" }, "IX_OrderItems_OrderId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_OrderItems_ProductId");
 
                     b.ToTable("OrderItems");
                 });
@@ -819,7 +819,7 @@ namespace DataAccess.Migrations
                     b.HasKey("PaymentId")
                         .HasName("PK__Payment___9B556A586F3D558D");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_Payment_Users_UserID");
 
                     b.ToTable("Payment_Users", (string)null);
                 });
@@ -862,7 +862,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("PriceHistoryId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_PriceHistory_ProductId");
 
                     b.ToTable("PriceHistory", (string)null);
                 });
@@ -923,9 +923,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex(new[] { "CategoryId" }, "IX_Products_CategoryId");
 
-                    b.HasIndex("SellerId");
+                    b.HasIndex(new[] { "SellerId" }, "IX_Products_SellerId");
 
                     b.ToTable("Products");
                 });
@@ -949,11 +949,11 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ProductAttributeId");
 
-                    b.HasIndex("AttributeId");
+                    b.HasIndex(new[] { "AttributeId" }, "IX_ProductAttributes_AttributeId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_ProductAttributes_ProductId");
 
-                    b.HasIndex("ValueId");
+                    b.HasIndex(new[] { "ValueId" }, "IX_ProductAttributes_ValueId");
 
                     b.ToTable("ProductAttributes");
                 });
@@ -1002,9 +1002,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("ReviewId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex(new[] { "ProductId" }, "IX_Reviews_ProductId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_Reviews_UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -1077,7 +1077,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("SearchHistoryId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_SearchHistory_UserId");
 
                     b.ToTable("SearchHistory", (string)null);
                 });
@@ -1179,7 +1179,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex(new[] { "RoleId" }, "IX_Users_RoleId");
 
                     b.HasIndex(new[] { "UserName" }, "UQ__Users__536C85E4FBE4BE36")
                         .IsUnique();
@@ -1206,9 +1206,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("UserDiscountId");
 
-                    b.HasIndex("DiscountId");
+                    b.HasIndex(new[] { "DiscountId" }, "IX_UserDiscounts_DiscountId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_UserDiscounts_UserId");
 
                     b.ToTable("UserDiscounts");
                 });
@@ -1243,9 +1243,9 @@ namespace DataAccess.Migrations
 
                     b.HasKey("UserFileId");
 
-                    b.HasIndex("FileId");
+                    b.HasIndex(new[] { "FileId" }, "IX_UserFiles_FileId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex(new[] { "UserId" }, "IX_UserFiles_UserId");
 
                     b.ToTable("UserFiles");
                 });
