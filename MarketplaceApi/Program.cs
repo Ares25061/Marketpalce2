@@ -140,8 +140,10 @@ namespace MarketplaceApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
-            app.UseMiddleware<ErrorHandlerMiddleware>();
+            if (app.Environment.IsProduction())
+            {
+                app.UseMiddleware<ErrorHandlerMiddleware>();
+            }
             app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();

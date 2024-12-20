@@ -107,6 +107,7 @@ namespace BusinessLogic.Services
         {
             var account = (await _repositoryWrapper.User.FindByCondition(u => u.RefreshTokens.Any(t => t.Token == token))).SingleOrDefault();
             if (account == null) throw new AppException("Invalid token");
+            account = await _repositoryWrapper.User.GetByIdWithToken(account.UserId);
             return account;
         }
         private async Task<RefreshToken> rotateRefreshToken(RefreshToken refreshToken, string ipAddress)
