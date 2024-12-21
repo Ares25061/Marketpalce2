@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
 
 <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
     <div class="container">
@@ -6,8 +8,6 @@
              style="max-width:5%; max-height:5%">
         <a class="navbar-brand" href="#">Кислород</a>
 
-        
-        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,12 +26,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Доставка</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Войти</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/registration">Зарегистрироваться</a>
-                </li>
+                @if (!string.IsNullOrEmpty(JwtToken))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Личный кабинет</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Войти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/registration">Зарегистрироваться</a>
+                    </li>
+                }
             </ul>
         </div>
     </div>
@@ -52,3 +61,40 @@
         </div>
     </div>
 </section>
+
+@code {
+    private string JwtToken { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
+
+        if (!string.IsNullOrEmpty(JwtToken))
+        {
+            if (!IsTokenValid(JwtToken))
+            {
+                await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
+                JwtToken = null;
+            }
+        }
+    }
+
+    private bool IsTokenValid(string token)
+    {
+        try
+        {
+            // Надо добавить чтобы по времени
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private async Task Logout()
+    {
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
+        NavigationManager.NavigateTo("/");
+    }
+}

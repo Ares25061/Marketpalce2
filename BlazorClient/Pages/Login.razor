@@ -3,6 +3,7 @@
 @inject User User
 @inject IJSRuntime JSRuntime
 @using Models
+@using System.Text.Json
 
 <section class="bg-green">
     <div class="mask d-flex align-items-center gradient-custom-3 vh-100 main-content">
@@ -102,6 +103,8 @@
                     else
                     {
                         await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                        var userJson = JsonSerializer.Serialize(User);
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
                         Navigation.NavigateTo("/profile");
                     }
                 }
@@ -124,7 +127,7 @@
     }
 
         .btn-custom:active {
-            background-color: #4a3f7c !important; /* Более темный цвет при нажатии */
-            transform: scale(0.95); /* Небольшое уменьшение кнопки при нажатии */
+            background-color: #4a3f7c !important; 
+            transform: scale(0.95); 
         }
 </style>
