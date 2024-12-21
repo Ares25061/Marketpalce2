@@ -38,7 +38,7 @@ namespace BusinessLogic.Services
         public async Task<AuthenticateResponse> Authenticate(AuthenticateRequest model, string ipAddress)
         {
             var account = await _repositoryWrapper.User.GetByEmailWithToken(model.Email);
-            if (account == null || !account.IsVerified || !BCrypt.Net.BCrypt.Verify(model.Password, account.Password))
+            if (account == null || !BCrypt.Net.BCrypt.Verify(model.Password, account.Password))
             {
                 throw new AppException("Email or password is incorrect");
             }
@@ -208,7 +208,6 @@ namespace BusinessLogic.Services
             var isFirstAccount = (await _repositoryWrapper.User.FindAll()).Count == 0;
             account.RoleId = isFirstAccount ? 1 : 2;
             account.Created = DateTime.UtcNow;
-            account.Verified = DateTime.UtcNow;
             account.VerificationToken = await generateVerificationToken();
 
             account.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);

@@ -1,4 +1,8 @@
 ﻿@page "/login"
+@inject NavigationManager Navigation
+@inject User User
+@inject IJSRuntime JSRuntime
+@using Models
 
 <section class="bg-green">
     <div class="mask d-flex align-items-center gradient-custom-3 vh-100 main-content">
@@ -16,23 +20,29 @@
                             <form>
                                 <div class="form-group mb-3 text-start">
                                     <label for="email"><b>Email</b></label>
-                                    <input type="email" class="form-control" id="email" placeholder="Введите Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Введите Email" @bind="Email">
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="password"><b>Пароль</b></label>
-                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль">
+                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль" @bind="Password">
                                     <div class="form-check mt-2">
                                         <input type="checkbox" class="form-check-input" @bind="ShowPassword" id="showPassword">
                                         <label class="form-check-label" for="showPassword">Показать пароль</label>
                                     </div>
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary mt-auto">Войти</button>
+                                    <button type="button" class="btn btn-primary mt-auto btn-custom" @onclick="Authenticate" disabled="@IsButtonDisabled">Войти</button>
                                 </div>
                                 <p class="text-center text-muted mt-2 mb-0">
                                     Нет аккаунта? <a href="/registration" class="fw-bold text-body"><u>Регистрация</u></a>
                                 </p>
                             </form>
+                            @if (!string.IsNullOrEmpty(ErrorMessage))
+                            {
+                                <div class="alert alert-danger mt-3" role="alert">
+                                    @ErrorMessage
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -42,5 +52,80 @@
 </section>
 
 @code {
+    private string Email = null!;
+    private string Password = null!;
     private bool ShowPassword { get; set; }
+    private bool IsButtonDisabled = false;
+    private string ErrorMessage = string.Empty;
+
+    private async Task Authenticate()
+    {
+        IsButtonDisabled = true;
+        ErrorMessage = string.Empty;
+
+        try
+        {
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                ErrorMessage = "Пожалуйста, заполните все поля.";
+                return;
+            }
+
+            HttpClient client = new HttpClient
+                {
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                };
+            AuthenticateRequest authenticateRequest = new AuthenticateRequest
+                {
+                    Email = Email,
+                    Password = Password
+                };
+            HttpResponseMessage response = await client.PostAsJsonAsync<AuthenticateRequest>("Accounts/authenticate", authenticateRequest);
+            if (response.IsSuccessStatusCode)
+            {
+                AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
+                if (authenticateResponse is not null)
+                {
+                    Console.WriteLine($"IsVerified from API: {authenticateResponse.isVerified}");
+                    User.UserId = authenticateResponse.UserId;
+                    User.UserName = authenticateResponse.UserName;
+                    User.FirstName = authenticateResponse.FirstName;
+                    User.LastName = authenticateResponse.LastName;
+                    User.Email = authenticateResponse.Email;
+                    User.RoleId = authenticateResponse.RoleId;
+                    User.Created = authenticateResponse.Created;
+                    User.Updated = authenticateResponse.Updated ?? DateTime.Now;
+
+                    if (!authenticateResponse.isVerified)
+                    {
+                        ErrorMessage = "Для входа необходимо подтвердить почту.";
+                    }
+                    else
+                    {
+                       // await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                      //  Navigation.NavigateTo("/profile");
+                    }
+                }
+            }
+            else
+            {
+                ErrorMessage = "Неверный email или пароль.";
+            }
+        }
+        finally
+        {
+            IsButtonDisabled = false;
+        }
+    }
 }
+
+<style>
+    .btn-custom {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .btn-custom:active {
+            background-color: #4a3f7c !important; /* Более темный цвет при нажатии */
+            transform: scale(0.95); /* Небольшое уменьшение кнопки при нажатии */
+        }
+</style>
