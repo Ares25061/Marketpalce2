@@ -22,7 +22,7 @@ namespace Models
         public int RoleId { get; set; }
         public DateTime Created { get; set; }
         public DateTime? Updated { get; set; }
-        public bool isVerified { get; set; } =false;
+        public bool isVerified { get; set; } = false;
         public string JwtToken { get; set; }
 
         [JsonIgnore] // для того, чтобы вернуть токен в качестве куки

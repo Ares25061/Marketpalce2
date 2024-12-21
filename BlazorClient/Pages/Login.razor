@@ -86,7 +86,6 @@
                 AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
                 if (authenticateResponse is not null)
                 {
-                    Console.WriteLine($"IsVerified from API: {authenticateResponse.isVerified}");
                     User.UserId = authenticateResponse.UserId;
                     User.UserName = authenticateResponse.UserName;
                     User.FirstName = authenticateResponse.FirstName;
@@ -102,8 +101,8 @@
                     }
                     else
                     {
-                       // await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
-                      //  Navigation.NavigateTo("/profile");
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                        Navigation.NavigateTo("/profile");
                     }
                 }
             }
