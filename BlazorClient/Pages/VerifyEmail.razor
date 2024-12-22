@@ -23,7 +23,7 @@
                                     <input type="text" class="form-control" id="token" placeholder="Введите токен" @bind="Token">
                                 </div>
                                 <div class="w-100 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary mt-auto" @onclick="VerifyEmail1" disabled="@IsButtonDisabled">Подтвердить почту</button>
+                                    <button type="button" class="btn btn-primary mt-auto" @onclick="VerifyEm" disabled="@IsButtonDisabled">Подтвердить почту</button>
                                 </div>
                             </form>
                             @if (!string.IsNullOrEmpty(ErrorMessage))
@@ -52,7 +52,7 @@
     private string ErrorMessage = string.Empty;
     private string SuccessMessage = string.Empty;
 
-    private async Task VerifyEmail1()
+    private async Task VerifyEm()
     {
         IsButtonDisabled = true;
         ErrorMessage = string.Empty;

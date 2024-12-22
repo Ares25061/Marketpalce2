@@ -56,7 +56,11 @@
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="password"><b>Пароль</b></label>
-                                    <input type="password" class="form-control" id="password" placeholder="Введите пароль" @bind="Password">
+                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль" @bind="Password">
+                                    <div class="form-check mt-2">
+                                        <input type="checkbox" class="form-check-input" @bind="ShowPassword" id="showPassword">
+                                        <label class="form-check-label" for="showPassword">Показать пароль</label>
+                                    </div>
                                     @if (ShowPasswordMessage)
                                     {
                                         <p class="text-danger">Пароль не введен или не соответствует требованиям</p>
@@ -67,7 +71,11 @@
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="confirmPassword"><b>Подтверждение пароля</b></label>
-                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Подтвердите пароль" @bind="ConfirmPassword">
+                                    <input type="@(ShowConfirmPassword ? "text" : "password")" class="form-control" id="confirmPassword" placeholder="Подтвердите пароль" @bind="ConfirmPassword">
+                                    <div class="form-check mt-2">
+                                        <input type="checkbox" class="form-check-input" @bind="ShowConfirmPassword" id="showConfirmPassword">
+                                        <label class="form-check-label" for="showConfirmPassword">Показать пароль</label>
+                                    </div>
                                     @if (ShowConfirmPasswordMessage)
                                     {
                                         <p class="text-danger">Пароли не совпадают</p>
@@ -107,6 +115,7 @@
         </div>
     </div>
 </section>
+
 @code {
     private string UserName = null!;
     private string FirstName = null!;
@@ -126,6 +135,9 @@
     private bool ShowFirstNameMessage = false;
     private bool ShowLastNameMessage = false;
     private bool ShowAcceptTermsMessage = false;
+
+    private bool ShowPassword = false;
+    private bool ShowConfirmPassword = false;
 
     private async Task Registered()
     {

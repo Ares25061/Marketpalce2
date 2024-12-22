@@ -37,6 +37,9 @@
                                 <p class="text-center text-muted mt-2 mb-0">
                                     Нет аккаунта? <a href="/registration" class="fw-bold text-body"><u>Регистрация</u></a>
                                 </p>
+                                <p class="text-center text-muted mt-2 mb-0">
+                                    Забыли пароль? <a href="/forgot-password" class="fw-bold text-body"><u>Сбросить пароль</u></a>
+                                </p>
                             </form>
                             @if (!string.IsNullOrEmpty(ErrorMessage))
                             {
@@ -127,26 +130,18 @@
 
     private async Task ResendVerificationCode()
     {
-        if (string.IsNullOrEmpty(Email))
-        {
-            ErrorMessage = "Пожалуйста, введите email, чтобы повторно отправить код подтверждения.";
-            return;
-        }
-
         try
         {
             HttpClient client = new HttpClient
                 {
-                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com")
                 };
-
-            // Отправка запроса на повторную отправку кода подтверждения
+            
             var response = await client.PostAsJsonAsync<string>("Accounts/resend-verification-code", Email);
 
             if (response.IsSuccessStatusCode)
             {
-                // Перенаправление на страницу подтверждения почты
-                Navigation.NavigateTo("/verify-email");
+                Navigation.NavigateTo("/verify-email", forceLoad: true);
             }
             else
             {
