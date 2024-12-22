@@ -10,13 +10,13 @@
         public string LastName { get; set; } = null!;
         public bool? IsActive { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public int ModifiedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
         public int RoleId { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; } = DateTime.UtcNow;
         public DateTime Updated { get; set; }
         public bool AcceptTerms { get; set; }
         public string? VerificationToken { get; set; }

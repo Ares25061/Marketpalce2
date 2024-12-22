@@ -67,34 +67,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
-
-        if (!string.IsNullOrEmpty(JwtToken))
-        {
-            if (!IsTokenValid(JwtToken))
-            {
-                await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
-                JwtToken = null;
-            }
-        }
-    }
-
-    private bool IsTokenValid(string token)
-    {
-        try
-        {
-            // Надо добавить чтобы по времени
-            return true;
-        }
-        catch
-        {
-            return false;
-        }
-    }
-
-    private async Task Logout()
-    {
-        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
-        Navigation.NavigateTo("/");
+       JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
     }
 }

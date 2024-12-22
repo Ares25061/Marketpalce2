@@ -2,6 +2,7 @@
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
 @using Models
+@inject User User
 @using System.Text.Json
 @using System.Text.RegularExpressions
 
@@ -122,6 +123,7 @@
 </section>
 
 @code {
+
     private string UserName = null!;
 
     private string FirstName = null!;
@@ -222,6 +224,7 @@
                     Password = Password,
                     ConfirmPassword = ConfirmPassword,
                     AcceptTerms = AcceptTerms
+
                 };
 
 
@@ -233,6 +236,16 @@
             if (response.IsSuccessStatusCode)
 
             {
+
+                
+
+
+
+
+
+
+
+
 
                 SuccessMessage = "Регистрация успешна. Пожалуйста, проверьте вашу почту для подтверждения.";
 

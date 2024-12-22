@@ -30,12 +30,15 @@
                     <a class="nav-link" href="#">Доставка</a>
                 </li>
                 @if (BlazorUser != null)
+
                 {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/profile">Личный кабинет</a>
                     </li>
                 }
+
                 else
+
                 {
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Войти</a>
@@ -57,7 +60,16 @@
                     <div class="card border shadow p-3 mb-5 bg-white" style="border-radius: 15px;">
                         <div class="card-body">
                             <h2 class="text-center mb-1">Личный кабинет</h2>
-                            @if (BlazorUser != null)
+                            @if (isLoading)
+
+                            {
+                                <div class="text-center">
+                                    <p>Загрузка...</p>
+                                </div>
+                            }
+
+                            else if (BlazorUser != null)
+
                             {
                                 <div class="form-group mb-3 text-start">
                                     <label for="username"><b>Логин</b></label>
@@ -83,7 +95,9 @@
                                     <button class="btn btn-danger" @onclick="Logout">Выход из аккаунта</button>
                                 </div>
                             }
+
                             else
+
                             {
                                 <div class="alert alert-danger" role="alert">
                                     Информация о пользователе не найдена. Пожалуйста, войдите в систему.
@@ -100,27 +114,54 @@
 @code {
     private string JwtToken { get; set; }
 
+    private bool isLoading = true; 
+
+
+
     protected override async Task OnInitializedAsync()
+
     {
+
         JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
 
+
+
         if (!string.IsNullOrEmpty(JwtToken))
+
         {
+
             var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "User");
+
             if (!string.IsNullOrEmpty(userJson))
+
             {
+
                 BlazorUser = JsonSerializer.Deserialize<User>(userJson);
+
             }
+
             else
+
             {
+
                 Navigation.NavigateTo("/");
+
             }
+
         }
+
         else
+
         {
+
             Navigation.NavigateTo("/");
+
         }
+
+
+
         var newJwtToken = await Refresher.NewTokenIfNeeded(JwtToken);
+
         if (newJwtToken is null)
 
         {
@@ -134,19 +175,36 @@
             return;
 
         }
+
         else if (JwtToken != newJwtToken)
+
         {
+
             JwtToken = newJwtToken;
+
             await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", JwtToken);
 
         }
 
+
+
+        isLoading = false; 
+
     }
+
+
+
     private async Task Logout()
+
     {
+
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
+
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "User");
+
         BlazorUser = null;
+
         Navigation.NavigateTo("/");
+
     }
 }

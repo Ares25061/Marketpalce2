@@ -21,7 +21,7 @@ namespace Models
 
             var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var remainingTime = Token.exp - currentTime;
-            if (remainingTime <= 60 * 14.9) // 60 is const for because seconds
+            if (remainingTime <= 60 * 2) 
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, "/Accounts/refresh-token");
 

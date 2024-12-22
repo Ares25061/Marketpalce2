@@ -207,6 +207,7 @@ namespace BusinessLogic.Services
 
             var isFirstAccount = (await _repositoryWrapper.User.FindAll()).Count == 0;
             account.RoleId = isFirstAccount ? 1 : 2;
+            account.CreatedDate = DateTime.UtcNow;
             account.Created = DateTime.UtcNow;
             account.VerificationToken = await generateVerificationToken();
 
