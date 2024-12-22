@@ -2,6 +2,8 @@
 @inject IJSRuntime JSRuntime
 @inject NavigationManager Navigation
 @inject User BlazorUser
+@using Models
+@inject TokenRefresher Refresher
 @using System.Text.Json
 
 <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
@@ -118,8 +120,28 @@
         {
             Navigation.NavigateTo("/");
         }
-    }
+        var newJwtToken = await Refresher.NewTokenIfNeeded(JwtToken);
+        if (newJwtToken is null)
 
+        {
+
+            Console.WriteLine("Токен не обновлен");
+
+            await JSRuntime.InvokeVoidAsync("localStorage.clear");
+
+            Navigation.NavigateTo("/login");
+
+            return;
+
+        }
+        else if (JwtToken != newJwtToken)
+        {
+            JwtToken = newJwtToken;
+            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", JwtToken);
+
+        }
+
+    }
     private async Task Logout()
     {
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");

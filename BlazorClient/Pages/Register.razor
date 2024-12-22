@@ -23,6 +23,7 @@
                                     <label for="username"><b>Логин</b></label>
                                     <input type="text" class="form-control" id="username" placeholder="Введите логин" @bind="UserName">
                                     @if (ShowUsernameMessage)
+
                                     {
                                         <p class="text-danger">Логин должен содержать не менее 5 символов и хотя бы 3 английские буквы</p>
                                     }
@@ -34,6 +35,7 @@
                                     <label for="firstName"><b>Имя</b></label>
                                     <input type="text" class="form-control" id="firstName" placeholder="Иван" @bind="FirstName">
                                     @if (ShowFirstNameMessage)
+
                                     {
                                         <p class="text-danger">Имя не введено или не соответствует формату</p>
                                     }
@@ -42,6 +44,7 @@
                                     <label for="lastName"><b>Фамилия</b></label>
                                     <input type="text" class="form-control" id="lastName" placeholder="Иванов" @bind="LastName">
                                     @if (ShowLastNameMessage)
+
                                     {
                                         <p class="text-danger">Фамилия не введена или не соответствует формату</p>
                                     }
@@ -50,6 +53,7 @@
                                     <label for="email"><b>Почта</b></label>
                                     <input type="email" class="form-control" id="email" placeholder="example@mail.com" @bind="Email">
                                     @if (ShowEmailMessage)
+
                                     {
                                         <p class="text-danger">Почта не введена или не соответствует требованиям</p>
                                     }
@@ -57,34 +61,33 @@
                                 <div class="form-group mb-3 text-start">
                                     <label for="password"><b>Пароль</b></label>
                                     <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль" @bind="Password">
-                                    <div class="form-check mt-2">
-                                        <input type="checkbox" class="form-check-input" @bind="ShowPassword" id="showPassword">
-                                        <label class="form-check-label" for="showPassword">Показать пароль</label>
-                                    </div>
-                                    @if (ShowPasswordMessage)
-                                    {
-                                        <p class="text-danger">Пароль не введен или не соответствует требованиям</p>
-                                    }
-                                    <div class="alert alert-info mt-2" role="alert">
-                                        Пароль должен быть минимум 8 символов, содержать 2 английские буквы разного регистра и хотя бы одну цифру.
-                                    </div>
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="confirmPassword"><b>Подтверждение пароля</b></label>
-                                    <input type="@(ShowConfirmPassword ? "text" : "password")" class="form-control" id="confirmPassword" placeholder="Подтвердите пароль" @bind="ConfirmPassword">
-                                    <div class="form-check mt-2">
-                                        <input type="checkbox" class="form-check-input" @bind="ShowConfirmPassword" id="showConfirmPassword">
-                                        <label class="form-check-label" for="showConfirmPassword">Показать пароль</label>
-                                    </div>
-                                    @if (ShowConfirmPasswordMessage)
-                                    {
-                                        <p class="text-danger">Пароли не совпадают</p>
-                                    }
+                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="confirmPassword" placeholder="Подтвердите пароль" @bind="ConfirmPassword">
+                                </div>
+                                <div class="form-check mb-3 text-start">
+                                    <input type="checkbox" class="form-check-input" @bind="ShowPassword" id="showPassword">
+                                    <label class="form-check-label" for="showPassword">Показать пароль</label>
+                                </div>
+                                @if (ShowPasswordMessage)
+
+                                {
+                                    <p class="text-danger">Пароль не введен или не соответствует требованиям</p>
+                                }
+                                @if (ShowConfirmPasswordMessage)
+
+                                {
+                                    <p class="text-danger">Пароли не совпадают</p>
+                                }
+                                <div class="alert alert-info mt-2" role="alert">
+                                    Пароль должен быть минимум 8 символов, содержать 2 английские буквы разного регистра и хотя бы одну цифру.
                                 </div>
                                 <div class="form-group form-check mb-3 text-start">
                                     <input type="checkbox" class="form-check-input" id="acceptTerms" @bind="AcceptTerms">
                                     <label class="form-check-label" for="acceptTerms"><b>Принять условия</b></label>
                                     @if (ShowAcceptTermsMessage)
+
                                     {
                                         <p class="text-danger">Вы должны принять условия</p>
                                     }
@@ -97,12 +100,14 @@
                                 </p>
                             </form>
                             @if (!string.IsNullOrEmpty(ErrorMessage))
+
                             {
                                 <div class="alert alert-danger mt-3" role="alert">
                                     @ErrorMessage
                                 </div>
                             }
                             @if (!string.IsNullOrEmpty(SuccessMessage))
+
                             {
                                 <div class="alert alert-success mt-3" role="alert">
                                     @SuccessMessage
@@ -118,52 +123,95 @@
 
 @code {
     private string UserName = null!;
+
     private string FirstName = null!;
+
     private string LastName = null!;
+
     private string Email = null!;
+
     private string Password = null!;
+
     private string ConfirmPassword = null!;
+
     private bool AcceptTerms = false;
+
     private bool IsButtonDisabled = false;
+
     private string ErrorMessage = string.Empty;
+
     private string SuccessMessage = string.Empty;
 
+
+
     private bool ShowUsernameMessage = false;
+
     private bool ShowEmailMessage = false;
+
     private bool ShowPasswordMessage = false;
+
     private bool ShowConfirmPasswordMessage = false;
+
     private bool ShowFirstNameMessage = false;
+
     private bool ShowLastNameMessage = false;
+
     private bool ShowAcceptTermsMessage = false;
 
+
+
     private bool ShowPassword = false;
-    private bool ShowConfirmPassword = false;
+
+
 
     private async Task Registered()
+
     {
+
         IsButtonDisabled = true;
+
         ErrorMessage = string.Empty;
+
         SuccessMessage = string.Empty;
 
+
+
         try
+
         {
+
             ShowUsernameMessage = !IsValidUsername(UserName);
+
             ShowEmailMessage = !IsValidEmail(Email);
+
             ShowPasswordMessage = !IsValidPassword(Password);
+
             ShowConfirmPasswordMessage = Password != ConfirmPassword;
+
             ShowFirstNameMessage = string.IsNullOrEmpty(FirstName) || FormatName(FirstName) == null;
+
             ShowLastNameMessage = string.IsNullOrEmpty(LastName) || FormatName(LastName) == null;
+
             ShowAcceptTermsMessage = !AcceptTerms;
 
+
+
             if (ShowUsernameMessage || ShowEmailMessage || ShowPasswordMessage || ShowConfirmPasswordMessage || ShowFirstNameMessage || ShowLastNameMessage || ShowAcceptTermsMessage)
+
             {
+
                 return;
+
             }
+
+
 
             HttpClient client = new HttpClient
                 {
                     BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
                 };
+
+
 
             RegisterRequest registerRequest = new RegisterRequest
                 {
@@ -176,88 +224,173 @@
                     AcceptTerms = AcceptTerms
                 };
 
+
+
             HttpResponseMessage response = await client.PostAsJsonAsync<RegisterRequest>("Accounts/regitster", registerRequest);
 
+
+
             if (response.IsSuccessStatusCode)
+
             {
+
                 SuccessMessage = "Регистрация успешна. Пожалуйста, проверьте вашу почту для подтверждения.";
+
                 ClearFields();
+
                 Navigation.NavigateTo("/verify-email");
+
             }
+
             else
+
             {
+
                 ErrorMessage = "Ошибка регистрации. Пожалуйста, попробуйте снова.";
+
             }
+
         }
+
         finally
+
         {
+
             IsButtonDisabled = false;
+
         }
+
     }
+
+
 
     private void ClearFields()
+
     {
+
         UserName = string.Empty;
+
         FirstName = string.Empty;
+
         LastName = string.Empty;
+
         Email = string.Empty;
+
         Password = string.Empty;
+
         ConfirmPassword = string.Empty;
+
         AcceptTerms = false;
+
     }
+
+
 
     private bool IsValidUsername(string username)
+
     {
+
         if (string.IsNullOrWhiteSpace(username) || username.Length < 5)
+
             return false;
+
         return username.Count(char.IsLetter) >= 3;
+
     }
+
+
 
     private bool IsValidEmail(string email)
+
     {
+
         if (string.IsNullOrWhiteSpace(email))
+
             return false;
+
         string pattern = @"^[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$";
+
         return Regex.IsMatch(email, pattern);
+
     }
+
+
 
     private bool IsValidPassword(string password)
+
     {
+
         if (string.IsNullOrWhiteSpace(password))
+
             return false;
+
         return password.Length >= 8 &&
+
                password.Any(char.IsLower) &&
+
                password.Any(char.IsUpper) &&
+
                password.Any(char.IsDigit);
+
     }
 
+
+
     private string FormatName(string name)
+
     {
+
         name = Regex.Replace(name, @"[^а-яА-ЯёЁa-zA-Z\-]", "");
 
+
+
         if (string.IsNullOrEmpty(name))
+
         {
+
             return null;
+
         }
+
         else
+
         {
+
             if (Regex.IsMatch(name, @"^[а-яА-ЯёЁa-zA-Z]+(-[а-яА-ЯёЁa-zA-Z]+)?$"))
+
             {
+
                 name = name.ToLower();
+
                 string[] words = name.Split('-');
+
                 for (int i = 0; i < words.Length; i++)
+
                 {
+
                     if (words[i].Length > 0)
+
                     {
+
                         words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+
                     }
+
                 }
+
                 return string.Join("-", words);
+
             }
+
             else
+
             {
+
                 return null;
+
             }
+
         }
+
     }
 }
