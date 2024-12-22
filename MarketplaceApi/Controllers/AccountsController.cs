@@ -2,10 +2,12 @@
 using BusinessLogic.Helpers;
 using BusinessLogic.Models.Accounts;
 using Domain.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MarketplaceApi.Controllers
 {
+    [EnableCors("AllowSpecificOrigins")]
     [Authorize]
     [ApiController]
     [Route("[controller]")]
@@ -20,9 +22,10 @@ namespace MarketplaceApi.Controllers
         {
             var cookieOptions = new CookieOptions
             {
-                HttpOnly = true,
-                Secure = true, 
-                Expires = DateTime.UtcNow.AddDays(7)
+                HttpOnly = false,
+                Expires = DateTime.UtcNow.AddDays(7),
+                SameSite = SameSiteMode.Lax,
+                Secure = false       
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }

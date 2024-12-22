@@ -19,6 +19,16 @@ namespace MarketplaceApi
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigins", builder =>
+                {
+                    builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+            });
             builder.Services.AddDbContext<MarketpalceContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
 
@@ -124,25 +134,22 @@ namespace MarketplaceApi
                 }
                 context.SaveChanges();
             }
+            app.UseRouting();
 
+            app.UseCors("AllowSpecificOrigins"); // CORS должен быть первым
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
             // Configure the HTTP request pipeline.
             //if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowSpecificOrigins", builder =>
-                {
-                    builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials(); 
-                });
-            });
-
 
             app.UseHttpsRedirection();
 
