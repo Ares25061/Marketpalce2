@@ -1,6 +1,6 @@
-﻿using System.Net.Http.Json;
-using Microsoft.AspNetCore.Components.WebAssembly.Http;
+﻿using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
+using System.Net.Http.Json;
 using System.Text.Json;
 
 namespace Models
@@ -21,7 +21,7 @@ namespace Models
 
             var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var remainingTime = Token.exp - currentTime;
-            if (remainingTime <= 60 * 2) 
+            if (remainingTime <= 60 * 2)
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, "/Accounts/refresh-token");
 
