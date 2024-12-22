@@ -116,6 +116,7 @@
                     }
                     else
                     {   
+                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
                      var userJson = JsonSerializer.Serialize(User);
                      await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
                      Navigation.NavigateTo("/profile");
