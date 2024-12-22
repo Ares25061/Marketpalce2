@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
+@inject NavigationManager Navigation
 
 <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
     <div class="container">
@@ -95,6 +95,6 @@
     private async Task Logout()
     {
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
-        NavigationManager.NavigateTo("/");
+        Navigation.NavigateTo("/");
     }
 }

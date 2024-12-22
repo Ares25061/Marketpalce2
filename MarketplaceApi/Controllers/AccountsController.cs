@@ -1,4 +1,5 @@
 ﻿using BusinessLogic.Authorization;
+using BusinessLogic.Helpers;
 using BusinessLogic.Models.Accounts;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -151,6 +152,20 @@ namespace MarketplaceApi.Controllers
             }
             await _accountService.Delete(id);
             return Ok(new { message = "Account deleted successfully" });
+        }
+        [AllowAnonymous]
+        [HttpPost("resend-verification-code")]
+        public async Task<IActionResult> ResendVerificationCode([FromBody] string email)
+        {
+            try
+            {
+                await _accountService.ResendVerificationCode(email, Request.Headers["origin"]);
+                return Ok(new { message = "Код подтверждения отправлен на вашу почту." });
+            }
+            catch (AppException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }

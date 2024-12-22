@@ -42,6 +42,11 @@
                             {
                                 <div class="alert alert-danger mt-3" role="alert">
                                     @ErrorMessage
+                                    @if (ErrorMessage.Contains("подтвердить почту"))
+                                    {
+                                        <br />
+                                        <a href="#" @onclick="ResendVerificationCode" class="text-danger">Нажмите, чтобы перейти к подтверждению почты</a>
+                                    }
                                 </div>
                             }
                         </div>
@@ -119,6 +124,40 @@
             IsButtonDisabled = false;
         }
     }
+
+    private async Task ResendVerificationCode()
+    {
+        if (string.IsNullOrEmpty(Email))
+        {
+            ErrorMessage = "Пожалуйста, введите email, чтобы повторно отправить код подтверждения.";
+            return;
+        }
+
+        try
+        {
+            HttpClient client = new HttpClient
+                {
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                };
+
+            // Отправка запроса на повторную отправку кода подтверждения
+            var response = await client.PostAsJsonAsync<string>("Accounts/resend-verification-code", Email);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // Перенаправление на страницу подтверждения почты
+                Navigation.NavigateTo("/verify-email");
+            }
+            else
+            {
+                ErrorMessage = "Не удалось отправить код подтверждения. Пожалуйста, попробуйте снова.";
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Произошла ошибка: {ex.Message}";
+        }
+    }
 }
 
 <style>
@@ -127,7 +166,7 @@
     }
 
         .btn-custom:active {
-            background-color: #4a3f7c !important; 
-            transform: scale(0.95); 
+            background-color: #4a3f7c !important;
+            transform: scale(0.95);
         }
 </style>

@@ -293,6 +293,19 @@ namespace BusinessLogic.Services
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
         }
+        public async Task ResendVerificationCode(string email, string origin)
+        {
+            var account = (await _repositoryWrapper.User.FindByCondition(x => x.Email == email)).FirstOrDefault();
+
+            if (account == null)
+            {
+                throw new AppException("Аккаунт с таким email не найден.");
+            }
+            account.VerificationToken = await generateVerificationToken();
+            await _repositoryWrapper.User.Update(account);
+            await _repositoryWrapper.Save();
+            _emailService.Send(account.Email, "Подтверждение почты", $"Для подтверждения вашей почты введите этот токен: {account.VerificationToken}");
+        }
 
     }
 }

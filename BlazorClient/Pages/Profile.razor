@@ -1,6 +1,6 @@
 ﻿@page "/profile"
 @inject IJSRuntime JSRuntime
-@inject NavigationManager NavigationManager
+@inject NavigationManager Navigation
 @inject User BlazorUser
 @using System.Text.Json
 
@@ -111,12 +111,12 @@
             }
             else
             {
-                NavigationManager.NavigateTo("/");
+                Navigation.NavigateTo("/");
             }
         }
         else
         {
-            NavigationManager.NavigateTo("/");
+            Navigation.NavigateTo("/");
         }
     }
 
@@ -125,6 +125,6 @@
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "User");
         BlazorUser = null;
-        NavigationManager.NavigateTo("/");
+        Navigation.NavigateTo("/");
     }
 }
