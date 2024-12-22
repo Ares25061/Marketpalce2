@@ -97,6 +97,7 @@
 
             HttpResponseMessage response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
                 if (authenticateResponse is not null)
@@ -115,8 +116,10 @@
                         ErrorMessage = "Для входа необходимо подтвердить почту.";
                     }
                     else
-                    {   
+                    {
+                        
                      await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "RefreshToken", authenticateResponse.RefreshToken);
                      var userJson = JsonSerializer.Serialize(User);
                      await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
                      Navigation.NavigateTo("/profile");

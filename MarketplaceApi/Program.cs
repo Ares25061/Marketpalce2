@@ -24,9 +24,9 @@ namespace MarketplaceApi
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
                     builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com")
-                           .AllowAnyHeader()
-                           .AllowAnyMethod()
-                           .AllowCredentials();
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
                 });
             });
             builder.Services.AddDbContext<MarketpalceContext>(
@@ -78,7 +78,7 @@ namespace MarketplaceApi
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Разработчик (не пишите, лучше помогите)",
+                        Name = " Бекэндер (не пишите)",
                         Url = new Uri("https://t.me/Ares250678")
                     },
                 });
@@ -136,7 +136,7 @@ namespace MarketplaceApi
             }
             app.UseRouting();
 
-            app.UseCors("AllowSpecificOrigins");
+            app.UseCors("AllowSpecificOrigins"); // CORS должен быть первым
 
             app.UseAuthorization();
 
@@ -153,6 +153,7 @@ namespace MarketplaceApi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthorization();
             if (app.Environment.IsProduction())
             {
                 app.UseMiddleware<ErrorHandlerMiddleware>();
