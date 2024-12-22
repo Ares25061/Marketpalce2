@@ -132,10 +132,16 @@ namespace MarketplaceApi
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(builder => builder.WithOrigins(new[] { "https://oxygenmarketapi.onrender.com", })
-           .AllowAnyHeader()
-           .AllowAnyMethod()
-           .AllowAnyOrigin());
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigins", builder =>
+                {
+                    builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials(); 
+                });
+            });
 
 
             app.UseHttpsRedirection();

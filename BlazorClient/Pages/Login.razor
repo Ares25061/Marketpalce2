@@ -89,7 +89,14 @@
                     Email = Email,
                     Password = Password
                 };
-            HttpResponseMessage response = await client.PostAsJsonAsync<AuthenticateRequest>("Accounts/authenticate", authenticateRequest);
+            var request = new HttpRequestMessage(HttpMethod.Post, "Accounts/authenticate");
+
+            request.Content = JsonContent.Create(authenticateRequest);
+
+            request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
+
+            HttpResponseMessage response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
             if (response.IsSuccessStatusCode)
             {
                 AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
@@ -110,12 +117,12 @@
                     }
                     else
                     {
-                        Console.WriteLine("RefreshToken:" + authenticateResponse.RefreshToken);
-                        //  await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
-                       // await JSRuntime.InvokeVoidAsync("localStorage.setItem", "RefreshToken", authenticateResponse.RefreshToken);
-                      //  var userJson = JsonSerializer.Serialize(User);
-                      //  await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
-                     //   Navigation.NavigateTo("/profile");
+                        
+                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "RefreshToken", authenticateResponse.RefreshToken);
+                     var userJson = JsonSerializer.Serialize(User);
+                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
+                     Navigation.NavigateTo("/profile");
                     }
                 }
             }
