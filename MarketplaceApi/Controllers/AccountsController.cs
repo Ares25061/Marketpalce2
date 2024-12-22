@@ -25,7 +25,7 @@ namespace MarketplaceApi.Controllers
                 HttpOnly = false,
                 Expires = DateTime.UtcNow.AddDays(7),
                 SameSite = SameSiteMode.Lax,
-                Secure = false       
+                Secure = false
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
