@@ -135,7 +135,6 @@ namespace MarketplaceApi
             app.UseCors(builder => builder.WithOrigins(new[] { "https://oxygenmarketapi.onrender.com", })
            .AllowAnyHeader()
            .AllowAnyMethod()
-           .AllowCredentials()
            .AllowAnyOrigin());
 
 
