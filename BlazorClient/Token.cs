@@ -21,12 +21,12 @@ namespace Models
 
             var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var remainingTime = Token.exp - currentTime;
-            if (remainingTime <= 60 * 3) // 60 is const for because seconds
+            if (remainingTime <= 60 * 14.9) // 60 is const for because seconds
             {
-                var request = new HttpRequestMessage(HttpMethod.Post, "Accounts/refresh-token");
+                var request = new HttpRequestMessage(HttpMethod.Post, "/Accounts/refresh-token");
 
                 request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
-                HttpResponseMessage response = await new HttpClient { BaseAddress = new Uri("https://oxygenmarketapi.onrender.com") }.SendAsync(request);
+                HttpResponseMessage response = await new HttpClient { BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/") }.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)
                 {

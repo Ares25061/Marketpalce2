@@ -22,10 +22,10 @@ namespace MarketplaceApi.Controllers
         {
             var cookieOptions = new CookieOptions
             {
-                HttpOnly = false,
+                HttpOnly = true,
                 Expires = DateTime.UtcNow.AddDays(7),
-                SameSite = SameSiteMode.Lax,
-                Secure = false
+                SameSite = SameSiteMode.None,
+                Secure = true
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
