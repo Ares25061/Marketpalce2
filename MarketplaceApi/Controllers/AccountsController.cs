@@ -41,16 +41,16 @@ namespace MarketplaceApi.Controllers
         public async Task<ActionResult<AuthenticateResponse>> Authenticate(AuthenticateRequest model)
         {
             var response = await _accountService.Authenticate(model, ipAddress());
-         //   setTokenCookie(response.RefreshToken);
+            //   setTokenCookie(response.RefreshToken);
             return Ok(response);
         }
         [AllowAnonymous]
         [HttpPost("refresh-token")]
         public async Task<ActionResult<AuthenticateResponse>> RefreshToken(RefreshTokenRequest refreshToken)
         {
-    //        var refreshToken = Request.Cookies["refreshToken"];
+            //        var refreshToken = Request.Cookies["refreshToken"];
             var response = await _accountService.RefreshToken(refreshToken.Token, ipAddress());
-     //       setTokenCookie(response.RefreshToken);
+            //       setTokenCookie(response.RefreshToken);
             return Ok(response);
         }
         [HttpPost("revoke-token")]

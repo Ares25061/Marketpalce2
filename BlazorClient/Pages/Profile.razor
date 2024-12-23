@@ -1,14 +1,14 @@
 ﻿@page "/profile"
 @inject IJSRuntime JSRuntime
 @inject NavigationManager Navigation
-@inject User BlazorUser
 @using Models
+@inject UserInfo user
 @inject TokenRefresher Refresher
 @using System.Text.Json
 
 <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Кислород</a>
+        <a class="navbar-brand" href="/">Кислород</a>
         <img src="https://github.com/Ares25061/Marketpalce2/blob/main/BlazorClient/wwwroot/images/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_2024-11-18_133151923.png?raw=true"
              style="max-width:5%; max-height:5%">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,15 +21,15 @@
                     <a class="nav-link" href="/">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Каталог</a>
+                    <a class="nav-link" href="/">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Акции</a>
+                    <a class="nav-link" href="/">Акции</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Доставка</a>
+                    <a class="nav-link" href="/">Доставка</a>
                 </li>
-                @if (BlazorUser != null)
+                @if (user != null)
 
                 {
                     <li class="nav-item">
@@ -68,28 +68,28 @@
                                 </div>
                             }
 
-                            else if (BlazorUser != null)
+                            else if (user != null)
 
                             {
                                 <div class="form-group mb-3 text-start">
                                     <label for="username"><b>Логин</b></label>
-                                    <p>@BlazorUser.UserName</p>
+                                    <p>@user.UserName</p>
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="email"><b>Почта</b></label>
-                                    <p>@BlazorUser.Email</p>
+                                    <p>@user.Email</p>
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="firstName"><b>Имя</b></label>
-                                    <p>@BlazorUser.FirstName</p>
+                                    <p>@user.FirstName</p>
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="lastName"><b>Фамилия</b></label>
-                                    <p>@BlazorUser.LastName</p>
+                                    <p>@user.LastName</p>
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="registrationDate"><b>Дата регистрации</b></label>
-                                    <p>@BlazorUser.Created.ToString("dd.MM.yyyy")</p>
+                                    <p>@user.CreatedDate.ToString("dd.MM.yyyy")</p>
                                 </div>
                                 <div class="form-group mb-3 text-center">
                                     <button class="btn btn-danger" @onclick="Logout">Выход из аккаунта</button>
@@ -112,48 +112,45 @@
 </section>
 
 @code {
-    private string JwtToken { get; set; }
     private bool isLoading = true; 
     protected override async Task OnInitializedAsync()
     {
-        JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
-        if (!string.IsNullOrEmpty(JwtToken))
+
+        var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+        var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "UserInfo");
+        if (!string.IsNullOrEmpty(json))
         {
-            var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "User");
-            if (!string.IsNullOrEmpty(userJson))
-            {
-                BlazorUser = JsonSerializer.Deserialize<User>(userJson);
-            }
-            else
-            {
-                Navigation.NavigateTo("/");
-            }
+            user = JsonSerializer.Deserialize<UserInfo>(json, options);
         }
-        else
+
+        if (user is null || user.Equals(new UserInfo()) || string.IsNullOrEmpty(user.JwtToken))
         {
+            Console.WriteLine("ЛЕЕЕ, ты не в аккаунте");
             Navigation.NavigateTo("/");
+            return;
         }
-        var newJwtToken = await Refresher.NewTokenIfNeeded(JwtToken);
-        if (newJwtToken is null)
+        var newUser = await Refresher.NewTokenIfNeeded(user);
+
+        if (newUser is null)
         {
             Console.WriteLine("Токен не обновлен");
             await JSRuntime.InvokeVoidAsync("localStorage.clear");
             Navigation.NavigateTo("/login");
             return;
         }
-
-        else if (JwtToken != newJwtToken)
-        {
-            JwtToken = newJwtToken;
-            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", JwtToken);
-        }
-        isLoading = false; 
+        user.JwtToken = newUser.JwtToken;
+        user.RefreshToken = newUser.RefreshToken;
+        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "UserInfo", System.Text.Json.JsonSerializer.Serialize(user));
+        isLoading = false;
     }
+
     private async Task Logout()
     {
-        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
-        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "User");
-        BlazorUser = null;
-        Navigation.NavigateTo("/");
+        await JSRuntime.InvokeVoidAsync("localStorage.clear");
+        Navigation.NavigateTo("/login");
     }
 }

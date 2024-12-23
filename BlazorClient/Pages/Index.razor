@@ -1,12 +1,13 @@
 ﻿@page "/"
 @inject IJSRuntime JSRuntime
 @inject NavigationManager Navigation
+@inject UserInfo user
 
 <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
     <div class="container">
         <img src="https://github.com/Ares25061/Marketpalce2/blob/main/BlazorClient/wwwroot/images/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_2024-11-18_133151923.png?raw=true"
              style="max-width:5%; max-height:5%">
-        <a class="navbar-brand" href="#">Кислород</a>
+        <a class="navbar-brand" href="/">Кислород</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,15 +19,15 @@
                     <a class="nav-link active" aria-current="page" href="#">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Каталог</a>
+                    <a class="nav-link" href="/">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Акции</a>
+                    <a class="nav-link" href="/">Акции</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Доставка</a>
+                    <a class="nav-link" href="/">Доставка</a>
                 </li>
-                @if (!string.IsNullOrEmpty(JwtToken))
+                @if (!string.IsNullOrEmpty(user.JwtToken))
                 {
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">Личный кабинет</a>
@@ -63,10 +64,26 @@
 </section>
 
 @code {
-    private string JwtToken { get; set; }
-
     protected override async Task OnInitializedAsync()
     {
-       JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
+        try
+        {
+            // Получаем JSON-строку из localStorage
+            var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "UserInfo");
+
+            if (!string.IsNullOrEmpty(userJson))
+            {
+                // Десериализуем JSON-строку в объект UserInfo
+                user = System.Text.Json.JsonSerializer.Deserialize<UserInfo>(userJson);
+            }
+            else
+            {
+                Console.WriteLine("Данные пользователя отсутствуют в localStorage.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка при получении данных пользователя: " + ex.Message);
+        }
     }
-}
+}+

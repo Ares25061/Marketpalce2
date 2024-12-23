@@ -89,11 +89,8 @@
                     Email = Email,
                     Password = Password
             };
-            var request = new HttpRequestMessage(HttpMethod.Post, "Accounts/authenticate");
-            request.Content = JsonContent.Create(authenticateRequest);
-            request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
 
-            HttpResponseMessage response = await client.SendAsync(request);
+            var response = await client.PostAsJsonAsync<AuthenticateRequest>($"Accounts/authenticate", authenticateRequest);
             if (response.IsSuccessStatusCode)
             {
                 AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
@@ -106,6 +103,9 @@
                     User.Email = authenticateResponse.Email;
                     User.RoleId = authenticateResponse.RoleId;
                     User.CreatedDate = authenticateResponse.Created;
+                    User.JwtToken = authenticateResponse.JwtToken;
+                    User.RefreshToken = authenticateResponse.RefreshToken;
+
 
                     if (!authenticateResponse.isVerified)
                     {
@@ -113,10 +113,7 @@
                     }
                     else
                     {
-                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
-                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "RefreshToken", authenticateResponse.RefreshToken);
-                        var userJson = JsonSerializer.Serialize(User);
-                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "UserInfo", System.Text.Json.JsonSerializer.Serialize(User));
                         Navigation.NavigateTo("/profile");
                     }
                 }

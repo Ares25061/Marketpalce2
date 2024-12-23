@@ -1,9 +1,8 @@
-﻿
-using System.Net.Http.Json;
+﻿using BlazorClient;
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
+using System.Net.Http.Json;
 using System.Text.Json;
-using BlazorClient;
 
 namespace Models
 {
@@ -24,7 +23,7 @@ namespace Models
 
             var currentTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var remainingTime = Token.exp - currentTime;
-            if (remainingTime <= 60 * 14.9) // 60 is const for because seconds
+            if (remainingTime <= 60 * 2) // 60 is const for because seconds
             {
                 var client = new HttpClient
                 {
