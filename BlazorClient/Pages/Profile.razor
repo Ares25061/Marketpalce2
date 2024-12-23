@@ -140,6 +140,7 @@
             Console.WriteLine("Токен не обновлен");
             await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "UserInfo");
             Navigation.NavigateTo("/login");
+            await JSRuntime.InvokeVoidAsync("location.reload");
             return;
         }
         user.JwtToken = newUser.JwtToken;
@@ -152,5 +153,6 @@
     {
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "UserInfo");
         Navigation.NavigateTo("/login");
+        await JSRuntime.InvokeVoidAsync("location.reload");
     }
 }
