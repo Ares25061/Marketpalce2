@@ -9,5 +9,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<User, User>();
+builder.Services.AddScoped<UserInfo>();
 builder.Services.AddScoped<TokenRefresher>();
 await builder.Build().RunAsync();

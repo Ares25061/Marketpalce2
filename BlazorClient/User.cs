@@ -26,4 +26,14 @@
         public string? ResetToken { get; set; }
         public DateTime? ResetTokenExpires { get; set; }
     }
+    public class UserInfo 
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string FirstName { get; set; } = null!;
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        public string LastName { get; set; } = null!;
+        public int RoleId { get; set; }
+    }
 }
