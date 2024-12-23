@@ -138,7 +138,7 @@
         if (newUser is null)
         {
             Console.WriteLine("Токен не обновлен");
-            await JSRuntime.InvokeVoidAsync("localStorage.clear");
+            await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "UserInfo");
             Navigation.NavigateTo("/login");
             return;
         }
@@ -150,7 +150,7 @@
 
     private async Task Logout()
     {
-        await JSRuntime.InvokeVoidAsync("localStorage.clear");
+        await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "UserInfo");
         Navigation.NavigateTo("/login");
     }
 }

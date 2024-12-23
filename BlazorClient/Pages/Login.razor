@@ -96,23 +96,21 @@
                 AuthenticateResponse? authenticateResponse = await response.Content.ReadFromJsonAsync<AuthenticateResponse>();
                 if (authenticateResponse is not null)
                 {
-                    User.UserId = authenticateResponse.UserId;
-                    User.UserName = authenticateResponse.UserName;
-                    User.FirstName = authenticateResponse.FirstName;
-                    User.LastName = authenticateResponse.LastName;
-                    User.Email = authenticateResponse.Email;
-                    User.RoleId = authenticateResponse.RoleId;
-                    User.CreatedDate = authenticateResponse.Created;
-                    User.JwtToken = authenticateResponse.JwtToken;
-                    User.RefreshToken = authenticateResponse.RefreshToken;
-
-
                     if (!authenticateResponse.isVerified)
                     {
                         ErrorMessage = "Для входа необходимо подтвердить почту.";
-                    }
+                    }               
                     else
                     {
+                        User.UserId = authenticateResponse.UserId;
+                        User.UserName = authenticateResponse.UserName;
+                        User.FirstName = authenticateResponse.FirstName;
+                        User.LastName = authenticateResponse.LastName;
+                        User.Email = authenticateResponse.Email;
+                        User.RoleId = authenticateResponse.RoleId;
+                        User.CreatedDate = authenticateResponse.Created;
+                        User.JwtToken = authenticateResponse.JwtToken;
+                        User.RefreshToken = authenticateResponse.RefreshToken;
                         await JSRuntime.InvokeVoidAsync("localStorage.setItem", "UserInfo", System.Text.Json.JsonSerializer.Serialize(User));
                         Navigation.NavigateTo("/profile");
                     }
