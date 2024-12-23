@@ -35,5 +35,7 @@
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
         public string LastName { get; set; } = null!;
         public int RoleId { get; set; }
+        public string JwtToken { get; set; }
+        public string RefreshToken { get; set; } = null!;
     }
 }
