@@ -48,7 +48,7 @@
                                     @if (ErrorMessage.Contains("подтвердить почту"))
                                     {
                                         <br />
-                                        <a href="#" @onclick="ResendVerificationCode" class="text-danger">Нажмите, чтобы перейти к подтверждению почты</a>
+                                        <a @onclick="ResendVerificationCode" href="/verify-email" class="text-danger">Нажмите, чтобы перейти к подтверждению почты</a>
                                     }
                                 </div>
                             }
@@ -148,7 +148,6 @@
 
             if (response.IsSuccessStatusCode)
             {
-                Navigation.NavigateTo("/verify-email", forceLoad: true);
             }
             else
             {
