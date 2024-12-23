@@ -24,8 +24,6 @@ namespace Models
         public DateTime? Updated { get; set; }
         public bool isVerified { get; set; } = false;
         public string JwtToken { get; set; }
-
-        [JsonIgnore] // для того, чтобы вернуть токен в качестве куки
         public string RefreshToken { get; set; }
     }
     public class RegisterRequest

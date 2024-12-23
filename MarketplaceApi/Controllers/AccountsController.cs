@@ -46,11 +46,11 @@ namespace MarketplaceApi.Controllers
         }
         [AllowAnonymous]
         [HttpPost("refresh-token")]
-        public async Task<ActionResult<AuthenticateResponse>> RefreshToken()
+        public async Task<ActionResult<AuthenticateResponse>> RefreshToken(string refreshToken)
         {
-            var refreshToken = Request.Cookies["refreshToken"];
+    //        var refreshToken = Request.Cookies["refreshToken"];
             var response = await _accountService.RefreshToken(refreshToken, ipAddress());
-            setTokenCookie(response.RefreshToken);
+     //       setTokenCookie(response.RefreshToken);
             return Ok(response);
         }
         [HttpPost("revoke-token")]

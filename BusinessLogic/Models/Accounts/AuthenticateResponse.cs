@@ -14,8 +14,6 @@ namespace BusinessLogic.Models.Accounts
         public DateTime? Updated { get; set; }
         public bool IsVerified { get; set; }
         public string JwtToken { get; set; }
-
-        [JsonIgnore] // для того, чтобы вернуть токен в качестве куки
         public string RefreshToken { get; set; }
     }
 }
