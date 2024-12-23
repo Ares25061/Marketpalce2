@@ -26,7 +26,7 @@
         public string? ResetToken { get; set; }
         public DateTime? ResetTokenExpires { get; set; }
     }
-    public class UserInfo 
+    public class UserInfo
     {
         public int UserId { get; set; }
         public string UserName { get; set; } = null!;
