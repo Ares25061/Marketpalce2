@@ -113,98 +113,47 @@
 
 @code {
     private string JwtToken { get; set; }
-
     private bool isLoading = true; 
-
-
-
     protected override async Task OnInitializedAsync()
-
     {
-
         JwtToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "JwtToken");
-
-
-
         if (!string.IsNullOrEmpty(JwtToken))
-
         {
-
             var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "User");
-
             if (!string.IsNullOrEmpty(userJson))
-
             {
-
                 BlazorUser = JsonSerializer.Deserialize<User>(userJson);
-
             }
-
             else
-
             {
-
                 Navigation.NavigateTo("/");
-
             }
-
         }
-
         else
-
         {
-
             Navigation.NavigateTo("/");
-
         }
-
-
-
         var newJwtToken = await Refresher.NewTokenIfNeeded(JwtToken);
-
         if (newJwtToken is null)
-
         {
-
             Console.WriteLine("Токен не обновлен");
-
             await JSRuntime.InvokeVoidAsync("localStorage.clear");
-
             Navigation.NavigateTo("/login");
-
             return;
-
         }
 
         else if (JwtToken != newJwtToken)
-
         {
-
             JwtToken = newJwtToken;
-
             await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", JwtToken);
-
         }
-
-
-
         isLoading = false; 
-
     }
-
-
-
     private async Task Logout()
-
     {
-
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "JwtToken");
-
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "User");
-
         BlazorUser = null;
-
         Navigation.NavigateTo("/");
-
     }
 }

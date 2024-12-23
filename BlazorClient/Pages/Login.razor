@@ -83,16 +83,14 @@
             HttpClient client = new HttpClient
                 {
                     BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                };
+            };
             AuthenticateRequest authenticateRequest = new AuthenticateRequest
-                {
+            {
                     Email = Email,
                     Password = Password
-                };
+            };
             var request = new HttpRequestMessage(HttpMethod.Post, "Accounts/authenticate");
-
             request.Content = JsonContent.Create(authenticateRequest);
-
             request.SetBrowserRequestCredentials(BrowserRequestCredentials.Include);
 
             HttpResponseMessage response = await client.SendAsync(request);
@@ -116,11 +114,10 @@
                     }
                     else
                     {
-                        
-                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
-                     var userJson = JsonSerializer.Serialize(User);
-                     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
-                     Navigation.NavigateTo("/profile");
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "JwtToken", authenticateResponse.JwtToken);
+                        var userJson = JsonSerializer.Serialize(User);
+                        await JSRuntime.InvokeVoidAsync("localStorage.setItem", "User", userJson);
+                        Navigation.NavigateTo("/profile");
                     }
                 }
             }
@@ -140,16 +137,13 @@
         try
         {
             HttpClient client = new HttpClient
-                {
-                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com")
-                };
-            
+            {
+               BaseAddress = new Uri("https://oxygenmarketapi.onrender.com")
+            };
+
             var response = await client.PostAsJsonAsync<string>("Accounts/resend-verification-code", Email);
 
-            if (response.IsSuccessStatusCode)
-            {
-            }
-            else
+            if (!response.IsSuccessStatusCode)
             {
                 ErrorMessage = "Не удалось отправить код подтверждения. Пожалуйста, попробуйте снова.";
             }
