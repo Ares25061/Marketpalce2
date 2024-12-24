@@ -4,6 +4,7 @@ using BusinessLogic.Models.Accounts;
 using Domain.Entities;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace MarketplaceApi.Controllers
 {
@@ -72,11 +73,19 @@ namespace MarketplaceApi.Controllers
             return Ok(new { message = "Token revoked" });
         }
         [AllowAnonymous]
-        [HttpPost("regitster")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequest model)
         {
+            if (await _accountService.CheckUsernameExists(model.UserName))
+            {
+                return BadRequest(new { message = "Логин уже занят" });
+            }
+            if (await _accountService.CheckEmailExists(model.Email))
+            {
+                return BadRequest(new { message = "Email уже занят" });
+            }
             await _accountService.Register(model, Request.Headers["origin"]);
-            return Ok(new { message = "Registration sucsesfull, please check your email for verification insrtructions" });
+            return Ok(new { message = "Регистрация успешна, пожалуйста, проверьте вашу почту для подтверждения" });
         }
 
         [AllowAnonymous]
@@ -107,8 +116,16 @@ namespace MarketplaceApi.Controllers
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword(ResetPasswordRequest model)
         {
-            await _accountService.ResetPassword(model);
-            return Ok(new { message = "Password reset successfullm you can now login" });
+            try
+            {
+                await _accountService.ValidateResetToken(new ValidateResetTokenRequest { Token = model.Token });
+                await _accountService.ResetPassword(model);
+                return Ok(new { message = "Пароль успешно сброшен. Теперь вы можете войти с новым паролем." });
+            }
+            catch (AppException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
         [Authorize(roles: 1)]
         [HttpGet]
@@ -170,6 +187,23 @@ namespace MarketplaceApi.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+
         }
+        [AllowAnonymous]
+        [HttpGet("checkusername")]
+        public async Task<IActionResult> CheckUsername(string username)
+        {
+            var exists = await _accountService.CheckUsernameExists(username);
+            return Ok(exists);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("checkemail")]
+        public async Task<IActionResult> CheckEmail(string email)
+        {
+            var exists = await _accountService.CheckEmailExists(email);
+            return Ok(exists);
+        }
+
     }
 }

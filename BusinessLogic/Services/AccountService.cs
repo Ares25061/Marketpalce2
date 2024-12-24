@@ -185,7 +185,6 @@ namespace BusinessLogic.Services
 
 
         }
-
         private async Task<string> generateVerificationToken()
         {
             var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
@@ -220,19 +219,20 @@ namespace BusinessLogic.Services
         private async Task<User> getAccountByResetToken(string token)
         {
             var account = (await _repositoryWrapper.User.FindByCondition(x =>
-            x.ResetToken == token && x.ResetTokenExpires > DateTime.UtcNow)).SingleOrDefault();
-            if (account == null) throw new AppException("Invalid token");
+                x.ResetToken == token && x.ResetTokenExpires > DateTime.UtcNow)).SingleOrDefault();
+            if (account == null)
+            {
+                throw new AppException("Неверный или просроченный токен.");
+            }
             return account;
         }
         public async Task ResetPassword(ResetPasswordRequest model)
         {
             var account = await getAccountByResetToken(model.Token);
-
             account.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
             account.PasswordReset = DateTime.UtcNow;
             account.ResetToken = null;
             account.ResetTokenExpires = null;
-
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
         }
@@ -279,7 +279,11 @@ namespace BusinessLogic.Services
 
         public async Task ValidateResetToken(ValidateResetTokenRequest model)
         {
-            await getAccountByResetToken(model.Token);
+            var account = await getAccountByResetToken(model.Token);
+            if (account == null)
+            {
+                throw new AppException("Неверный или просроченный токен.");
+            }
         }
 
         public async Task VerifyEmail(string token)
@@ -306,6 +310,14 @@ namespace BusinessLogic.Services
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
             _emailService.Send(account.Email, "Подтверждение почты", $"Для подтверждения вашей почты введите этот токен: {account.VerificationToken}");
+        }
+        public async Task<bool> CheckUsernameExists(string username)
+        {
+            return (await _repositoryWrapper.User.FindByCondition(x => x.UserName == username)).Any();
+        }
+        public async Task<bool> CheckEmailExists(string email)
+        {
+            return (await _repositoryWrapper.User.FindByCondition(x => x.Email == email)).Any();
         }
 
     }

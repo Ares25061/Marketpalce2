@@ -18,5 +18,7 @@ namespace BusinessLogic.Authorization
         Task<AccountResponse> Update(int id, UpdateRequest model);
         Task Delete(int id);
         Task ResendVerificationCode(string email, string origin);
+        Task<bool> CheckUsernameExists(string username);
+        Task<bool> CheckEmailExists(string email);
     }
 }

@@ -76,5 +76,10 @@ namespace Models
         [EmailAddress]
         public string Email { get; set; }
     }
+    public class ValidateResetTokenRequest
+    {
+        [Required]
+        public string Token { get; set; }
+    }
 
 }

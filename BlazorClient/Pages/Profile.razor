@@ -30,15 +30,12 @@
                     <a class="nav-link" href="/">Доставка</a>
                 </li>
                 @if (user != null)
-
                 {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/profile">Личный кабинет</a>
                     </li>
                 }
-
                 else
-
                 {
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Войти</a>
@@ -61,15 +58,12 @@
                         <div class="card-body">
                             <h2 class="text-center mb-1">Личный кабинет</h2>
                             @if (isLoading)
-
                             {
                                 <div class="text-center">
                                     <p>Загрузка...</p>
                                 </div>
                             }
-
                             else if (user != null)
-
                             {
                                 <div class="form-group mb-3 text-start">
                                     <label for="username"><b>Логин</b></label>
@@ -95,9 +89,7 @@
                                     <button class="btn btn-danger" @onclick="Logout">Выход из аккаунта</button>
                                 </div>
                             }
-
                             else
-
                             {
                                 <div class="alert alert-danger" role="alert">
                                     Информация о пользователе не найдена. Пожалуйста, войдите в систему.
@@ -115,18 +107,19 @@
     private bool isLoading = true; 
     protected override async Task OnInitializedAsync()
     {
-
         var options = new JsonSerializerOptions
-            {
+        {
                 PropertyNameCaseInsensitive = true
-            };
-
+        };
         var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "UserInfo");
         if (!string.IsNullOrEmpty(json))
         {
             user = JsonSerializer.Deserialize<UserInfo>(json, options);
         }
-
+        else
+        {
+            Console.WriteLine("тест");
+        }
         if (user is null || user.Equals(new UserInfo()) || string.IsNullOrEmpty(user.JwtToken))
         {
             Console.WriteLine("ЛЕЕЕ, ты не в аккаунте");
@@ -134,7 +127,6 @@
             return;
         }
         var newUser = await Refresher.NewTokenIfNeeded(user);
-
         if (newUser is null)
         {
             Console.WriteLine("Токен не обновлен");
@@ -148,7 +140,6 @@
         await JSRuntime.InvokeVoidAsync("localStorage.setItem", "UserInfo", System.Text.Json.JsonSerializer.Serialize(user));
         isLoading = false;
     }
-
     private async Task Logout()
     {
         await JSRuntime.InvokeVoidAsync("localStorage.removeItem", "UserInfo");

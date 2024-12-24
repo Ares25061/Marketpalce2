@@ -46,7 +46,6 @@
         </div>
     </div>
 </nav>
-
 <section id="hero">
     <div class="container">
         <div class="row">
@@ -68,12 +67,9 @@
     {
         try
         {
-            // Получаем JSON-строку из localStorage
             var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "UserInfo");
-
             if (!string.IsNullOrEmpty(userJson))
             {
-                // Десериализуем JSON-строку в объект UserInfo
                 user = System.Text.Json.JsonSerializer.Deserialize<UserInfo>(userJson);
             }
             else

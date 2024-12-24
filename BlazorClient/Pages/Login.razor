@@ -21,11 +21,11 @@
                             <form>
                                 <div class="form-group mb-3 text-start">
                                     <label for="email"><b>Email</b></label>
-                                    <input type="email" class="form-control" id="email" placeholder="Введите Email" @bind="Email">
+                                    <input type="email" class="form-control" id="email" placeholder="Введите Email" @bind="Email" @oninput="OnFieldChanged">
                                 </div>
                                 <div class="form-group mb-3 text-start">
                                     <label for="password"><b>Пароль</b></label>
-                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль" @bind="Password">
+                                    <input type="@(ShowPassword ? "text" : "password")" class="form-control" id="password" placeholder="Введите пароль" @bind="Password" @oninput="OnFieldChanged">
                                     <div class="form-check mt-2">
                                         <input type="checkbox" class="form-check-input" @bind="ShowPassword" id="showPassword">
                                         <label class="form-check-label" for="showPassword">Показать пароль</label>
@@ -66,12 +66,17 @@
     private bool ShowPassword { get; set; }
     private bool IsButtonDisabled = false;
     private string ErrorMessage = string.Empty;
-
+    private void OnFieldChanged()
+    {
+        if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            ErrorMessage = string.Empty;
+        }
+    }
     private async Task Authenticate()
     {
         IsButtonDisabled = true;
         ErrorMessage = string.Empty;
-
         try
         {
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
@@ -79,10 +84,10 @@
                 ErrorMessage = "Пожалуйста, заполните все поля.";
                 return;
             }
-
             HttpClient client = new HttpClient
             {
-                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    //  BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    BaseAddress = new Uri("https://localhost:7258/")
             };
             AuthenticateRequest authenticateRequest = new AuthenticateRequest
             {
@@ -99,7 +104,7 @@
                     if (!authenticateResponse.isVerified)
                     {
                         ErrorMessage = "Для входа необходимо подтвердить почту.";
-                    }               
+                    }
                     else
                     {
                         User.UserId = authenticateResponse.UserId;
@@ -126,18 +131,16 @@
             IsButtonDisabled = false;
         }
     }
-
     private async Task ResendVerificationCode()
     {
         try
         {
             HttpClient client = new HttpClient
             {
-               BaseAddress = new Uri("https://oxygenmarketapi.onrender.com")
+                    //  BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    BaseAddress = new Uri("https://localhost:7258/")
             };
-
             var response = await client.PostAsJsonAsync<string>("Accounts/resend-verification-code", Email);
-
             if (!response.IsSuccessStatusCode)
             {
                 ErrorMessage = "Не удалось отправить код подтверждения. Пожалуйста, попробуйте снова.";

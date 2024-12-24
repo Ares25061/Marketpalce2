@@ -23,7 +23,7 @@ namespace MarketplaceApi
             {
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
-                    builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com")
+                    builder.WithOrigins("https://localhost:7203", "https://oxygenmarketsite.onrender.com", "https://oxygenmarketapi.onrender.com", "https://localhost:7258/")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials();
