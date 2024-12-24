@@ -187,7 +187,7 @@
             HttpClient client = new HttpClient
             {
                     BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                    // BaseAddress = new Uri("https://localhost:7258/")
+                    
             };
             RegisterRequest registerRequest = new RegisterRequest
             {
@@ -282,7 +282,7 @@
         HttpClient client = new HttpClient
             {
                 BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                // BaseAddress = new Uri("https://localhost:7258/")
+                
             };
         var response = await client.GetAsync($"Accounts/checkusername?username={username}");
         return response.IsSuccessStatusCode && await response.Content.ReadFromJsonAsync<bool>();
@@ -292,7 +292,7 @@
         HttpClient client = new HttpClient
             {
                 BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                // BaseAddress = new Uri("https://localhost:7258/")
+                
             };
         var response = await client.GetAsync($"Accounts/checkemail?email={email}");
         return response.IsSuccessStatusCode && await response.Content.ReadFromJsonAsync<bool>();

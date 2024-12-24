@@ -28,7 +28,7 @@ namespace Models
                 var client = new HttpClient
                 {
                     BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                    // BaseAddress = new Uri("https://localhost:7258/")
+                    
                 };
                 var refreshRequest = new RefreshTokenRequest { Token = user.RefreshToken };
                 var response = await client.PostAsJsonAsync<RefreshTokenRequest>($"Accounts/refresh-token", refreshRequest);

@@ -86,8 +86,8 @@
             }
             HttpClient client = new HttpClient
             {
-                    //  BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                    BaseAddress = new Uri("https://localhost:7258/")
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    
             };
             AuthenticateRequest authenticateRequest = new AuthenticateRequest
             {
@@ -137,8 +137,8 @@
         {
             HttpClient client = new HttpClient
             {
-                    //  BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                    BaseAddress = new Uri("https://localhost:7258/")
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                    
             };
             var response = await client.PostAsJsonAsync<string>("Accounts/resend-verification-code", Email);
             if (!response.IsSuccessStatusCode)
