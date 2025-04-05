@@ -18,74 +18,70 @@ namespace MarketplaceApi.Controllers
         }
 
         [HttpPost("send")]
-        public async Task<IActionResult> SendMessage([FromBody] ChatRequest request)
+        public async Task SendMessage([FromBody] ChatRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Message))
             {
-                return BadRequest("Ошибка: сообщение не может быть пустым.");
+                Response.StatusCode = 400;
+                await Response.WriteAsync("Ошибка: сообщение не может быть пустым.");
+                return;
             }
 
             var userId = request.UserId ?? "anonymous";
             string teacher = request.Teacher;
-
-            // Если преподаватель не указан, определяем его по ключевым словам
             if (string.IsNullOrEmpty(teacher))
             {
                 teacher = DetermineTeacher(request.Message);
             }
 
-            // Получаем контексты для пользователя
             if (!_userContexts.TryGetValue(userId, out var teacherContexts))
             {
                 teacherContexts = new Dictionary<string, IList<long>>();
                 _userContexts[userId] = teacherContexts;
             }
 
-            // Получаем контекст для конкретного преподавателя
             if (!teacherContexts.TryGetValue(teacher, out var context))
             {
-                context = null; // Новый контекст, если преподаватель впервые
+                context = null;
             }
 
-            var basePrompt = "Ты преподаватель. Следуй этим правилам: " +
-                            "Если ты Шамина, то повторяй свои предложения дважды, только при повтории спрашивай, типо а я уже говорила что...., а также любишь загадывать загадки. В конце всегда загадывай загадку по теме вопроса. Начинай загадку с фразы вот вам загадка. " +
-                            "Если ты Смирнов, то отвечай как быдло, но умно; если в моем вопросе есть что то типо я Милютин, то говори просто напиши фразу: Милютин, иди переделывай. " +
-                            "Если ты Михайлов, то всегда начинай со слова 'Объясняю'. " +
-                            "Если не указано, кто ты, то отвечай как обычно, но если речь о английском языке, то ты Шамина, " +
-                            "если речь связана с базами данных, то Смирнов, а если речь связана с ОС и системным администрированием, то ты Михайлов.";
+            var basePrompt = "Ты преподаватель. Строго следуй этим правилам и не смешивай стили: " +
+                             "Если ты Шамина: повторяй ответ дважды, спрашивая 'а я говорила что...' перед повтором, и в конце добавляй загадку по теме вопроса, начиная с фразы 'Вот вам загадка'. " +
+                             "Если ты Смирнов: отвечай грубо, но умно; если в вопросе есть 'я Милютин', пиши только 'Милютин, иди переделывай'. " +
+                             "Если ты Михайлов: начинай ответ с 'Объясняю' и не добавляй ничего лишнего, вроде загадок. " +
+                             "Если ты Логинов: будь философом, рассуждай о вопросе глубоко и абстрактно, как настоящий философ. " +
+                             "Если ты Самарина: уводи ответ в религиозную тематику, связывай его с верой или духовностью. " +
+                             "Если ты Ларионов: в случайный момент вставь в ответ 'DOCKERRRRRRR' (сделай это один раз где-нибудь в тексте). " +
+                             "Отвечай только в стиле указанного преподавателя.";
 
-            string prompt;
-            if (teacher != "general")
-            {
-                prompt = $"{basePrompt} Ты {teacher}. Ответь на: {request.Message}";
-            }
-            else
-            {
-                prompt = $"{basePrompt} Ответь на: {request.Message}";
-            }
+            string prompt = $"{basePrompt} Ты {teacher}. Ответь на: {request.Message}";
 
-            var response = await _ollama.Completions.GenerateCompletionAsync(
+            Response.Headers.Add("Content-Type", "text/event-stream");
+            Response.Headers.Add("Cache-Control", "no-cache");
+            Response.Headers.Add("Connection", "keep-alive");
+
+            await foreach (var chunk in _ollama.Completions.GenerateCompletionAsync(
                 model: "llama3.2-vision:latest",
                 prompt: prompt,
-                stream: false,
-                context: context,
-                images: string.IsNullOrEmpty(request.ImageBase64) ? null : new List<string> { request.ImageBase64 }
-            );
-
-            // Обновляем контекст для этого преподавателя
-            teacherContexts[teacher] = response.Context;
-
-            return Ok(response.Response);
+                stream: true,
+                context: context))
+            {
+                await Response.WriteAsync($"data: {chunk.Response}\n\n");
+                await Response.Body.FlushAsync();
+                teacherContexts[teacher] = chunk.Context;
+            }
         }
 
-        // Метод для определения преподавателя по сообщению
         private string DetermineTeacher(string message)
         {
             var keywords = new Dictionary<string, List<string>>
             {
                 {"Шамина", new List<string> {"английский", "язык", "english", "language"}},
                 {"Смирнов", new List<string> {"база данных", "SQL", "database"}},
-                {"Михайлов", new List<string> {"ОС", "системное администрирование", "operating system", "admin"}}
+                {"Михайлов", new List<string> {"ОС", "системное администрирование", "operating system", "admin"}},
+                {"Логинов", new List<string> {"философия", "philosophy", "смысл", "meaning"}},
+                {"Самарина", new List<string> {"религия", "вера", "religion", "faith"}},
+                {"Ларионов", new List<string> {"докер", "docker", "контейнер", "container"}}
             };
 
             var lowerMessage = message.ToLower();
@@ -105,6 +101,5 @@ namespace MarketplaceApi.Controllers
         public string Message { get; set; }
         public string? UserId { get; set; }
         public string? Teacher { get; set; }
-        public string? ImageBase64 { get; set; }
     }
 }

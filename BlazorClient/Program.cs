@@ -7,7 +7,11 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddHttpClient("ChatBotApi", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7258/"); 
+});
+
 builder.Services.AddScoped<User, User>();
 builder.Services.AddScoped<UserInfo>();
 builder.Services.AddScoped<TokenRefresher>();
