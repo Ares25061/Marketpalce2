@@ -1,0 +1,135 @@
+﻿@page "/chatbot"
+@using System.Net.Http
+@using System.Net.Http.Json
+@using System.Text.Json
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient HttpClient
+@inject IJSRuntime JSRuntime
+
+<h3>Чат с преподавателем</h3>
+
+<div class="chat-container">
+    <div class="teacher-selection">
+        <label>Выберите преподавателя:</label>
+        <select @bind="selectedTeacher">
+            <option value="">Автоматический выбор</option>
+            <option value="Шамина">Шамина</option>
+            <option value="Смирнов">Смирнов</option>
+            <option value="Михайлов">Михайлов</option>
+        </select>
+    </div>
+    <ul class="chat-history">
+        @foreach (var message in chatHistory)
+        {
+            <li>@message</li>
+        }
+    </ul>
+    <div class="input-container">
+        <input @bind="userInput" @bind:event="oninput" placeholder="Введите сообщение..." />
+        <input type="file" @onchange="HandleFileChange" accept="image/*" />
+        <button @onclick="SendMessage" disabled="@(isSending)">Отправить</button>
+    </div>
+</div>
+
+@code {
+    private List<string> chatHistory = new List<string>();
+    private string userInput = string.Empty;
+    private string? selectedTeacher = string.Empty;
+    private string? imageBase64 = null;
+    private bool isSending = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        chatHistory.Add("Чат-бот: Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
+    }
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file != null)
+        {
+            using var stream = file.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024); // Лимит 10 МБ
+            var buffer = new byte[file.Size];
+            await stream.ReadAsync(buffer, 0, (int)file.Size);
+            imageBase64 = Convert.ToBase64String(buffer);
+        }
+    }
+
+    private async Task SendMessage()
+    {
+        if (string.IsNullOrWhiteSpace(userInput))
+            return;
+
+        isSending = true;
+        chatHistory.Add($"Вы: {userInput}");
+        var userMessage = userInput;
+        userInput = string.Empty;
+        StateHasChanged();
+
+        try
+        {
+            var request = new
+            {
+                Message = userMessage,
+                UserId = "anonymous",
+                Teacher = selectedTeacher,
+                ImageBase64 = imageBase64
+            };
+            var content = new StringContent(JsonSerializer.Serialize(request), System.Text.Encoding.UTF8, "application/json");
+            var response = await HttpClient.PostAsync("api/chatbot/send", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var botResponse = await response.Content.ReadAsStringAsync();
+                chatHistory.Add($"Чат-бот: {botResponse}");
+            }
+            else
+            {
+                chatHistory.Add($"Чат-бот: Ошибка API: {response.StatusCode}");
+            }
+            imageBase64 = null;
+        }
+        catch (Exception ex)
+        {
+            chatHistory.Add($"Чат-бот: Ошибка: {ex.Message}");
+        }
+        finally
+        {
+            isSending = false;
+            StateHasChanged();
+        }
+    }
+}
+
+<style>
+    .chat-container {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    .teacher-selection {
+        margin-bottom: 10px;
+    }
+    .chat-history {
+        list-style-type: none;
+        padding: 0;
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .input-container {
+        display: flex;
+        margin-top: 10px;
+    }
+    input[type="text"] {
+        flex-grow: 1;
+        padding: 5px;
+    }
+    input[type="file"] {
+        margin-left: 10px;
+    }
+    button {
+        margin-left: 10px;
+        padding: 5px 15px;
+    }
+</style>

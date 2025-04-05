@@ -10,6 +10,7 @@ using MarketplaceApi.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Ollama;
 using System.Reflection;
 
 namespace MarketplaceApi
@@ -54,6 +55,14 @@ namespace MarketplaceApi
             builder.Services.AddScoped<IPaymentService, PaymentService>();
             builder.Services.AddScoped<IPaymentUserService, PaymentUserService>();
             builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+            builder.Services.AddSingleton(s =>
+            {
+                var httpClient = new HttpClient
+                {
+                    BaseAddress = new Uri("http://localhost:11434/api/") 
+                };
+                return new OllamaApiClient(httpClient);
+            });
 
             builder.Services.AddScoped<IJwtUtils, JwtUtils>();
             builder.Services.AddScoped<IAccountService, AccountService>();
@@ -62,7 +71,6 @@ namespace MarketplaceApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddMapster();
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddSwaggerGen(options =>
@@ -79,7 +87,7 @@ namespace MarketplaceApi
                     },
                     License = new OpenApiLicense
                     {
-                        Name = " Бекэндер (не пишите)",
+                        Name = "Бекэндер (не пишите)",
                         Url = new Uri("https://t.me/Ares250678")
                     },
                 });
@@ -94,7 +102,7 @@ namespace MarketplaceApi
                     Scheme = "Bearer"
                 });
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                  {
+                {
                     {
                       new OpenApiSecurityScheme
                       {
@@ -106,12 +114,10 @@ namespace MarketplaceApi
                           Scheme = "oauth2",
                           Name = "Bearer",
                           In = ParameterLocation.Header,
-
-                        },
-                        new List<string>()
-                      }
-                    });
-                // using System.Reflection;
+                      },
+                      new List<string>()
+                    }
+                });
                 var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
@@ -131,12 +137,10 @@ namespace MarketplaceApi
                         new Role { RoleName = "User" },
                         new Role { RoleName = "Support" }
                     );
-
                 }
                 context.SaveChanges();
             }
 
-            // Configure the HTTP request pipeline.
             //if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -144,9 +148,7 @@ namespace MarketplaceApi
             }
 
             app.UseCors("AllowSpecificOrigins");
-
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
             if (app.Environment.IsProduction())
             {
