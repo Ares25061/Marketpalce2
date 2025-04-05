@@ -90,8 +90,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        chatHistory.Add("Чат-бот: Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
         await LoadUserInfo();
+        await LoadChatHistory(); // Load chat history on initialization
     }
 
     private async Task LoadUserInfo()
@@ -101,12 +101,49 @@
             var userJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "UserInfo");
             if (!string.IsNullOrEmpty(userJson))
             {
-                user = System.Text.Json.JsonSerializer.Deserialize<UserInfo>(userJson);
+                user = JsonSerializer.Deserialize<UserInfo>(userJson);
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine("Ошибка при получении данных пользователя: " + ex.Message);
+        }
+    }
+
+    private async Task LoadChatHistory()
+    {
+        try
+        {
+            var historyJson = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "ChatHistory");
+            if (!string.IsNullOrEmpty(historyJson))
+            {
+                chatHistory = JsonSerializer.Deserialize<List<string>>(historyJson);
+            }
+            else
+            {
+                // If no history exists, initialize with welcome message
+                chatHistory.Add("Чат-бот: Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
+                await SaveChatHistory();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка при загрузке истории чата: " + ex.Message);
+            chatHistory.Add("Чат-бот: Ошибка при загрузке истории: " + ex.Message);
+            await SaveChatHistory();
+        }
+    }
+
+    private async Task SaveChatHistory()
+    {
+        try
+        {
+            var historyJson = JsonSerializer.Serialize(chatHistory);
+            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "ChatHistory", historyJson);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка при сохранении истории чата: " + ex.Message);
         }
     }
 
@@ -120,6 +157,7 @@
         var userMessage = userInput;
         userInput = string.Empty;
         currentResponse = "";
+        await SaveChatHistory(); // Save history after adding user message
         StateHasChanged();
 
         try
@@ -136,16 +174,12 @@
         catch (Exception ex)
         {
             chatHistory.Add($"Чат-бот: Ошибка: {ex.Message}");
-        }
-        finally
-        {
-            isSending = false;
-            StateHasChanged();
+            await SaveChatHistory(); // Save history on error
         }
     }
 
     [JSInvokable]
-    public void OnMessageReceived(string message)
+    public async void OnMessageReceived(string message)
     {
         currentResponse += message;
         if (chatHistory.LastOrDefault()?.StartsWith("Чат-бот: ") == true)
@@ -156,6 +190,7 @@
         {
             chatHistory.Add($"Чат-бот: {currentResponse}");
         }
+        await SaveChatHistory(); // Save history after receiving bot response
         StateHasChanged();
     }
 
@@ -184,12 +219,12 @@
         transition: color 0.3s;
     }
 
-        .nav-link:hover, .nav-link.active {
-            color: #00d4ff !important;
-        }
+    .nav-link:hover, .nav-link.active {
+        color: #00d4ff !important;
+    }
 
     .chat-page {
-        padding-top: 100px; /* Учитываем фиксированный навбар */
+        padding-top: 100px;
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -215,19 +250,19 @@
         text-align: center;
     }
 
-        .teacher-selection label {
-            color: #b0b0b0;
-            margin-right: 10px;
-        }
+    .teacher-selection label {
+        color: #b0b0b0;
+        margin-right: 10px;
+    }
 
-        .teacher-selection select {
-            background: #2c3e50;
-            color: #e0e0e0;
-            border: 1px solid #3a506b;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 14px;
-        }
+    .teacher-selection select {
+        background: #2c3e50;
+        color: #e0e0e0;
+        border: 1px solid #3a506b;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
 
     .chat-history {
         list-style-type: none;
@@ -240,12 +275,12 @@
         margin-bottom: 20px;
     }
 
-        .chat-history li {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            word-wrap: break-word;
-        }
+    .chat-history li {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        word-wrap: break-word;
+    }
 
     .user-message {
         background: #3a506b;
@@ -274,9 +309,9 @@
         font-size: 14px;
     }
 
-        input[type="text"]::placeholder {
-            color: #b0b0b0;
-        }
+    input[type="text"]::placeholder {
+        color: #b0b0b0;
+    }
 
     button {
         background: #00d4ff;
@@ -288,14 +323,14 @@
         transition: background 0.3s;
     }
 
-        button:hover:not(:disabled) {
-            background: #00b8d4;
-        }
+    button:hover:not(:disabled) {
+        background: #00b8d4;
+    }
 
-        button:disabled {
-            background: #3a506b;
-            cursor: not-allowed;
-        }
+    button:disabled {
+        background: #3a506b;
+        cursor: not-allowed;
+    }
 </style>
 
 <script>
