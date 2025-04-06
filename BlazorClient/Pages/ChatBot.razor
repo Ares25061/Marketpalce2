@@ -168,7 +168,7 @@
                 Teacher = selectedTeacher
             };
 
-            await JSRuntime.InvokeVoidAsync("startEventSource", "https://localhost:7258/api/chatbot/send", request, DotNetObjectReference.Create(this));
+            await JSRuntime.InvokeVoidAsync("startEventSource", "https://oxygenmarketapi.onrender.com/api/chatbot/send", request, DotNetObjectReference.Create(this));
         }
         catch (Exception ex)
         {
