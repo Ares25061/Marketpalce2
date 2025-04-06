@@ -91,7 +91,7 @@
     protected override async Task OnInitializedAsync()
     {
         await LoadUserInfo();
-        await LoadChatHistory(); // Load chat history on initialization
+        await LoadChatHistory(); 
     }
 
     private async Task LoadUserInfo()
@@ -121,7 +121,6 @@
             }
             else
             {
-                // If no history exists, initialize with welcome message
                 chatHistory.Add("Чат-бот: Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
                 await SaveChatHistory();
             }
@@ -157,7 +156,7 @@
         var userMessage = userInput;
         userInput = string.Empty;
         currentResponse = "";
-        await SaveChatHistory(); // Save history after adding user message
+        await SaveChatHistory(); 
         StateHasChanged();
 
         try
@@ -174,7 +173,7 @@
         catch (Exception ex)
         {
             chatHistory.Add($"Чат-бот: Ошибка: {ex.Message}");
-            await SaveChatHistory(); // Save history on error
+            await SaveChatHistory();
         }
     }
 
@@ -190,7 +189,7 @@
         {
             chatHistory.Add($"Чат-бот: {currentResponse}");
         }
-        await SaveChatHistory(); // Save history after receiving bot response
+        await SaveChatHistory(); 
         StateHasChanged();
     }
 
