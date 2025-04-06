@@ -6,80 +6,84 @@
 @inject NavigationManager Navigation
 @inject UserInfo user
 
-<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
-    <div class="container">
-        <img src="https://github.com/Ares25061/Marketpalce2/blob/main/BlazorClient/wwwroot/images/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_2024-11-18_133151923.png?raw=true"
-             style="max-width:5%; max-height:5%">
-        <a class="navbar-brand" href="/">Кислород</a>
+@if (string.IsNullOrEmpty(user.JwtToken))
+{
+    <div class="chat-page">
+        <div class="container chat-container">
+            <div class="alert alert-warning text-center">
+                <h4>Пожалуйста, авторизуйтесь</h4>
+                <p>Для использования чат-бота необходимо войти в аккаунт.</p>
+                <a href="/login" class="btn btn-primary">Войти</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+        <div class="container">
+            <img src="https://github.com/Ares25061/Marketpalce2/blob/main/BlazorClient/wwwroot/images/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_2024-11-18_133151923.png?raw=true"
+                 style="max-width:5%; max-height:5%">
+            <a class="navbar-brand" href="/">Кислород</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Главная</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Каталог</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Акции</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Доставка</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/chatbot">Чат-Бот</a>
-                </li>
-                @if (!string.IsNullOrEmpty(user.JwtToken))
-                {
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Доставка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/chatbot">Чат-Бот</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">Личный кабинет</a>
                     </li>
-                }
-                else
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="chat-page">
+        <div class="container chat-container">
+            <h3>Чат с преподавателем</h3>
+            <div class="teacher-selection">
+                <label>Выберите преподавателя:</label>
+                <select @bind="selectedTeacher">
+                    <option value="">Автоматический выбор</option>
+                    <option value="Шамина">Шамина</option>
+                    <option value="Смирнов">Смирнов</option>
+                    <option value="Михайлов">Михайлов</option>
+                    <option value="Логинов">Логинов</option>
+                    <option value="Самарина">Самарина</option>
+                    <option value="Ларионов">Ларионов</option>
+                </select>
+            </div>
+            <ul class="chat-history">
+                @foreach (var message in chatHistory)
                 {
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Войти</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/registration">Зарегистрироваться</a>
-                    </li>
+                    <li class="@(message.StartsWith("Вы: ") ? "user-message" : "bot-message")">@message</li>
                 }
             </ul>
+            <div class="input-container">
+                <input @bind="userInput" @bind:event="oninput" placeholder="Введите сообщение..." />
+                <button @onclick="SendMessage" disabled="@(isSending)">Отправить</button>
+                <button @onclick="ClearChatHistory" class="btn-clear">Очистить историю</button>
+            </div>
         </div>
     </div>
-</nav>
-
-<div class="chat-page">
-    <div class="container chat-container">
-        <h3>Чат с преподавателем</h3>
-        <div class="teacher-selection">
-            <label>Выберите преподавателя:</label>
-            <select @bind="selectedTeacher">
-                <option value="">Автоматический выбор</option>
-                <option value="Шамина">Шамина</option>
-                <option value="Смирнов">Смирнов</option>
-                <option value="Михайлов">Михайлов</option>
-                <option value="Логинов">Логинов</option>
-                <option value="Самарина">Самарина</option>
-                <option value="Ларионов">Ларионов</option>
-            </select>
-        </div>
-        <ul class="chat-history">
-            @foreach (var message in chatHistory)
-            {
-                <li class="@(message.StartsWith("Вы: ") ? "user-message" : "bot-message")">@message</li>
-            }
-        </ul>
-        <div class="input-container">
-            <input @bind="userInput" @bind:event="oninput" placeholder="Введите сообщение..." />
-            <button @onclick="SendMessage" disabled="@(isSending)">Отправить</button>
-        </div>
-    </div>
-</div>
+}
 
 @code {
     private List<string> chatHistory = new List<string>();
@@ -91,7 +95,12 @@
     protected override async Task OnInitializedAsync()
     {
         await LoadUserInfo();
-        await LoadChatHistory(); 
+        if (string.IsNullOrEmpty(user.JwtToken))
+        {
+            Navigation.NavigateTo("/login");
+            return;
+        }
+        await LoadChatHistory();
     }
 
     private async Task LoadUserInfo()
@@ -146,6 +155,14 @@
         }
     }
 
+    private async Task ClearChatHistory()
+    {
+        chatHistory.Clear();
+        chatHistory.Add("Чат-бот: История очищена. Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
+        await SaveChatHistory();
+        StateHasChanged();
+    }
+
     private async Task SendMessage()
     {
         if (string.IsNullOrWhiteSpace(userInput))
@@ -156,7 +173,7 @@
         var userMessage = userInput;
         userInput = string.Empty;
         currentResponse = "";
-        await SaveChatHistory(); 
+        await SaveChatHistory();
         StateHasChanged();
 
         try
@@ -164,7 +181,7 @@
             var request = new
             {
                 Message = userMessage,
-                UserId = "anonymous",
+                UserId = user.UserName ?? "anonymous",
                 Teacher = selectedTeacher
             };
 
@@ -189,7 +206,7 @@
         {
             chatHistory.Add($"Чат-бот: {currentResponse}");
         }
-        await SaveChatHistory(); 
+        await SaveChatHistory();
         StateHasChanged();
     }
 
@@ -218,9 +235,9 @@
         transition: color 0.3s;
     }
 
-    .nav-link:hover, .nav-link.active {
-        color: #00d4ff !important;
-    }
+        .nav-link:hover, .nav-link.active {
+            color: #00d4ff !important;
+        }
 
     .chat-page {
         padding-top: 100px;
@@ -249,19 +266,19 @@
         text-align: center;
     }
 
-    .teacher-selection label {
-        color: #b0b0b0;
-        margin-right: 10px;
-    }
+        .teacher-selection label {
+            color: #b0b0b0;
+            margin-right: 10px;
+        }
 
-    .teacher-selection select {
-        background: #2c3e50;
-        color: #e0e0e0;
-        border: 1px solid #3a506b;
-        border-radius: 5px;
-        padding: 5px 10px;
-        font-size: 14px;
-    }
+        .teacher-selection select {
+            background: #2c3e50;
+            color: #e0e0e0;
+            border: 1px solid #3a506b;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
 
     .chat-history {
         list-style-type: none;
@@ -274,12 +291,12 @@
         margin-bottom: 20px;
     }
 
-    .chat-history li {
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 5px;
-        word-wrap: break-word;
-    }
+        .chat-history li {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            word-wrap: break-word;
+        }
 
     .user-message {
         background: #3a506b;
@@ -308,9 +325,9 @@
         font-size: 14px;
     }
 
-    input[type="text"]::placeholder {
-        color: #b0b0b0;
-    }
+        input[type="text"]::placeholder {
+            color: #b0b0b0;
+        }
 
     button {
         background: #00d4ff;
@@ -322,14 +339,23 @@
         transition: background 0.3s;
     }
 
-    button:hover:not(:disabled) {
-        background: #00b8d4;
+        button:hover:not(:disabled) {
+            background: #00b8d4;
+        }
+
+        button:disabled {
+            background: #3a506b;
+            cursor: not-allowed;
+        }
+
+    .btn-clear {
+        background: #ff4d4d;
+        color: #ffffff;
     }
 
-    button:disabled {
-        background: #3a506b;
-        cursor: not-allowed;
-    }
+        .btn-clear:hover:not(:disabled) {
+            background: #e63939;
+        }
 </style>
 
 <script>
@@ -351,7 +377,7 @@
             }
             const chunk = decoder.decode(value);
             const lines = chunk.split('\n');
-            for (const line of lines) {
+            for (lines of lines) {
                 if (line.startsWith('data: ')) {
                     const message = line.substring(6);
                     dotnetObj.invokeMethodAsync('OnMessageReceived', message);
