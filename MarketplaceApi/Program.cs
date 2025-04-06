@@ -59,7 +59,7 @@ namespace MarketplaceApi
             {
                 var httpClient = new HttpClient
                 {
-                    BaseAddress = new Uri("http://localhost:11434/api/") 
+                    BaseAddress = new Uri("https://tokyo-compare-gel-harvey.trycloudflare.com/api/") 
                 };
                 return new OllamaApiClient(httpClient);
             });
