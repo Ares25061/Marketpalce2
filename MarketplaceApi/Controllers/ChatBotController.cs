@@ -79,7 +79,7 @@ namespace MarketplaceApi.Controllers
                 {"Шамина", new List<string> {"английский", "язык", "english", "language"}},
                 {"Смирнов", new List<string> {"база данных", "SQL", "database"}},
                 {"Михайлов", new List<string> {"ОС", "системное администрирование", "operating system", "admin"}},
-                {"Логинов", new List<string> {"философия", "philosophy", "смысл", "meaning"}},
+                {"Логинов", new List<string> {"философия", "philosophy", "смысл", "meaning", "мотоцикл"}},
                 {"Самарина", new List<string> {"религия", "вера", "religion", "faith"}},
                 {"Ларионов", new List<string> {"докер", "docker", "контейнер", "container","Fumo","Touhou",}}
             };
