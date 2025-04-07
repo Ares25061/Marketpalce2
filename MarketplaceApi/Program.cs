@@ -59,7 +59,7 @@ namespace MarketplaceApi
             {
                 var httpClient = new HttpClient
                 {
-                    BaseAddress = new Uri("https://domainollamaforproject.online/api/")
+                    BaseAddress = new Uri("https://domainollamaforproject.ru/api/")
                 };
                 return new OllamaApiClient(httpClient);
             });
