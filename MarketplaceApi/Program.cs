@@ -59,7 +59,7 @@ namespace MarketplaceApi
             {
                 var httpClient = new HttpClient
                 {
-                    BaseAddress = new Uri("https://extensions-honey-subsection-food.trycloudflare.com/api/")
+                    BaseAddress = new Uri("https://domainollamaforproject.online/api/")
                 };
                 return new OllamaApiClient(httpClient);
             });
