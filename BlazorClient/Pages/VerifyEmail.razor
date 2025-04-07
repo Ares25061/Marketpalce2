@@ -1,12 +1,11 @@
 ﻿@page "/verify-email"
 @inject NavigationManager Navigation
 @inject IJSRuntime JSRuntime
-@using Models
 @using System.Text.Json
 
 <section class="bg-green">
-    <div class="mask d-flex align-items-center gradient-custom-3 vw-100 vh-100 main-content">
-        <div class="container">
+    <div class="mask d-flex align-items-center gradient-custom-3 vh-100 main-content">
+        <div class="container" style="width: 3000px">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <a href="/" class="btn btn-link text-decoration-none">
                     <i class="bi bi-arrow-left"></i> Вернуться на главную
@@ -14,28 +13,27 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card border shadow p-3 mb-3 bg-white">
+                    <div class="card border shadow p-3 mb-5 bg-white" style="border-radius: 15px;">
                         <div class="card-body">
                             <h2 class="text-center mb-3">Подтверждение почты</h2>
-                            <form>
-                                <div class="form-group mb-3 text-start">
-                                    <label for="token"><b>Токен подтверждения</b></label>
-                                    <input type="text" class="form-control" id="token" placeholder="Введите токен" @bind="Token" @oninput="OnTokenChanged">
+                            @if (isLoading)
+                            {
+                                <div class="text-center">
+                                    <p>Проверка токена...</p>
                                 </div>
-                                <div class="w-100 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-primary mt-auto" @onclick="VerifyEm" disabled="@IsButtonDisabled">Подтвердить почту</button>
-                                </div>
-                            </form>
-                            @if (!string.IsNullOrEmpty(ErrorMessage))
+                            }
+                            else if (!string.IsNullOrEmpty(ErrorMessage))
                             {
                                 <div class="alert alert-danger mt-3" role="alert">
                                     @ErrorMessage
                                 </div>
                             }
-                            @if (!string.IsNullOrEmpty(SuccessMessage))
+                            else if (!string.IsNullOrEmpty(SuccessMessage))
                             {
                                 <div class="alert alert-success mt-3" role="alert">
                                     @SuccessMessage
+                                    <br />
+                                    <a href="/login" class="btn btn-primary mt-3">Войти</a>
                                 </div>
                             }
                         </div>
@@ -47,51 +45,54 @@
 </section>
 
 @code {
-    private string Token = null!;
-    private bool IsButtonDisabled = false;
+    private bool isLoading = true;
     private string ErrorMessage = string.Empty;
     private string SuccessMessage = string.Empty;
-    private void OnTokenChanged()
-    {
-        ErrorMessage = string.Empty;
-    }
 
-    private async Task VerifyEm()
+    protected override async Task OnInitializedAsync()
     {
-        IsButtonDisabled = true;
-        ErrorMessage = string.Empty;
-        SuccessMessage = string.Empty;
         try
         {
-            if (string.IsNullOrEmpty(Token))
+            // Извлекаем токен из query-параметра
+            var uri = new Uri(Navigation.Uri);
+            var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+            var token = query["token"];
+
+            if (string.IsNullOrEmpty(token))
             {
-                ErrorMessage = "Пожалуйста, введите токен подтверждения.";
+                ErrorMessage = "Токен не найден в URL.";
+                isLoading = false;
                 return;
             }
-            HttpClient client = new HttpClient
-            {
-                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
 
-            };
-            VerifyEmailRequest verifyEmailRequest = new VerifyEmailRequest
-            {
-                    Token = Token
-            };
-            HttpResponseMessage response = await client.PostAsJsonAsync<VerifyEmailRequest>("Accounts/verify-email", verifyEmailRequest);
+            // Отправляем запрос на API для подтверждения
+            using var client = new HttpClient
+                {
+                    BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
+                };
+
+            var request = new { Token = token };
+            var response = await client.PostAsJsonAsync("Accounts/verify-email", request);
+
             if (response.IsSuccessStatusCode)
             {
-                SuccessMessage = "Почта успешно подтверждена. Теперь вы можете войти в систему.";
-                Token = string.Empty;
-                Navigation.NavigateTo("/login");
+                SuccessMessage = "Почта успешно подтверждена! Теперь вы можете войти.";
             }
             else
             {
-                ErrorMessage = "Неверный или просроченный токен. Пожалуйста, проверьте вашу почту и попробуйте снова.";
+                var errorContent = await response.Content.ReadAsStringAsync();
+                var errorObj = JsonSerializer.Deserialize<Dictionary<string, string>>(errorContent);
+                ErrorMessage = errorObj.ContainsKey("message") ? errorObj["message"] : "Ошибка подтверждения почты.";
             }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Произошла ошибка: {ex.Message}";
         }
         finally
         {
-            IsButtonDisabled = false;
+            isLoading = false;
+            StateHasChanged();
         }
     }
 }

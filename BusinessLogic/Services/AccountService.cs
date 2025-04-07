@@ -101,7 +101,10 @@ namespace BusinessLogic.Services
 
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
-            _emailService.Send(account.Email, "Сброс пароля", $"Для сброса вашего пароля введите этот токен: {account.ResetToken}");
+            var resetUrl = $"{origin}/reset-password?token={account.ResetToken}";
+            var message = $"<h3>Сброс пароля</h3><p>Для сброса вашего пароля перейдите по <a href='{resetUrl}'>этой ссылке</a>.</p>";
+
+            _emailService.Send(account.Email, "Сброс пароля", message);
         }
         private async Task<User> getAccountByRefreshToken(string token)
         {
@@ -213,7 +216,10 @@ namespace BusinessLogic.Services
             account.Password = BCrypt.Net.BCrypt.HashPassword(model.Password);
             await _repositoryWrapper.User.Create(account);
             await _repositoryWrapper.Save();
-            _emailService.Send(account.Email, "Подтверждение почты", $"Для верефикации введите этот токен: {account.VerificationToken}");
+            var verifyUrl = $"{origin}/verify-email?token={account.VerificationToken}";
+            var message = $"<h3>Подтверждение почты</h3><p>Для подтверждения вашей почты перейдите по <a href='{verifyUrl}'>этой ссылке</a>.</p>";
+
+            _emailService.Send(account.Email, "Подтверждение почты", message);
         }
 
         private async Task<User> getAccountByResetToken(string token)
@@ -309,7 +315,10 @@ namespace BusinessLogic.Services
             account.VerificationToken = await generateVerificationToken();
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
-            _emailService.Send(account.Email, "Подтверждение почты", $"Для подтверждения вашей почты введите этот токен: {account.VerificationToken}");
+            var verifyUrl = $"{origin}/verify-email?token={account.VerificationToken}";
+            var message = $"<h3>Подтверждение почты</h3><p>Для подтверждения вашей почты перейдите по <a href='{verifyUrl}'>этой ссылке</a>.</p>";
+
+            _emailService.Send(account.Email, "Подтверждение почты", message);
         }
         public async Task<bool> CheckUsernameExists(string username)
         {

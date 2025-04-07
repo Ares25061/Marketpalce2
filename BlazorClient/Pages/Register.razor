@@ -185,12 +185,11 @@
                 return;
             }
             HttpClient client = new HttpClient
-            {
+                {
                     BaseAddress = new Uri("https://oxygenmarketapi.onrender.com/")
-                    
-            };
+                };
             RegisterRequest registerRequest = new RegisterRequest
-            {
+                {
                     UserName = UserName,
                     FirstName = FirstName,
                     LastName = LastName,
@@ -198,12 +197,12 @@
                     Password = Password,
                     ConfirmPassword = ConfirmPassword,
                     AcceptTerms = AcceptTerms
-            };
+                };
 
             HttpResponseMessage response = await client.PostAsJsonAsync<RegisterRequest>("Accounts/register", registerRequest);
             if (response.IsSuccessStatusCode)
             {
-                SuccessMessage = "Регистрация успешна. Пожалуйста, проверьте вашу почту для подтверждения.";
+                SuccessMessage = "Регистрация успешна. Пожалуйста, перейдите по ссылке, отправленной на вашу почту, чтобы подтвердить email.";
                 ClearFields();
                 Navigation.NavigateTo("/verify-email");
             }
