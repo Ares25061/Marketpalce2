@@ -59,7 +59,9 @@ else
     <div class="chat-page">
         <div class="container chat-container">
             <div class="chat-header">
-                <h3>Чат с преподавателем</h3>
+                <div class="header-title">
+                    <h3>Чат с преподавателем</h3>
+                </div>
                 <button class="clear-history-btn" @onclick="ClearChatHistory" title="Очистить историю">
                     <i class="bi bi-trash"></i>
                 </button>
@@ -265,6 +267,11 @@ else
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
+    }
+
+    .header-title {
+        flex-grow: 1;
+        text-align: center;
     }
 
     h3 {
