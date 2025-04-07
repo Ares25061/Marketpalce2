@@ -155,7 +155,7 @@ namespace MarketplaceApi
                 app.UseMiddleware<ErrorHandlerMiddleware>();
             }
             app.UseMiddleware<JwtMiddleware>();
-            
+
             app.MapControllers();
 
             app.Run();
