@@ -9,7 +9,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddHttpClient("ChatBotApi", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7258/"); 
+    client.BaseAddress = new Uri("https://localhost:7258/");
 });
 
 builder.Services.AddScoped<User, User>();
