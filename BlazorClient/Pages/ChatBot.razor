@@ -58,7 +58,12 @@ else
 
     <div class="chat-page">
         <div class="container chat-container">
-            <h3>Чат с преподавателем</h3>
+            <div class="chat-header">
+                <h3>Чат с преподавателем</h3>
+                <button class="clear-history-btn" @onclick="ClearChatHistory" title="Очистить историю">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
             <div class="teacher-selection">
                 <label>Выберите преподавателя:</label>
                 <select @bind="selectedTeacher">
@@ -70,9 +75,6 @@ else
                     <option value="Самарина">Самарина</option>
                     <option value="Ларионов">Ларионов</option>
                 </select>
-            </div>
-            <div class="chat-controls">
-                <button class="clear-history-btn" @onclick="ClearChatHistory">Очистить историю</button>
             </div>
             <ul class="chat-history">
                 @foreach (var message in chatHistory)
@@ -161,7 +163,7 @@ else
     private async Task ClearChatHistory()
     {
         chatHistory.Clear();
-        chatHistory.Add("Чат-бот: История очищена. Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
+        chatHistory.Add("Чат-бот: Здравствуйте! Я ваш виртуальный преподаватель. Выберите, кем я буду, или задайте вопрос, и я сам пойму.");
         await SaveChatHistory();
         StateHasChanged();
     }
@@ -258,10 +260,16 @@ else
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
+    .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
     h3 {
         color: #00d4ff;
-        text-align: center;
-        margin-bottom: 20px;
+        margin: 0;
     }
 
     .teacher-selection {
@@ -283,18 +291,13 @@ else
             font-size: 14px;
         }
 
-    .chat-controls {
-        text-align: right;
-        margin-bottom: 10px;
-    }
-
     .clear-history-btn {
         background: #ff4d4d;
         color: #fff;
         border: none;
         border-radius: 5px;
-        padding: 8px 15px;
-        font-size: 14px;
+        padding: 8px;
+        font-size: 16px;
         transition: background 0.3s;
     }
 
