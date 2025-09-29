@@ -12,3 +12,4 @@ MarketplaceApi/bin/
 MarketplaceApi/obj/
 BlazorClient/bin/
 BlazorClient/obj/
+MarketplaceApi/appsettings.json
