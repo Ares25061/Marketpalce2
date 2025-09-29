@@ -104,7 +104,7 @@ namespace BusinessLogic.Services
             var resetUrl = $"{origin}/reset-password?token={account.ResetToken}";
             var message = $"<h3>Сброс пароля</h3><p>Для сброса вашего пароля перейдите по <a href='{resetUrl}'>этой ссылке</a>.</p>";
 
-            _emailService.Send(account.Email, "Сброс пароля", message);
+            _emailService.SendAsync(account.Email, "Сброс пароля", message);
         }
         private async Task<User> getAccountByRefreshToken(string token)
         {
@@ -219,7 +219,7 @@ namespace BusinessLogic.Services
             var verifyUrl = $"{origin}/verify-email?token={account.VerificationToken}";
             var message = $"<h3>Подтверждение почты</h3><p>Для подтверждения вашей почты перейдите по <a href='{verifyUrl}'>этой ссылке</a>.</p>";
 
-            _emailService.Send(account.Email, "Подтверждение почты", message);
+            _emailService.SendAsync(account.Email, "Подтверждение почты", message);
         }
 
         private async Task<User> getAccountByResetToken(string token)
@@ -318,7 +318,7 @@ namespace BusinessLogic.Services
             var verifyUrl = $"{origin}/verify-email?token={account.VerificationToken}";
             var message = $"<h3>Подтверждение почты</h3><p>Для подтверждения вашей почты перейдите по <a href='{verifyUrl}'>этой ссылке</a>.</p>";
 
-            _emailService.Send(account.Email, "Подтверждение почты", message);
+            _emailService.SendAsync(account.Email, "Подтверждение почты", message);
         }
         public async Task<bool> CheckUsernameExists(string username)
         {
