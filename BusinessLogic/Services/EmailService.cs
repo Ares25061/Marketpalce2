@@ -19,31 +19,46 @@ namespace BusinessLogic.Services
 
         public async Task SendAsync(string to, string subject, string html, string from = null)
         {
-            try
+            // Пробуем разные порты
+            var portConfigs = new[]
             {
-                var email = new MimeMessage();
-                email.From.Add(MailboxAddress.Parse(from ?? _appSettings.EmailFrom));
-                email.To.Add(MailboxAddress.Parse(to));
-                email.Subject = subject;
-                email.Body = new TextPart(TextFormat.Html) { Text = html };
+        new { Port = 587, Security = SecureSocketOptions.StartTls },
+        new { Port = 465, Security = SecureSocketOptions.SslOnConnect },
+        new { Port = 25, Security = SecureSocketOptions.StartTls },
+        new { Port = 2525, Security = SecureSocketOptions.StartTls } // Альтернативный порт
+    };
 
+            foreach (var config in portConfigs)
+            {
                 using var smtp = new SmtpClient();
+                smtp.Timeout = 30000;
 
-                // Настраиваем таймауты
-                smtp.Timeout = 30000; // 30 секунд
+                try
+                {
+                    Console.WriteLine($"🔄 Trying SMTP {_appSettings.SmtpHost}:{config.Port}");
 
-                await smtp.ConnectAsync(_appSettings.SmtpHost, _appSettings.SmtpPort, SecureSocketOptions.StartTls);
-                await smtp.AuthenticateAsync(_appSettings.SmtpUser, _appSettings.SmtpPass);
-                await smtp.SendAsync(email);
-                await smtp.DisconnectAsync(true);
+                    await smtp.ConnectAsync(_appSettings.SmtpHost, config.Port, config.Security);
+                    await smtp.AuthenticateAsync(_appSettings.SmtpUser, _appSettings.SmtpPass);
 
-                Console.WriteLine($"Email sent to {to}");
+                    var email = new MimeMessage();
+                    email.From.Add(MailboxAddress.Parse(from ?? _appSettings.EmailFrom));
+                    email.To.Add(MailboxAddress.Parse(to));
+                    email.Subject = subject;
+                    email.Body = new TextPart(TextFormat.Html) { Text = html };
+
+                    await smtp.SendAsync(email);
+                    await smtp.DisconnectAsync(true);
+
+                    Console.WriteLine($"✅ Email sent via port {config.Port}");
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"❌ Port {config.Port} failed: {ex.Message}");
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ Email error to {to}: {ex.Message}");
-                // Можно залогировать ошибку, но не бросать исключение
-            }
+
+            Console.WriteLine("❌ All SMTP ports failed");
         }
 
         public async Task SendWithRetryAsync(string to, string subject, string html, string from = null, int maxRetries = 3)
