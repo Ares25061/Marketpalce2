@@ -34,7 +34,7 @@ namespace BusinessLogic.Services
                 Console.WriteLine('5');
                 using var smtp = new SmtpClient();
                 Console.WriteLine('6');
-                smtp.Connect(_appSettings.SmtpHost, _appSettings.SmtpPort, SecureSocketOptions.StartTls);
+                smtp.Connect(_appSettings.SmtpHost, _appSettings.SmtpPort, SecureSocketOptions.SslOnConnect);
                 Console.WriteLine('7');
                 smtp.Authenticate(_appSettings.SmtpUser, _appSettings.SmtpPass);
                 Console.WriteLine('8');
