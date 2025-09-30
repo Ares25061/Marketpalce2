@@ -23,16 +23,25 @@ namespace BusinessLogic.Services
             {
                 var email = new MimeMessage();
                 // Используем EmailFrom из конфигурации, если from не передан
+                Console.WriteLine('1');
                 email.From.Add(MailboxAddress.Parse(from ?? _appSettings.EmailFrom));
+                Console.WriteLine('2');
                 email.To.Add(MailboxAddress.Parse(to));
+                Console.WriteLine('3');
                 email.Subject = subject;
+                Console.WriteLine('4');
                 email.Body = new TextPart(TextFormat.Html) { Text = html };
-
+                Console.WriteLine('5');
                 using var smtp = new SmtpClient();
+                Console.WriteLine('6');
                 smtp.Connect(_appSettings.SmtpHost, _appSettings.SmtpPort, SecureSocketOptions.StartTls);
+                Console.WriteLine('7');
                 smtp.Authenticate(_appSettings.SmtpUser, _appSettings.SmtpPass);
+                Console.WriteLine('8');
                 smtp.Send(email);
+                Console.WriteLine('9');
                 smtp.Disconnect(true);
+                Console.WriteLine("10");
             }
             catch (Exception ex)
             {
