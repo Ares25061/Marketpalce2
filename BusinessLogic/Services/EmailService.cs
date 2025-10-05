@@ -1,10 +1,10 @@
-﻿using BusinessLogic.Authorization;
+﻿using brevo_csharp.Api;
+using brevo_csharp.Client;
+using brevo_csharp.Model;
+using BusinessLogic.Authorization;
 using BusinessLogic.Helpers;
-using MailKit.Net.Smtp;
-using MailKit.Security;
 using Microsoft.Extensions.Options;
-using MimeKit;
-using MimeKit.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLogic.Services
 {
@@ -17,35 +17,48 @@ namespace BusinessLogic.Services
             _appSettings = appSettings.Value;
         }
 
-        public void Send(string to, string subject, string html, string from = null)
+        public async System.Threading.Tasks.Task Send(string to, string subject, string html, string from = null)
         {
             try
             {
-                var email = new MimeMessage();
-                // Используем EmailFrom из конфигурации, если from не передан
-                Console.WriteLine('1');
-                email.From.Add(MailboxAddress.Parse(from ?? _appSettings.EmailFrom));
-                Console.WriteLine('2');
-                email.To.Add(MailboxAddress.Parse(to));
-                Console.WriteLine('3');
-                email.Subject = subject;
-                Console.WriteLine('4');
-                email.Body = new TextPart(TextFormat.Html) { Text = html };
-                Console.WriteLine('5');
-                using var smtp = new SmtpClient();
-                Console.WriteLine('6');
-                smtp.Connect(_appSettings.SmtpHost, _appSettings.SmtpPort);
-                Console.WriteLine('7');
-                smtp.Authenticate(_appSettings.SmtpUser, _appSettings.SmtpPass);
-                Console.WriteLine('8');
-                smtp.Send(email);
-                Console.WriteLine('9');
-                smtp.Disconnect(true);
-                Console.WriteLine("10");
+                // Используем подтвержденного отправителя
+                var fromEmail = _appSettings.EmailFrom; // явно указываем подтвержденный email
+                var fromName = _appSettings.EmailFromName;
+
+                Console.WriteLine($"Sending email from: {fromEmail} to: {to}");
+                Console.WriteLine($"API Key: {_appSettings.BrevoApiKey?.Substring(0, 10)}...");
+
+                // Настройка Brevo API
+                var config = new brevo_csharp.Client.Configuration();
+                config.ApiKey.Add("api-key", _appSettings.BrevoApiKey);
+
+                var brevoApi = new TransactionalEmailsApi(config);
+
+                // Создание письма
+                var sendSmtpEmail = new SendSmtpEmail(
+                    sender: new SendSmtpEmailSender(email: fromEmail, name: fromName),
+                    to: new List<SendSmtpEmailTo> { new SendSmtpEmailTo(email: to) },
+                    subject: subject,
+                    htmlContent: html
+                );
+
+                Console.WriteLine("Attempting to send email via Brevo...");
+
+                // Отправка
+                var result = await brevoApi.SendTransacEmailAsync(sendSmtpEmail);
+                Console.WriteLine($"✅ Email sent via Brevo. Message ID: {result.MessageId}");
+            }
+            catch (brevo_csharp.Client.ApiException brevoEx)
+            {
+                Console.WriteLine($"❌ Brevo API Exception: {brevoEx.Message}");
+                Console.WriteLine($"❌ Error Code: {brevoEx.ErrorCode}");
+                Console.WriteLine($"❌ Error Content: {brevoEx.ErrorContent}");
+                throw;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ЛЕЕЕ ОШИБКА БРАТ " + ex.Message);
+                Console.WriteLine($"❌ General error: {ex.Message}");
+                throw;
             }
         }
     }
