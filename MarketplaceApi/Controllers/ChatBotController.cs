@@ -68,7 +68,7 @@ namespace MarketplaceApi.Controllers
             Response.Headers.Add("Connection", "keep-alive");
 
             await foreach (var chunk in _ollama.Completions.GenerateCompletionAsync(
-                model: "llama3.2-vision:latest",
+                model: "deepseek-v3.1:671b-cloud",
                 prompt: prompt,
                 stream: true,
                 context: context))
