@@ -3,6 +3,7 @@ using brevo_csharp.Client;
 using brevo_csharp.Model;
 using BusinessLogic.Authorization;
 using BusinessLogic.Helpers;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 
@@ -11,26 +12,35 @@ namespace BusinessLogic.Services
     public class EmailService : IEmailService
     {
         private readonly AppSettings _appSettings;
+        private readonly IConfiguration _configuration;
 
-        public EmailService(IOptions<AppSettings> appSettings)
+        public EmailService(IOptions<AppSettings> appSettings, IConfiguration configuration)
         {
             _appSettings = appSettings.Value;
+            _configuration = configuration;
         }
 
         public async System.Threading.Tasks.Task Send(string to, string subject, string html, string from = null)
         {
             try
             {
-                // Используем подтвержденного отправителя
-                var fromEmail = _appSettings.EmailFrom; // явно указываем подтвержденный email
+                // Получаем API ключ из переменных окружения Render
+                var apiKey = _configuration["AppSettings:BrevoApiKey"] ?? _appSettings.BrevoApiKey;
+
+                if (string.IsNullOrEmpty(apiKey))
+                {
+                    throw new Exception("Brevo API Key is missing");
+                }
+
+                var fromEmail = _appSettings.EmailFrom;
                 var fromName = _appSettings.EmailFromName;
 
                 Console.WriteLine($"Sending email from: {fromEmail} to: {to}");
-                Console.WriteLine($"API Key: {_appSettings.BrevoApiKey?.Substring(0, 10)}...");
+                Console.WriteLine($"API Key exists: {!string.IsNullOrEmpty(apiKey)}");
 
                 // Настройка Brevo API
                 var config = new brevo_csharp.Client.Configuration();
-                config.ApiKey.Add("api-key", _appSettings.BrevoApiKey);
+                config.ApiKey.Add("api-key", apiKey);
 
                 var brevoApi = new TransactionalEmailsApi(config);
 
@@ -48,16 +58,9 @@ namespace BusinessLogic.Services
                 var result = await brevoApi.SendTransacEmailAsync(sendSmtpEmail);
                 Console.WriteLine($"✅ Email sent via Brevo. Message ID: {result.MessageId}");
             }
-            catch (brevo_csharp.Client.ApiException brevoEx)
-            {
-                Console.WriteLine($"❌ Brevo API Exception: {brevoEx.Message}");
-                Console.WriteLine($"❌ Error Code: {brevoEx.ErrorCode}");
-                Console.WriteLine($"❌ Error Content: {brevoEx.ErrorContent}");
-                throw;
-            }
             catch (Exception ex)
             {
-                Console.WriteLine($"❌ General error: {ex.Message}");
+                Console.WriteLine($"❌ Error: {ex.Message}");
                 throw;
             }
         }
