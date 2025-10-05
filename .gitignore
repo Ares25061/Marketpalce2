@@ -13,3 +13,6 @@ MarketplaceApi/obj/
 BlazorClient/bin/
 BlazorClient/obj/
 MarketplaceApi/appsettings.json
+MarketplaceApi/appsettings.*.json
+appsettings.json
+appsettings.*.json
